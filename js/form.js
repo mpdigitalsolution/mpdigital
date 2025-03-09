@@ -1,6 +1,6 @@
 (function() {
-    // Initialize EmailJS with your public key (Replace YOUR_PUBLIC_KEY with your actual key)
-    emailjs.init("YOUR_PUBLIC_KEY");
+    // Initialize EmailJS with your public key
+    emailjs.init("efRrbEvsWA8_PG5Z0");
     
     // Get form elements
     const contactForm = document.getElementById('contactForm');
@@ -45,9 +45,8 @@
         to_email: "mpalomaresdigital@gmail.com" // This will be used in your EmailJS template
       };
       
-      // Send the email using EmailJS
-      // Replace YOUR_SERVICE_ID and YOUR_TEMPLATE_ID with your actual values
-      emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData)
+      // Send the email using EmailJS with your actual service ID
+      emailjs.send('service_tnsgf4p', 'template_contact', formData)
         .then(function(response) {
           // Hide spinner and enable button
           spinner.style.display = 'none';
@@ -76,4 +75,3 @@
         });
     });
   })();
-  
