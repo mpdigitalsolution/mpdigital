@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get In Touch - Marlon Palomares</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #4a6bff;
+      --secondary-color: #ff6b6b;
+      --accent-color: #ffd166;
+      --dark-color: #2c3e50;
+      --light-color: #f8f9fa;
+      --gradient: linear-gradient(135deg, var(--primary-color), #8c43ff);
+      --shadow: 0 10px 30px rgba(0,0,0,0.1);
+      --transition: all 0.3s ease;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      background-color: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    /* Header Styles */
+    .headline-banner {
+      background: var(--gradient);
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.01); }
+      100% { transform: scale(1); }
+    }
+    
+    header {
+      background-color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    }
+    
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 15px;
+    }
+    
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+    
+    nav ul li {
+      margin: 0 15px;
+    }
+    
+    nav ul li a {
+      text-decoration: none;
+      color: var(--dark-color);
+      font-weight: 600;
+      padding: 8px 15px;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    nav ul li a:hover {
+      color: var(--primary-color);
+    }
+    
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: var(--primary-color);
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: width 0.3s ease;
+    }
+    
+    nav ul li a:hover::after {
+      width: 70%;
+    }
+    
+    /* Main Content Styles */
+    main {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    
+    .section-headline {
+      font-size: 1.2rem;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-align: center;
+      position: relative;
+      display: inline-block;
+      padding: 0 20px;
+    }
+    
+    .section-headline::before, .section-headline::after {
+      content: '';
+      height: 1px;
+      width: 30px;
+      background: var(--primary-color);
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 10px;
+    }
+    
+    h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: var(--dark-color);
+      position: relative;
+    }
+    
+    h2::after {
+      content: '';
+      position: absolute;
+      height: 4px;
+      width: 60px;
+      background: var(--gradient);
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+    
+    .contact {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 0;
+    }
+    
+    .contact > p {
+      text-align: center;
+      max-width: 700px;
+      margin-bottom: 30px;
+      color: #666;
+      font-size: 1.1rem;
+    }
+    
+    /* Contact Form Styles */
+    .contact-container {
+      display: flex;
+      width: 100%;
+      max-width: 1100px;
+      gap: 30px;
+      margin: 0 auto;
+    }
+    
+    .contact-info {
+      flex: 1;
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      padding: 30px;
+      border-left: 5px solid var(--primary-color);
+    }
+    
+    .contact-info h3 {
+      color: var(--dark-color);
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #eee;
+      font-size: 1.4rem;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      color: #555;
+    }
+    
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--gradient);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+      color: white;
+      font-size: 1.2rem;
+      box-shadow: 0 5px 15px rgba(74, 107, 255, 0.3);
+    }
+    
+    .contact-text {
+      flex: 1;
+    }
+    
+    .contact-text strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--dark-color);
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 30px;
+    }
+    
+    .social-link {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: #f5f7fa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--dark-color);
+      text-decoration: none;
+      font-size: 1.3rem;
+      transition: var(--transition);
+    }
+    
+    .social-link:hover {
+      transform: translateY(-5px);
+    }
+    
+    .social-link.facebook:hover {
+      background: #3b5998;
+      color: white;
+    }
+    
+    .social-link.instagram:hover {
+      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+      color: white;
+    }
+    
+    .social-link.twitter:hover {
+      background: #1da1f2;
+      color: white;
+    }
+    
+    .social-link.linkedin:hover {
+      background: #0077b5;
+      color: white;
+    }
+    
+    .social-link.viber:hover {
+      background: #7360f2;
+      color: white;
+    }
+    
+    .form-container {
+      flex: 1.5;
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .form-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 150px;
+      height: 150px;
+      background: var(--gradient);
+      opacity: 0.1;
+      border-radius: 0 0 0 150px;
+    }
+    
+    #contactForm {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+      position: relative;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: var(--dark-color);
+    }
+    
+    .form-group label i {
+      color: var(--primary-color);
+      margin-right: 8px;
+    }
+    
+    .form-group input, 
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+    
+    .form-group input:focus, 
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(74, 107, 255, 0.2);
+      outline: none;
+    }
+    
+    button[type="submit"] {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--gradient);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: 0 5px 15px rgba(74, 107, 255, 0.3);
+    }
+    
+    button[type="submit"]:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(74, 107, 255, 0.4);
+    }
+    
+    button[type="submit"] i {
+      margin-right: 8px;
+    }
+    
+    .spinner {
+      display: none;
+      width: 20px;
+      height: 20px;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: white;
+      animation: spin 1s ease-in-out infinite;
+      margin-right: 8px;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    .form-status {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      display: none;
+      text-align: center;
+      font-weight: 500;
+    }
+    
+    .form-success {
+      background-color: rgba(39, 174, 96, 0.1);
+      color: #27ae60;
+      border: 1px solid #27ae60;
+    }
+    
+    .form-error {
+      background-color: rgba(231, 76, 60, 0.1);
+      color: #e74c3c;
+      border: 1px solid #e74c3c;
+    }
+    
+    /* CTA Button */
+    .cta-button {
+      display: block;
+      width: max-content;
+      margin: 40px auto 0;
+      background: var(--gradient);
+      color: white;
+      padding: 15px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 5px 20px rgba(74, 107, 255, 0.4);
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+    }
+    
+    .cta-button:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(74, 107, 255, 0.5);
+    }
+    
+    .cta-button i {
+      margin-right: 8px;
+    }
+    
+    /* Map Styles */
+    #map {
+      width: 100%;
+      height: 250px;
+      border-radius: 10px;
+      margin-top: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Chat Widget Styles */
+    .chat-widget {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+    
+    .chat-toggle {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--gradient);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      box-shadow: 0 5px 20px rgba(74, 107, 255, 0.4);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    
+    .chat-toggle:hover {
+      transform: scale(1.1);
+    }
+    
+    .chat-box {
+      position: absolute;
+      bottom: 70px;
+      right: 0;
+      width: 350px;
+      height: 450px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+      display: none;
+      overflow: hidden;
+      flex-direction: column;
+    }
+    
+    .chat-header {
+      background: var(--gradient);
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .chat-title {
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+    }
+    
+    .chat-title i {
+      margin-right: 10px;
+    }
+    
+    .chat-close {
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+    
+    .chat-body {
+      flex: 1;
+      padding: 15px;
+      overflow-y: auto;
+      background: #f9f9f9;
+    }
+    
+    .message {
+      margin-bottom: 15px;
+      max-width: 80%;
+      padding: 10px 15px;
+      border-radius: 15px;
+      position: relative;
+      word-wrap: break-word;
+    }
+    
+    .message.received {
+      background: #e6e6e6;
+      align-self: flex-start;
+      border-bottom-left-radius: 5px;
+    }
+    
+    .message.sent {
+      background: var(--primary-color);
+      color: white;
+      align-self: flex-end;
+      margin-left: auto;
+      border-bottom-right-radius: 5px;
+    }
+    
+    .message-time {
+      font-size: 0.7rem;
+      opacity: 0.7;
+      margin-top: 5px;
+      text-align: right;
+    }
+    
+    .chat-footer {
+      padding: 10px 15px;
+      background: white;
+      border-top: 1px solid #eee;
+      display: flex;
+      align-items: center;
+    }
+    
+    .chat-input {
+      flex: 1;
+      padding: 10px 15px;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      margin-right: 10px;
+    }
+    
+    .chat-input:focus {
+      outline: none;
+      border-color: var(--primary-color);
+    }
+    
+    .chat-send {
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    
+    .chat-send:hover {
+      background: var(--dark-color);
+    }
+    
+    .viber-button {
+      display: flex;
+      align-items: center;
+      background: #7360f2;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 30px;
+      text-decoration: none;
+      margin-top: 20px;
+      font-weight: 600;
+      transition: var(--transition);
+      width: fit-content;
+    }
+    
+    .viber-button:hover {
+      background: #5b48d1;
+      transform: translateY(-2px);
+    }
+    
+    .viber-button i {
+      margin-right: 10px;
+      font-size: 1.2rem;
+    }
+    
+    /* Notification Toast */
+    .notification {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: white;
+      color: var(--dark-color);
+      padding: 15px 25px;
+      border-radius: 8px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+      transform: translateY(150%);
+      transition: transform 0.3s ease;
+      z-index: 1000;
+      font-weight: 500;
+    }
+    
+    .notification.show {
+      transform: translateY(0);
+    }
+    
+    /* Footer Styles */
+    footer {
+      background: var(--dark-color);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 60px;
+      position: relative;
+    }
+    
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .social-icons {
+      margin: 20px 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    
+    .social-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.1);
+      color: white;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    
+    .social-icons a:hover {
+      background: var(--primary-color);
+      transform: translateY(-5px);
+    }
+    
+    footer p {
+      margin-top: 20px;
+      opacity: 0.7;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 992px) {
+      .contact-container {
+        flex-direction: column;
+      }
+      
+      .contact-info, .form-container {
+        width: 100%;
+      }
+      
+      .chat-box {
+        width: 300px;
+        height: 400px;
+        right: 0;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      nav ul li {
+        margin: 5px 0;
+      }
+      
+      h2 {
+        font-size: 2rem;
+      }
+      
+      .contact > p {
+        font-size: 1rem;
+        padding: 0 20px;
+      }
+      
+      .chat-box {
+        width: 280px;
+        right: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header with Navigation -->
+  <header>
+    <div class="headline-banner">🚀 Elevate Your Brand's Social Media Presence Today!</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="hobbies.html">My Hobbies</a></li>
+        <li><a href="services.html">My Services</a></li>
+        <li><a href="tools.html">Tools I Use</a></li>
+        <li><a href="contact.html">Get In Touch</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <!-- Main Content -->
+  <main>
+    <section class="contact" id="contact">
+      <div class="section-headline">📱 Let's Connect and Grow Together</div>
+      <h2>Get In Touch</h2>
+      <p>Ready to elevate your social media presence? I'm here to help you achieve your digital marketing goals. Fill out the form below, and I'll get back to you with personalized strategies for your brand.</p>
+      
+      <div class="contact-container">
+        <div class="contact-info">
+          <h3>Contact Information</h3>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-text">
+              <strong>Location</strong>
+              Sitio Bayan-Bayanan Brgy, San Vicente San Pedro, Laguna
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-text">
+              <strong>Email</strong>
+              mpalomaresdigitalsultion@gmail.com
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div class="contact-text">
+              <strong>Phone</strong>
+              09913062370
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="contact-text">
+              <strong>Working Hours</strong>
+              Monday - Friday, 9am - 5pm PHT
+            </div>
+          </div>
+          
+          <!-- Google Map -->
+          <h3>Find Me</h3>
+          <div id="map"></div>
+          
+          <h3>Connect With Me</h3>
+          <div class="social-links">
+            <a href="https://www.facebook.com/marlon.palomares.2024/" class="social-link facebook" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/palomares523/" class="social-link instagram" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://x.com/home" class="social-link twitter" aria-label="X (Twitter)">
+              <i class="fab fa-x-twitter"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/mpdigital/" class="social-link linkedin" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="viber://chat?number=%2B639913062370" class="social-link viber" aria-label="Viber">
+              <i class="fab fa-viber"></i>
+            </a>
+          </div>
+          
+          <a href="https://calendly.com/marlon-palomares02/30min" class="cta-button" style="margin-top: 30px;">
+            <i class="fas fa-calendar-check"></i> Schedule a Call
+          </a>
+          
+          <a href="viber://chat?number=%2B639913062370" class="viber-button">
+            <i class="fab fa-viber"></i> Chat on Viber
+          </a>
+        </div>
+        
+        <div class="form-container">
+          <form id="contactForm" action="https://formspree.io/f/mpalomaresdigitalsultion@gmail.com" method="POST">
+            <div class="form-group">
+              <label for="name"><i class="fas fa-user"></i> Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email"><i class="fas fa-envelope"></i> Email Address</label>
+              <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="phone"><i class="fas fa-phone"></i> Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="Your phone number">
+            </div>
+            
+            <div class="form-group">
+              <label for="company"><i class="fas fa-building"></i> Company / Brand</label>
+              <input type="text" id="company" name="company" placeholder="Your company or brand name">
+            </div>
+            
+            <div class="form-group">
+              <label for="service"><i class="fas fa-briefcase"></i> Service You're Interested In</label>
+              <select id="service" name="service" required>
+                <option value="" disabled selected>Select a service</option>
+                <option value="social-media-management">Social Media Management</option>
+                <option value="content-creation">Content Creation</option>
+                <option value="influencer-marketing">Influencer Marketing</option>
+                <option value="paid-advertising">Paid Advertising</option>
+                <option value="social-strategy">Social Media Strategy</option>
+                <option value="other">Other (Please specify)</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="message"><i class="fas fa-comment"></i> How can I help you?</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about your project, goals, or challenges..." required></textarea>
+            </div>
+            
+            <button type="submit" id="submitBtn">
+              <div id="spinner" class="spinner"></div>
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+            
+            <div id="formSuccess" class="form-status form-success">
+              <i class="fas fa-check-circle"></i> Thank you for your message! I'll get back to you soon.
+            </div>
+            
+            <div id="formError" class="form-status form-error">
+              <i class="fas fa-exclamation-circle"></i> Oops! Something went wrong. Please try again later.
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Chat Widget -->
+  <div class="chat-widget">
+    <div class="chat-toggle">
+      <i class="fas fa-comments"></i>
+    </div>
+    <div class="chat-box">
+      <div class="chat-header">
+        <div class="chat-title">
+          <i class="fas fa-headset"></i> Let's Chat
+        </div>
+        <button class="chat-close">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="chat-body" id="chatMessages">
+        <div class="message received">
+          <div class="message-content">
+            Hi there! 👋 I'm Marlon. How can I help you with your social media needs today?
+          </div>
+          <div class="message-time">Just now</div>
+        </div>
+      </div>
+      <div class="chat-footer">
+        <input type="text" class="chat-input" placeholder="Type your message here..." id="messageInput">
+        <button class="chat-send" id="sendMessage">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Notification Toast -->
+  <div id="notification" class="notification"></div>
+  
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="social-icons">
+        <a href="https://www.facebook.com/marlon.palomares.2024/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/palomares523/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://x.com/home" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/mpdigital/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="viber://chat?number=%2B639913062370" aria-label="Viber"><i class="fab fa-viber"></i></a>
+      </div>
+      <p>&copy; 2025 Marlon Palomares. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <!-- External JS Files -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+  
+  <!-- Google Maps Script -->
+  <script>
+    function initMap() {
+      // San Pedro, Laguna, Philippines coordinates (approximate)
+      const location = { lat: 14.3643, lng: 121.0532 };
+      
+      const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 15,
+        center: location,
+      });
+      
+      const marker = new google.maps.Marker({
+        position: location,
+        map: map,
+        title: "Marlon Palomares Digital Solutions",
+      });
+  </script>
+</body>
+</html>
