@@ -4,14 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Me - Marlon Palomares</title>
-
-  <!-- 
-    1. Check if css/style.css exists.
-       If it doesn't, you'll see a console warning below and need to add it:
-       <link rel="stylesheet" href="css/style.css">
-  -->
+  
+  <!-- Check if css/style.css exists. -->
   <link rel="stylesheet" href="css/style.css">
-
+  
   <style>
     /* Profile image styling with enhanced elements */
     .profile-container {
@@ -291,10 +287,6 @@
       
       <div class="about-content">
         <!-- Profile Picture with Enhanced Overlay and Badges -->
-        <!-- 
-          2. Check if images/home.png exists. If not, create it or rename your image to match this path:
-             <img src="images/home.png" alt="Home Image">
-        -->
         <div class="profile-container">
           <img src="images/home.png" alt="Home Image" class="profile-image">
           <div class="profile-overlay">
@@ -327,7 +319,13 @@
         </div>
         
         <h2>About Me</h2>
-        <p>Hello! I'm a passionate Social Media Manager with over 7 years of experience helping brands connect with their audience and build meaningful relationships online. My approach combines creative content strategies with data-driven insights to deliver measurable results.</p>
+        <!-- REPLACED PARAGRAPHS BELOW -->
+        <p>
+          Hi there, I'm Marlon Palomares. I come from a strong background in customer service and digital outreach, and I've always been passionate about connecting with people. I recently invested in a lead generation course at The VA BAR, where I learned to use essential tools like Mailchimp for email campaigns, Apollo.io for lead discovery, Canva for graphic design, and CapCut for basic video editing.
+        </p>
+        <p>
+          While I haven't held a dedicated lead generation role yet, I'm already familiar with finding quality leads on platforms like LinkedIn and Instagram using Boolean search methods. I'm also passionate about artificial intelligence, which helps me work smarter and more efficiently.
+        </p>
         
         <div class="expertise-list">
           <span class="expertise-item"><i class="fas fa-bullhorn"></i> Brand Strategy</span>
@@ -349,48 +347,8 @@
     <p>&copy; 2025 Marlon Palomares. All rights reserved.</p>
   </footer>
   
-  <!-- 
-    3. Check if js/script.js exists. 
-       If not, you'll see a console warning below and need to add:
-       <script src="js/script.js"></script>
-  -->
+  <!-- External JS Files -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
   <script src="js/script.js"></script>
-
-  <!-- Simple JavaScript checks for missing files -->
-  <script>
-    // Check for style.css
-    fetch('css/style.css')
-      .then(response => {
-        if (!response.ok) {
-          console.warn('⚠️ css/style.css not found. Please add the file or update the path/link tag.');
-        }
-      })
-      .catch(() => {
-        console.warn('⚠️ Could not fetch css/style.css. Please ensure the file exists.');
-      });
-
-    // Check for home.png
-    fetch('images/home.png')
-      .then(response => {
-        if (!response.ok) {
-          console.warn('⚠️ images/home.png not found. Please add or rename your image file.');
-        }
-      })
-      .catch(() => {
-        console.warn('⚠️ Could not fetch images/home.png. Please ensure the file exists.');
-      });
-
-    // Check for script.js
-    fetch('js/script.js')
-      .then(response => {
-        if (!response.ok) {
-          console.warn('⚠️ js/script.js not found. Please add the file or update the script src.');
-        }
-      })
-      .catch(() => {
-        console.warn('⚠️ Could not fetch js/script.js. Please ensure the file exists.');
-      });
-  </script>
 </body>
 </html>
