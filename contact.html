@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Get In Touch - Marlon Palomares</title>
+  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
@@ -79,7 +80,7 @@
       font-weight: 600;
       padding: 8px 15px;
       border-radius: 25px;
-      transition: all 0.3s ease;
+      transition: var(--transition);
       position: relative;
     }
     
@@ -167,15 +168,17 @@
       font-size: 1.1rem;
     }
     
-    /* Contact Form Styles */
+    /* Contact Form & Info Container */
     .contact-container {
       display: flex;
       width: 100%;
       max-width: 1100px;
       gap: 30px;
       margin: 0 auto;
+      flex-wrap: wrap;
     }
     
+    /* Contact Info Styles */
     .contact-info {
       flex: 1;
       background: white;
@@ -225,55 +228,28 @@
       color: var(--dark-color);
     }
     
-    .social-links {
-      display: flex;
-      gap: 15px;
-      margin-top: 30px;
-    }
-    
-    .social-link {
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      background: #f5f7fa;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--dark-color);
-      text-decoration: none;
-      font-size: 1.3rem;
+    /* Enhanced Google Maps Embed Container */
+    .map-container {
+      margin-top: 20px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 3px solid var(--primary-color);
       transition: var(--transition);
     }
     
-    .social-link:hover {
-      transform: translateY(-5px);
+    .map-container:hover {
+      transform: scale(1.02);
+      box-shadow: 0 12px 30px rgba(74, 107, 255, 0.4);
     }
     
-    .social-link.facebook:hover {
-      background: #3b5998;
-      color: white;
+    .map-container iframe {
+      width: 100%;
+      height: 300px;
+      border: 0;
     }
     
-    .social-link.instagram:hover {
-      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-      color: white;
-    }
-    
-    .social-link.twitter:hover {
-      background: #1da1f2;
-      color: white;
-    }
-    
-    .social-link.linkedin:hover {
-      background: #0077b5;
-      color: white;
-    }
-    
-    .social-link.viber:hover {
-      background: #7360f2;
-      color: white;
-    }
-    
+    /* Form Container Styles */
     .form-container {
       flex: 1.5;
       background: white;
@@ -319,7 +295,7 @@
     }
     
     .form-group input, 
-    .form-group textarea,
+    .form-group textarea, 
     .form-group select {
       width: 100%;
       padding: 12px 15px;
@@ -330,7 +306,7 @@
     }
     
     .form-group input:focus, 
-    .form-group textarea:focus,
+    .form-group textarea:focus, 
     .form-group select:focus {
       border-color: var(--primary-color);
       box-shadow: 0 0 0 3px rgba(74, 107, 255, 0.2);
@@ -398,216 +374,11 @@
       border: 1px solid #e74c3c;
     }
     
-    /* CTA Button */
-    .cta-button {
-      display: block;
-      width: max-content;
-      margin: 40px auto 0;
-      background: var(--gradient);
-      color: white;
-      padding: 15px 30px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 5px 20px rgba(74, 107, 255, 0.4);
-      transition: all 0.3s ease;
-      border: none;
-      cursor: pointer;
-      text-align: center;
-    }
-    
-    .cta-button:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 25px rgba(74, 107, 255, 0.5);
-    }
-    
-    .cta-button i {
-      margin-right: 8px;
-    }
-    
-    /* Map Styles */
-    #map {
-      width: 100%;
-      height: 250px;
-      border-radius: 10px;
-      margin-top: 20px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    }
-    
-    /* Chat Widget Styles */
-    .chat-widget {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 1000;
-    }
-    
-    .chat-toggle {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background: var(--gradient);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 1.5rem;
-      box-shadow: 0 5px 20px rgba(74, 107, 255, 0.4);
-      cursor: pointer;
-      transition: var(--transition);
-    }
-    
-    .chat-toggle:hover {
-      transform: scale(1.1);
-    }
-    
-    .chat-box {
-      position: absolute;
-      bottom: 70px;
-      right: 0;
-      width: 350px;
-      height: 450px;
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
-      display: none;
-      overflow: hidden;
-      flex-direction: column;
-    }
-    
-    .chat-header {
-      background: var(--gradient);
-      color: white;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    
-    .chat-title {
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-    }
-    
-    .chat-title i {
-      margin-right: 10px;
-    }
-    
-    .chat-close {
-      background: transparent;
-      border: none;
-      color: white;
-      font-size: 1.2rem;
-      cursor: pointer;
-    }
-    
-    .chat-body {
-      flex: 1;
-      padding: 15px;
-      overflow-y: auto;
-      background: #f9f9f9;
-    }
-    
-    .message {
-      margin-bottom: 15px;
-      max-width: 80%;
-      padding: 10px 15px;
-      border-radius: 15px;
-      position: relative;
-      word-wrap: break-word;
-    }
-    
-    .message.received {
-      background: #e6e6e6;
-      align-self: flex-start;
-      border-bottom-left-radius: 5px;
-    }
-    
-    .message.sent {
-      background: var(--primary-color);
-      color: white;
-      align-self: flex-end;
-      margin-left: auto;
-      border-bottom-right-radius: 5px;
-    }
-    
-    .message-time {
-      font-size: 0.7rem;
-      opacity: 0.7;
-      margin-top: 5px;
-      text-align: right;
-    }
-    
-    .chat-footer {
-      padding: 10px 15px;
-      background: white;
-      border-top: 1px solid #eee;
-      display: flex;
-      align-items: center;
-    }
-    
-    .chat-input {
-      flex: 1;
-      padding: 10px 15px;
-      border: 1px solid #ddd;
-      border-radius: 20px;
-      font-size: 0.9rem;
-      margin-right: 10px;
-    }
-    
-    .chat-input:focus {
-      outline: none;
-      border-color: var(--primary-color);
-    }
-    
-    .chat-send {
-      background: var(--primary-color);
-      color: white;
-      border: none;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: var(--transition);
-    }
-    
-    .chat-send:hover {
-      background: var(--dark-color);
-    }
-    
-    .viber-button {
-      display: flex;
-      align-items: center;
-      background: #7360f2;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 30px;
-      text-decoration: none;
-      margin-top: 20px;
-      font-weight: 600;
-      transition: var(--transition);
-      width: fit-content;
-    }
-    
-    .viber-button:hover {
-      background: #5b48d1;
-      transform: translateY(-2px);
-    }
-    
-    .viber-button i {
-      margin-right: 10px;
-      font-size: 1.2rem;
-    }
-    
     /* Notification Toast */
     .notification {
       position: fixed;
       bottom: 20px;
-      left: 20px;
+      right: 20px;
       background: white;
       color: var(--dark-color);
       padding: 15px 25px;
@@ -630,7 +401,6 @@
       text-align: center;
       padding: 40px 20px;
       margin-top: 60px;
-      position: relative;
     }
     
     .footer-content {
@@ -657,7 +427,7 @@
       background: rgba(255,255,255,0.1);
       color: white;
       border-radius: 50%;
-      transition: all 0.3s ease;
+      transition: var(--transition);
       text-decoration: none;
     }
     
@@ -680,12 +450,6 @@
       .contact-info, .form-container {
         width: 100%;
       }
-      
-      .chat-box {
-        width: 300px;
-        height: 400px;
-        right: 0;
-      }
     }
     
     @media (max-width: 768px) {
@@ -705,11 +469,6 @@
       .contact > p {
         font-size: 1rem;
         padding: 0 20px;
-      }
-      
-      .chat-box {
-        width: 280px;
-        right: 0;
       }
     }
   </style>
@@ -738,6 +497,7 @@
       <p>Ready to elevate your social media presence? I'm here to help you achieve your digital marketing goals. Fill out the form below, and I'll get back to you with personalized strategies for your brand.</p>
       
       <div class="contact-container">
+        <!-- Updated Contact Information with Enhanced Google Maps Embed -->
         <div class="contact-info">
           <h3>Contact Information</h3>
           
@@ -747,7 +507,7 @@
             </div>
             <div class="contact-text">
               <strong>Location</strong>
-              Sitio Bayan-Bayanan Brgy, San Vicente San Pedro, Laguna
+              Sitio Bayan-Bayanan, Brgy San Vicente, San Pedro, Laguna
             </div>
           </div>
           
@@ -771,50 +531,21 @@
             </div>
           </div>
           
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fas fa-clock"></i>
-            </div>
-            <div class="contact-text">
-              <strong>Working Hours</strong>
-              Monday - Friday, 9am - 5pm PHT
-            </div>
+          <!-- Enhanced Google Maps Embed -->
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.9999999999995!2d121.005!3d14.123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c8a24f9a5c1f%3A0xabcdef1234567890!2sSitio+Bayan-Bayanan%2C+Brgy+San+Vicente%2C+San+Pedro%2C+Laguna!5e0!3m2!1sen!2sph!4v1600000000000" 
+              allowfullscreen="" loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
           </div>
           
-          <!-- Google Map -->
-          <h3>Find Me</h3>
-          <div id="map"></div>
-          
-          <h3>Connect With Me</h3>
-          <div class="social-links">
-            <a href="https://www.facebook.com/marlon.palomares.2024/" class="social-link facebook" aria-label="Facebook">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="https://www.instagram.com/palomares523/" class="social-link instagram" aria-label="Instagram">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://x.com/home" class="social-link twitter" aria-label="X (Twitter)">
-              <i class="fab fa-x-twitter"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/mpdigital/" class="social-link linkedin" aria-label="LinkedIn">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a href="viber://chat?number=%2B639913062370" class="social-link viber" aria-label="Viber">
-              <i class="fab fa-viber"></i>
-            </a>
-          </div>
-          
-          <a href="https://calendly.com/marlon-palomares02/30min" class="cta-button" style="margin-top: 30px;">
-            <i class="fas fa-calendar-check"></i> Schedule a Call
-          </a>
-          
-          <a href="viber://chat?number=%2B639913062370" class="viber-button">
-            <i class="fab fa-viber"></i> Chat on Viber
-          </a>
+          <!-- Removed Viber Chat Button -->
         </div>
         
+        <!-- Contact Form -->
         <div class="form-container">
-          <form id="contactForm" action="https://formspree.io/f/mpalomaresdigitalsultion@gmail.com" method="POST">
+          <form id="contactForm">
             <div class="form-group">
               <label for="name"><i class="fas fa-user"></i> Full Name</label>
               <input type="text" id="name" name="name" placeholder="Your name" required>
@@ -823,11 +554,6 @@
             <div class="form-group">
               <label for="email"><i class="fas fa-envelope"></i> Email Address</label>
               <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
-            </div>
-            
-            <div class="form-group">
-              <label for="phone"><i class="fas fa-phone"></i> Phone Number</label>
-              <input type="tel" id="phone" name="phone" placeholder="Your phone number">
             </div>
             
             <div class="form-group">
@@ -871,37 +597,6 @@
     </section>
   </main>
   
-  <!-- Chat Widget -->
-  <div class="chat-widget">
-    <div class="chat-toggle">
-      <i class="fas fa-comments"></i>
-    </div>
-    <div class="chat-box">
-      <div class="chat-header">
-        <div class="chat-title">
-          <i class="fas fa-headset"></i> Let's Chat
-        </div>
-        <button class="chat-close">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div class="chat-body" id="chatMessages">
-        <div class="message received">
-          <div class="message-content">
-            Hi there! 👋 I'm Marlon. How can I help you with your social media needs today?
-          </div>
-          <div class="message-time">Just now</div>
-        </div>
-      </div>
-      <div class="chat-footer">
-        <input type="text" class="chat-input" placeholder="Type your message here..." id="messageInput">
-        <button class="chat-send" id="sendMessage">
-          <i class="fas fa-paper-plane"></i>
-        </button>
-      </div>
-    </div>
-  </div>
-  
   <!-- Notification Toast -->
   <div id="notification" class="notification"></div>
   
@@ -913,7 +608,6 @@
         <a href="https://www.instagram.com/palomares523/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
         <a href="https://x.com/home" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
         <a href="https://www.linkedin.com/in/mpdigital/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="viber://chat?number=%2B639913062370" aria-label="Viber"><i class="fab fa-viber"></i></a>
       </div>
       <p>&copy; 2025 Marlon Palomares. All rights reserved.</p>
     </div>
@@ -921,23 +615,68 @@
   
   <!-- External JS Files -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
-  
-  <!-- Google Maps Script -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script>
-    function initMap() {
-      // San Pedro, Laguna, Philippines coordinates (approximate)
-      const location = { lat: 14.3643, lng: 121.0532 };
+    // Initialize EmailJS (replace YOUR_PUBLIC_KEY with your actual public key)
+    emailjs.init("YOUR_PUBLIC_KEY");
+    
+    // Form submission handling using EmailJS
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
       
-      const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 15,
-        center: location,
-      });
+      // Show spinner and disable button
+      document.getElementById('spinner').style.display = 'block';
+      document.getElementById('submitBtn').disabled = true;
       
-      const marker = new google.maps.Marker({
-        position: location,
-        map: map,
-        title: "Marlon Palomares Digital Solutions",
-      });
+      // Collect form data
+      const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        company: document.getElementById('company').value,
+        service: document.getElementById('service').value,
+        message: document.getElementById('message').value,
+        // This "to_email" is used in your EmailJS template
+        to_email: "mpalomaresdigitalsultion@gmail.com"
+      };
+      
+      // Send the email using EmailJS (replace YOUR_SERVICE_ID and YOUR_TEMPLATE_ID with your actual values)
+      emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData)
+        .then(function(response) {
+          // Hide spinner and enable button
+          document.getElementById('spinner').style.display = 'none';
+          document.getElementById('submitBtn').disabled = false;
+          
+          // Show success message and reset form
+          document.getElementById('formSuccess').style.display = 'block';
+          document.getElementById('contactForm').reset();
+          
+          // Hide success message after 5 seconds
+          setTimeout(() => {
+            document.getElementById('formSuccess').style.display = 'none';
+          }, 5000);
+        }, function(error) {
+          // Hide spinner and enable button
+          document.getElementById('spinner').style.display = 'none';
+          document.getElementById('submitBtn').disabled = false;
+          
+          // Show error message
+          document.getElementById('formError').style.display = 'block';
+          setTimeout(() => {
+            document.getElementById('formError').style.display = 'none';
+          }, 5000);
+        });
+    });
+    
+    // Optional notification function for additional feedback
+    function showNotification(message) {
+      const notification = document.getElementById('notification');
+      notification.textContent = message;
+      notification.classList.add('show');
+      
+      setTimeout(() => {
+        notification.classList.remove('show');
+      }, 3000);
+    }
   </script>
 </body>
 </html>
