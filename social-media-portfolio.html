@@ -403,6 +403,42 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
         
+        /* Form Success/Error Messages */
+        .form-status {
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 20px;
+            display: none;
+        }
+        
+        .form-success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .form-error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        /* Form Loading Spinner */
+        .spinner {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 10px;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
         /* Call to Action Banner */
         .cta-banner {
             background: linear-gradient(135deg, #3182ce, #805ad5);
@@ -527,7 +563,7 @@
         <section class="about">
             <div class="section-headline">💼 Your Social Media Success Story Starts Here</div>
             <h2>About Me</h2>
-            <p>Hello! I'm Marlon Palomares I am a passionate Social Media Manager with over 7 years of experience helping brands connect with their audience and build meaningful relationships online. My approach combines creative content strategies with data-driven insights to deliver measurable results.</p>
+            <p>Hello! I'm a passionate Social Media Manager with over 7 years of experience helping brands connect with their audience and build meaningful relationships online. My approach combines creative content strategies with data-driven insights to deliver measurable results.</p>
             <p>I specialize in developing and implementing comprehensive social media strategies that align with business objectives, from increasing brand awareness to driving conversions. My expertise spans across multiple platforms including Instagram, Facebook, Twitter, LinkedIn, TikTok, and Pinterest.</p>
         </section>
         
@@ -658,7 +694,7 @@
                 </div>
                 <div class="portfolio-item">
                     <div class="portfolio-cta">Outline Winning Strategies</div>
-                    <img src="docs.jpeg" alt="Google Docs">
+                    <img src="docs.png" alt="Google Docs">
                     <div class="portfolio-overlay">
                         <h3><i class="fas fa-file-alt"></i> Google Docs</h3>
                         <p>Collaborative document editor for content strategy planning and client proposals.</p>
@@ -680,7 +716,7 @@
             <div class="section-headline">📱 Let's Connect and Grow Together</div>
             <h2>Get In Touch</h2>
             <p>Interested in working together? Fill out the form below, and I'll get back to you as soon as possible.</p>
-            <form action="#" method="post">
+            <form id="contactForm">
                 <div class="form-group">
                     <label for="name"><i class="fas fa-user"></i> Name</label>
                     <input type="text" id="name" name="name" required>
@@ -697,7 +733,16 @@
                     <label for="message"><i class="fas fa-comment"></i> How can I help you?</label>
                     <textarea id="message" name="message" rows="5" required></textarea>
                 </div>
-                <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+                <button type="submit" id="submitBtn">
+                    <div id="spinner" class="spinner"></div>
+                    <i class="fas fa-paper-plane"></i> Send Message
+                </button>
+                <div id="formSuccess" class="form-status form-success">
+                    <i class="fas fa-check-circle"></i> Thank you for your message! I'll get back to you soon.
+                </div>
+                <div id="formError" class="form-status form-error">
+                    <i class="fas fa-exclamation-circle"></i> Oops! Something went wrong. Please try again later.
+                </div>
             </form>
         </section>
         
@@ -709,5 +754,71 @@
     
     <!-- Font Awesome for icons -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    
+    <!-- Email JS Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
+    <!-- Form Submission Script -->
+    <script>
+        (function() {
+            // Initialize EmailJS with your public key
+            // You'll need to sign up at emailjs.com and replace with your actual public key
+            emailjs.init("YOUR_PUBLIC_KEY");
+            
+            // Get form elements
+            const contactForm = document.getElementById('contactForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const spinner = document.getElementById('spinner');
+            const formSuccess = document.getElementById('formSuccess');
+            const formError = document.getElementById('formError');
+            
+            // Form submission handler
+            contactForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                // Show loading spinner
+                spinner.style.display = 'block';
+                submitBtn.disabled = true;
+                
+                // Hide any previous messages
+                formSuccess.style.display = 'none';
+                formError.style.display = 'none';
+                
+                // Get form data
+                const formData = {
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    company: document.getElementById('company').value,
+                    message: document.getElementById('message').value
+                };
+                
+                // Send the email using EmailJS
+                // Replace with your actual service_id and template_id from emailjs.com
+                emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData)
+                    .then(function(response) {
+                        // Hide spinner
+                        spinner.style.display = 'none';
+                        submitBtn.disabled = false;
+                        
+                        // Show success message
+                        formSuccess.style.display = 'block';
+                        
+                        // Reset form
+                        contactForm.reset();
+                        
+                        console.log('SUCCESS!', response.status, response.text);
+                    }, function(error) {
+                        // Hide spinner
+                        spinner.style.display = 'none';
+                        submitBtn.disabled = false;
+                        
+                        // Show error message
+                        formError.style.display = 'block';
+                        
+                        console.log('FAILED...', error);
+                    });
+            });
+        })();
+    </script>
 </body>
 </html>
