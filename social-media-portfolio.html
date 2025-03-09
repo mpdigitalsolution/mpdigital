@@ -546,7 +546,7 @@
         <!-- Header Section -->
         <header>
             <div class="headline-banner">🚀 Elevate Your Brand's Social Media Presence Today!</div>
-            <img src="Profile.png" alt="Profile Image" class="profile-image">
+            <img src="images/Profile.png" alt="Profile Image" class="profile-image">
             <div class="profile-info">
                 <h1>Marlon Palomares</h1>
                 <p class="tagline">Social Media Manager | Content Creator | Digital Strategist</p>
@@ -646,7 +646,7 @@
             <div class="portfolio-grid">
                 <div class="portfolio-item">
                     <div class="portfolio-cta">Optimize Your Email Marketing</div>
-                    <img src="mailchimp.png" alt="Mailchimp">
+                    <img src="images/mailchimp.png" alt="Mailchimp">
                     <div class="portfolio-overlay">
                         <h3><i class="fas fa-envelope"></i> Mailchimp</h3>
                         <p>Email marketing automation platform for creating targeted campaigns and analyzing audience engagement.</p>
@@ -654,7 +654,7 @@
                 </div>
                 <div class="portfolio-item">
                     <div class="portfolio-cta">Create Eye-Catching Content</div>
-                    <img src="canva.png" alt="Canva">
+                    <img src="images/canva.png" alt="Canva">
                     <div class="portfolio-overlay">
                         <h3><i class="fas fa-palette"></i> Canva</h3>
                         <p>Design platform for creating stunning social media graphics, presentations, and visual content.</p>
@@ -662,7 +662,7 @@
                 </div>
                 <div class="portfolio-item">
                     <div class="portfolio-cta">Produce Viral-Worthy Videos</div>
-                    <img src="capcut.png" alt="CapCut">
+                    <img src="images/capcut.png" alt="CapCut">
                     <div class="portfolio-overlay">
                         <h3><i class="fas fa-video"></i> CapCut</h3>
                         <p>Video editing software for creating engaging social media videos with professional effects and transitions.</p>
@@ -670,7 +670,7 @@
                 </div>
                 <div class="portfolio-item">
                     <div class="portfolio-cta">Streamline Your Scheduling</div>
-                    <img src="calendly.png" alt="Calendly">
+                    <img src="images/calendly.png" alt="Calendly">
                     <div class="portfolio-overlay">
                         <h3><i class="fas fa-calendar-alt"></i> Calendly</h3>
                         <p>Scheduling tool to efficiently manage client meetings and content planning sessions.</p>
@@ -678,7 +678,7 @@
                 </div>
                 <div class="portfolio-item">
                     <div class="portfolio-cta">Generate Engaging Content</div>
-                    <img src="chatgpt.png" alt="ChatGPT">
+                    <img src="images/chatgpt.png" alt="ChatGPT">
                     <div class="portfolio-overlay">
                         <h3><i class="fas fa-robot"></i> ChatGPT</h3>
                         <p>AI assistant for content ideation, copywriting assistance, and creating engaging social captions.</p>
@@ -686,7 +686,7 @@
                 </div>
                 <div class="portfolio-item">
                     <div class="portfolio-cta">Track Your Performance</div>
-                    <img src="sheet.jpeg" alt="Google Sheets">
+                    <img src="images/sheet.jpeg" alt="Google Sheets">
                     <div class="portfolio-overlay">
                         <h3><i class="fas fa-table"></i> Google Sheets</h3>
                         <p>Spreadsheet tool for tracking campaign metrics, content calendars, and ROI analysis.</p>
@@ -694,7 +694,7 @@
                 </div>
                 <div class="portfolio-item">
                     <div class="portfolio-cta">Outline Winning Strategies</div>
-                    <img src="docs.png" alt="Google Docs">
+                    <img src="images/docs.png" alt="Google Docs">
                     <div class="portfolio-overlay">
                         <h3><i class="fas fa-file-alt"></i> Google Docs</h3>
                         <p>Collaborative document editor for content strategy planning and client proposals.</p>
@@ -702,7 +702,7 @@
                 </div>
                 <div class="portfolio-item">
                     <div class="portfolio-cta">Gather Audience Insights</div>
-                    <img src="forms.png" alt="Google Forms">
+                    <img src="images/forms.png" alt="Google Forms">
                     <div class="portfolio-overlay">
                         <h3><i class="fas fa-poll"></i> Google Forms</h3>
                         <p>Survey tool for collecting audience feedback and conducting social media audits.</p>
@@ -762,7 +762,7 @@
     <script>
         (function() {
             // Initialize EmailJS with your public key
-            // You'll need to sign up at emailjs.com and replace with your actual public key
+            // Get your own public key from emailjs.com
             emailjs.init("YOUR_PUBLIC_KEY");
             
             // Get form elements
@@ -789,7 +789,8 @@
                     name: document.getElementById('name').value,
                     email: document.getElementById('email').value,
                     company: document.getElementById('company').value,
-                    message: document.getElementById('message').value
+                    message: document.getElementById('message').value,
+                    to_email: "mpalomaresdigital@gmail.com" // This will be used in your EmailJS template
                 };
                 
                 // Send the email using EmailJS
