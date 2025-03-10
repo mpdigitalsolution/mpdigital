@@ -5,28 +5,229 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Me - Marlon Palomares</title>
   
-  <!-- Check if css/style.css exists. -->
   <link rel="stylesheet" href="css/style.css">
   
   <style>
+    /* Global Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f9fafb;
+      overflow-x: hidden;
+    }
+    
+    /* Header and Navigation Styles - Mobile First Approach */
+    .headline-banner {
+      background: linear-gradient(135deg, #3498db, #9b59b6);
+      color: white;
+      text-align: center;
+      padding: 12px;
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .headline-banner:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 50%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      transform: skewX(-25deg);
+      animation: shimmer 3s infinite;
+    }
+    
+    @keyframes shimmer {
+      100% {
+        left: 150%;
+      }
+    }
+    
+    header {
+      background-color: white;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    
+    nav {
+      position: relative;
+      padding: 0 20px;
+    }
+    
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 15px 0;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      font-size: 22px;
+      color: #2c3e50;
+      text-decoration: none;
+    }
+    
+    .logo-icon {
+      margin-right: 10px;
+      color: #3498db;
+    }
+    
+    /* Mobile Menu Toggle */
+    .menu-toggle {
+      display: block;
+      font-size: 24px;
+      background: none;
+      border: none;
+      color: #2c3e50;
+      cursor: pointer;
+      z-index: 1001;
+      transition: all 0.3s ease;
+    }
+    
+    .menu-toggle:hover {
+      color: #3498db;
+    }
+    
+    /* Mobile Navigation */
+    .nav-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 80%;
+      max-width: 300px;
+      height: 100vh;
+      background: #2c3e50;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: right 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+      box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+    
+    .nav-menu.active {
+      right: 0;
+    }
+    
+    .nav-menu ul {
+      list-style: none;
+      text-align: center;
+      width: 100%;
+    }
+    
+    .nav-menu ul li {
+      margin: 20px 0;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.4s ease;
+      transition-delay: calc(0.1s * var(--i));
+    }
+    
+    .nav-menu.active ul li {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .nav-menu ul li a {
+      display: inline-block;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 500;
+      padding: 8px 15px;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .nav-menu ul li a:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: #3498db;
+      transform: translateX(-50%);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-menu ul li a:hover:before {
+      width: 70%;
+    }
+    
+    .nav-menu ul li a:hover {
+      background-color: rgba(52, 152, 219, 0.2);
+    }
+    
+    /* Overlay for mobile menu */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 999;
+    }
+    
+    .overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    /* Profile Section & Enhanced Design */
+    .section-headline {
+      text-align: center;
+      font-size: 20px;
+      font-weight: 600;
+      color: #3498db;
+      margin: 30px 0;
+      padding: 0 20px;
+    }
+    
     /* Profile image styling with enhanced elements */
     .profile-container {
       position: relative;
-      width: 300px;
-      height: 300px;
-      margin: 0 auto 50px;
+      width: 280px;
+      height: 280px;
+      margin: 0 auto 40px;
       border-radius: 20px;
       overflow: hidden;
-      border: 10px solid transparent;
+      border: 8px solid transparent;
       background: linear-gradient(135deg, #3498db, #9b59b6, #e74c3c, #f39c12) border-box;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.25);
       transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
+    
     .profile-container:hover {
-      transform: translateY(-15px) scale(1.03);
-      box-shadow: 0 25px 50px rgba(0,0,0,0.4);
-      border-width: 12px;
+      transform: translateY(-12px) scale(1.03);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+      border-width: 10px;
     }
+    
     .profile-image {
       width: 100%;
       height: 100%;
@@ -34,9 +235,11 @@
       transition: transform 0.6s ease-out;
       filter: contrast(1.05) brightness(1.05);
     }
+    
     .profile-container:hover .profile-image {
       transform: scale(1.1);
     }
+    
     .profile-overlay {
       position: absolute;
       bottom: 0;
@@ -56,10 +259,12 @@
       transform: translateY(20px);
       transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
+    
     .profile-container:hover .profile-overlay {
       opacity: 1;
       transform: translateY(0);
     }
+    
     .overlay-text {
       font-weight: bold;
       font-size: 18px;
@@ -67,11 +272,13 @@
       text-shadow: 0 2px 4px rgba(0,0,0,0.6);
       letter-spacing: 0.5px;
     }
+    
     .overlay-subtext {
       font-size: 16px;
       text-shadow: 0 1px 3px rgba(0,0,0,0.5);
       letter-spacing: 0.3px;
     }
+    
     .profile-badges {
       position: absolute;
       top: 20px;
@@ -80,80 +287,133 @@
       flex-direction: column;
       gap: 12px;
     }
+    
     .profile-badge {
       background-color: rgba(255,255,255,0.95);
       border-radius: 50%;
-      width: 48px;
-      height: 48px;
+      width: 44px;
+      height: 44px;
       display: flex;
       align-items: center;
       justify-content: center;
       color: #3498db;
-      font-size: 20px;
+      font-size: 18px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.2);
       transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       border: 2px solid transparent;
     }
+    
     .profile-badge:nth-child(1) {
       border-color: #f1c40f;
       color: #f1c40f;
     }
+    
     .profile-badge:nth-child(2) {
       border-color: #e74c3c;
       color: #e74c3c;
     }
+    
     .profile-badge:nth-child(3) {
       border-color: #3498db;
       color: #3498db;
     }
+    
     .profile-badge:hover {
       transform: scale(1.3) rotate(15deg);
       background-color: white;
       box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     }
+    
     .about-content {
       max-width: 800px;
       margin: 0 auto;
       padding: 20px;
       text-align: center;
     }
+    
     .headline {
-      font-size: 34px;
+      font-size: 28px;
       font-weight: bold;
       color: #2c3e50;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
       position: relative;
-      padding-bottom: 18px;
+      padding-bottom: 15px;
       letter-spacing: 0.5px;
     }
+    
     .headline:after {
       content: '';
       position: absolute;
       bottom: 0;
       left: 50%;
       transform: translateX(-50%);
-      width: 140px;
-      height: 6px;
+      width: 120px;
+      height: 5px;
       background: linear-gradient(to right, #3498db, #9b59b6, #e74c3c);
       border-radius: 3px;
     }
+    
+    .about-content p {
+      margin-bottom: 20px;
+      color: #555;
+      font-size: 16px;
+    }
+    
+    .expertise-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin: 25px 0;
+    }
+    
+    .expertise-item {
+      background-color: #f8f9fa;
+      padding: 10px 18px;
+      border-radius: 30px;
+      border: 2px solid #e9ecef;
+      font-size: 14px;
+      font-weight: 500;
+      color: #495057;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    
+    .expertise-item:hover {
+      background-color: #3498db;
+      color: white;
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(52, 152, 219, 0.4);
+      border-color: #3498db;
+    }
+    
+    .expertise-item i {
+      margin-right: 8px;
+      transition: transform 0.3s ease;
+    }
+    
+    .expertise-item:hover i {
+      transform: scale(1.2);
+    }
+    
     .cta-button {
       display: inline-block;
-      padding: 16px 36px;
+      padding: 14px 32px;
       background: linear-gradient(145deg, #3498db, #2980b9);
       color: white;
       text-decoration: none;
       border-radius: 30px;
       font-weight: bold;
-      font-size: 17px;
+      font-size: 16px;
       letter-spacing: 0.5px;
-      margin-top: 40px;
+      margin-top: 30px;
       transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       box-shadow: 0 8px 20px rgba(52, 152, 219, 0.5);
       position: relative;
       overflow: hidden;
       z-index: 1;
     }
+    
     .cta-button:before {
       content: '';
       position: absolute;
@@ -165,41 +425,49 @@
       transition: all 0.5s;
       z-index: -1;
     }
+    
     .cta-button:hover:before {
       width: 100%;
     }
+    
     .cta-button:hover {
       transform: translateY(-6px);
       box-shadow: 0 12px 25px rgba(52, 152, 219, 0.7);
     }
+    
     .cta-button i {
       margin-left: 10px;
       transition: transform 0.4s ease;
     }
+    
     .cta-button:hover i {
       transform: translateX(8px);
     }
+    
     .social-links {
       display: flex;
       justify-content: center;
-      gap: 18px;
-      margin: 30px 0;
+      gap: 15px;
+      margin: 25px 0;
+      flex-wrap: wrap;
     }
+    
     .social-link {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 50px;
-      height: 50px;
+      width: 45px;
+      height: 45px;
       border-radius: 50%;
       color: white;
-      font-size: 22px;
+      font-size: 20px;
       transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       position: relative;
       overflow: hidden;
       box-shadow: 0 5px 15px rgba(0,0,0,0.15);
       border: 2px solid transparent;
     }
+    
     .social-link:before {
       content: '';
       position: absolute;
@@ -211,86 +479,198 @@
       z-index: -1;
       transition: all 0.4s ease;
     }
+    
     .social-link.facebook:before {
       background: linear-gradient(145deg, #3b5998, #344e86);
     }
+    
     .social-link.linkedin:before {
       background: linear-gradient(145deg, #0077b5, #00669c);
     }
+    
     .social-link.instagram:before {
       background: linear-gradient(145deg, #e1306c, #c13584, #833ab4);
     }
+    
     .social-link.twitter:before {
       background: linear-gradient(145deg, #1da1f2, #0d95e8);
     }
+    
     .social-link:hover {
       transform: translateY(-8px) rotate(15deg);
       box-shadow: 0 8px 20px rgba(0,0,0,0.25);
     }
+    
     .social-link:hover:before {
       transform: scale(1.2) rotate(-10deg);
     }
-    .expertise-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 14px;
-      margin: 30px 0;
-    }
-    .expertise-item {
-      background-color: #f8f9fa;
-      padding: 12px 22px;
-      border-radius: 30px;
-      border: 2px solid #e9ecef;
-      font-size: 16px;
-      font-weight: 500;
-      color: #495057;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
-      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-    .expertise-item:hover {
-      background-color: #3498db;
+    
+    /* Footer Styling */
+    footer {
+      background-color: #2c3e50;
       color: white;
-      transform: translateY(-5px);
-      box-shadow: 0 8px 15px rgba(52, 152, 219, 0.4);
-      border-color: #3498db;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 60px;
     }
-    .expertise-item i {
-      margin-right: 8px;
-      transition: transform 0.3s ease;
+    
+    footer p {
+      margin-bottom: 15px;
     }
-    .expertise-item:hover i {
-      transform: scale(1.2);
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .footer-link {
+      color: #a3c1e0;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .footer-link:hover {
+      color: #3498db;
+    }
+    
+    /* Animations for Page Content */
+    .animate-fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out;
+    }
+    
+    .animate-fade-up.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Media Queries for Responsive Design */
+    @media (min-width: 768px) {
+      .headline-banner {
+        font-size: 16px;
+        padding: 14px;
+      }
+      
+      .menu-toggle {
+        display: none;
+      }
+      
+      .nav-menu {
+        position: static;
+        width: auto;
+        height: auto;
+        background: transparent;
+        flex-direction: row;
+        box-shadow: none;
+        transition: none;
+      }
+      
+      .nav-menu ul {
+        display: flex;
+        align-items: center;
+      }
+      
+      .nav-menu ul li {
+        margin: 0 5px;
+        opacity: 1;
+        transform: none;
+      }
+      
+      .nav-menu ul li a {
+        color: #2c3e50;
+        font-size: 15px;
+        padding: 8px 12px;
+      }
+      
+      .nav-menu ul li a:hover {
+        background-color: rgba(52, 152, 219, 0.1);
+      }
+      
+      .profile-container {
+        width: 320px;
+        height: 320px;
+      }
+      
+      .headline {
+        font-size: 32px;
+      }
+      
+      .expertise-item {
+        font-size: 16px;
+        padding: 12px 22px;
+      }
+    }
+    
+    @media (min-width: 992px) {
+      .nav-menu ul li a {
+        font-size: 16px;
+        padding: 10px 15px;
+      }
+      
+      .nav-menu ul li {
+        margin: 0 8px;
+      }
+      
+      .section-headline {
+        font-size: 22px;
+        margin: 40px 0;
+      }
+      
+      .headline {
+        font-size: 34px;
+      }
+      
+      .about-content p {
+        font-size: 17px;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Header with Navigation -->
+  <!-- Header with Mobile-Friendly Navigation -->
   <header>
     <div class="headline-banner">🚀 Elevate Your Brand's Social Media Presence Today!</div>
     <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Me</a></li>
-        <li><a href="hobbies.html">My Hobbies</a></li>
-        <li><a href="services.html">My Services</a></li>
-        <li><a href="tools.html">Tools I Use</a></li>
-        <li><a href="contact.html">Get In Touch</a></li>
-      </ul>
+      <div class="nav-container">
+        <a href="index.html" class="logo">
+          <i class="fas fa-hashtag logo-icon"></i>
+          <span>Marlon Palomares</span>
+        </a>
+        
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+          <i class="fas fa-bars"></i>
+        </button>
+        
+        <div class="nav-menu" id="navMenu">
+          <ul>
+            <li style="--i:1"><a href="index.html">Home</a></li>
+            <li style="--i:2"><a href="about.html">About Me</a></li>
+            <li style="--i:3"><a href="hobbies.html">My Hobbies</a></li>
+            <li style="--i:4"><a href="services.html">My Services</a></li>
+            <li style="--i:5"><a href="tools.html">Tools I Use</a></li>
+            <li style="--i:6"><a href="contact.html">Get In Touch</a></li>
+          </ul>
+        </div>
+      </div>
     </nav>
+    <div class="overlay" id="overlay"></div>
   </header>
   
   <!-- Main Content -->
   <main>
     <section class="about">
-      <div class="section-headline">💼 Your Social Media Success Story Starts Here</div>
+      <div class="section-headline animate-fade-up">💼 Your Social Media Success Story Starts Here</div>
       
       <div class="about-content">
         <!-- Profile Picture with Enhanced Overlay and Badges -->
-        <div class="profile-container">
+        <div class="profile-container animate-fade-up">
           <img src="images/home.png" alt="Home Image" class="profile-image">
           <div class="profile-overlay">
-            <div class="overlay-text">7+ Years Experience</div>
+            <div class="overlay-text">Expert in Leads</div>
             <div class="overlay-subtext">Digital Marketing Expert</div>
           </div>
           <div class="profile-badges">
@@ -300,10 +680,10 @@
           </div>
         </div>
         
-        <div class="headline">Social Media Strategist & Brand Builder</div>
+        <div class="headline animate-fade-up">Social Media Strategist & Brand Builder</div>
         
         <!-- Social Media Links -->
-        <div class="social-links">
+        <div class="social-links animate-fade-up">
           <a href="https://www.facebook.com/marlon.palomares.2024/" class="social-link facebook" target="_blank" aria-label="Facebook profile">
             <i class="fab fa-facebook-f"></i>
           </a>
@@ -318,16 +698,15 @@
           </a>
         </div>
         
-        <h2>About Me</h2>
-        <!-- REPLACED PARAGRAPHS BELOW -->
-        <p>
+        <h2 class="animate-fade-up">About Me</h2>
+        <p class="animate-fade-up">
           Hi there, I'm Marlon Palomares. I come from a strong background in customer service and digital outreach, and I've always been passionate about connecting with people. I recently invested in a lead generation course at The VA BAR, where I learned to use essential tools like Mailchimp for email campaigns, Apollo.io for lead discovery, Canva for graphic design, and CapCut for basic video editing.
         </p>
-        <p>
+        <p class="animate-fade-up">
           While I haven't held a dedicated lead generation role yet, I'm already familiar with finding quality leads on platforms like LinkedIn and Instagram using Boolean search methods. I'm also passionate about artificial intelligence, which helps me work smarter and more efficiently.
         </p>
         
-        <div class="expertise-list">
+        <div class="expertise-list animate-fade-up">
           <span class="expertise-item"><i class="fas fa-bullhorn"></i> Brand Strategy</span>
           <span class="expertise-item"><i class="fas fa-pencil-alt"></i> Content Creation</span>
           <span class="expertise-item"><i class="fas fa-comments"></i> Community Management</span>
@@ -335,20 +714,86 @@
           <span class="expertise-item"><i class="fas fa-ad"></i> Paid Campaigns</span>
         </div>
         
-        <p>I specialize in developing and implementing comprehensive social media strategies that align with business objectives—from increasing brand awareness to driving conversions. My expertise spans across multiple platforms including Instagram, Facebook, Twitter, and LinkedIn.</p>
+        <p class="animate-fade-up">I specialize in developing and implementing comprehensive social media strategies that align with business objectives—from increasing brand awareness to driving conversions. My expertise spans across multiple platforms including Instagram, Facebook, Twitter, and LinkedIn.</p>
         
-        <a href="https://calendly.com/marlon-palomares02/30min" class="cta-button">Let's Grow Your Brand <i class="fas fa-rocket"></i></a>
+        <a href="https://calendly.com/marlon-palomares02/30min" class="cta-button animate-fade-up">Let's Grow Your Brand <i class="fas fa-rocket"></i></a>
       </div>
     </section>
   </main>
   
-  <!-- Footer -->
+  <!-- Enhanced Footer -->
   <footer>
+    <div class="footer-links">
+      <a href="privacy.html" class="footer-link">Privacy Policy</a>
+      <a href="terms.html" class="footer-link">Terms of Service</a>
+      <a href="contact.html" class="footer-link">Contact</a>
+    </div>
     <p>&copy; 2025 Marlon Palomares. All rights reserved.</p>
   </footer>
   
   <!-- External JS Files -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
-  <script src="js/script.js"></script>
+  
+  <!-- Navigation JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.getElementById('menuToggle');
+      const navMenu = document.getElementById('navMenu');
+      const overlay = document.getElementById('overlay');
+      
+      // Toggle menu on click
+      menuToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+        overlay.classList.toggle('active');
+        
+        // Change icon based on menu state
+        const icon = menuToggle.querySelector('i');
+        if (navMenu.classList.contains('active')) {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-times');
+        } else {
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+      });
+      
+      // Close menu when clicking on overlay
+      overlay.addEventListener('click', function() {
+        navMenu.classList.remove('active');
+        overlay.classList.remove('active');
+        const icon = menuToggle.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      });
+      
+      // Add animation to elements
+      const animatedElements = document.querySelectorAll('.animate-fade-up');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+      
+      animatedElements.forEach(element => {
+        observer.observe(element);
+      });
+      
+      // Close menu on window resize (if in desktop mode)
+      window.addEventListener('resize', function() {
+        if (window.innerWidth >= 768) {
+          navMenu.classList.remove('active');
+          overlay.classList.remove('active');
+          const icon = menuToggle.querySelector('i');
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
