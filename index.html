@@ -134,7 +134,7 @@
     
     /* Overlay for Hero Text */
     .overlay-text {
-      background: rgba(0, 0, 0, 0.6); /* Semi-transparent dark overlay */
+      background: rgba(0, 0, 0, 0.6);
       padding: 20px;
       border: 2px solid #ccc;
       border-radius: 10px;
@@ -201,7 +201,7 @@
       text-align: center;
     }
     
-    /* Services Section (Centered) */
+    /* Services Section (Centered with Expandable Cards) */
     .services {
       padding: 80px 20px;
       text-align: center;
@@ -250,6 +250,7 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
       transition: all 0.3s ease;
       text-align: center;
+      position: relative;
     }
     
     .service-card:hover {
@@ -289,27 +290,26 @@
       margin-bottom: 20px;
     }
     
-    .service-link {
-      display: inline-block;
+    .service-more {
+      display: none;
+      color: #7f8c8d;
+      font-size: 0.95rem;
+      margin-top: 10px;
+      border-top: 1px dashed #ccc;
+      padding-top: 10px;
+    }
+    
+    .learn-more-toggle {
+      cursor: pointer;
       color: #3498db;
       text-decoration: none;
       font-weight: bold;
-      position: relative;
+      display: inline-block;
+      margin-top: 10px;
     }
     
-    .service-link:after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background-color: #3498db;
-      transition: width 0.3s ease;
-    }
-    
-    .service-link:hover:after {
-      width: 100%;
+    .learn-more-toggle:hover {
+      text-decoration: underline;
     }
     
     /* CTA Section (Centered) */
@@ -557,13 +557,14 @@
     </div>
   </section>
   
-  <!-- Services Section (Centered) -->
+  <!-- Services Section (Centered & Expandable) -->
   <section class="services">
     <h2 class="section-title">My Services</h2>
     <p class="section-subtitle">
       Comprehensive social media solutions designed to meet your specific business objectives and drive meaningful engagement.
     </p>
     <div class="services-grid">
+      <!-- Service Card 1 -->
       <div class="service-card">
         <div class="service-icon">
           <i class="fas fa-bullhorn"></i>
@@ -573,9 +574,13 @@
           <p class="service-description">
             Custom social media strategies aligned with your business goals to increase brand awareness, engagement, and conversions.
           </p>
-          <a href="services.html" class="service-link">Learn More <i class="fas fa-chevron-right"></i></a>
+          <div class="service-more">
+            <p>Our Strategy Development service includes a comprehensive market analysis, competitor review, and a tailored plan to maximize your digital presence.</p>
+          </div>
+          <a href="#" class="service-link learn-more-toggle">Learn More <i class="fas fa-chevron-down"></i></a>
         </div>
       </div>
+      <!-- Service Card 2 -->
       <div class="service-card">
         <div class="service-icon">
           <i class="fas fa-pencil-alt"></i>
@@ -585,9 +590,13 @@
           <p class="service-description">
             Engaging, platform-optimized content that resonates with your audience and reflects your brand's unique voice and values.
           </p>
-          <a href="services.html" class="service-link">Learn More <i class="fas fa-chevron-right"></i></a>
+          <div class="service-more">
+            <p>Our Content Creation service produces high-quality visuals, copy, and multimedia assets that capture your brand's essence and engage your followers.</p>
+          </div>
+          <a href="#" class="service-link learn-more-toggle">Learn More <i class="fas fa-chevron-down"></i></a>
         </div>
       </div>
+      <!-- Service Card 3 -->
       <div class="service-card">
         <div class="service-icon">
           <i class="fas fa-chart-line"></i>
@@ -597,7 +606,10 @@
           <p class="service-description">
             In-depth analysis and regular reporting to track performance, optimize strategies, and demonstrate clear ROI on your investment.
           </p>
-          <a href="services.html" class="service-link">Learn More <i class="fas fa-chevron-right"></i></a>
+          <div class="service-more">
+            <p>Our Analytics &amp; Reporting service provides detailed insights and actionable data to continuously refine your social media strategy.</p>
+          </div>
+          <a href="#" class="service-link learn-more-toggle">Learn More <i class="fas fa-chevron-down"></i></a>
         </div>
       </div>
     </div>
@@ -727,6 +739,24 @@
             console.log('FAILED...', error);
             alert('Sorry, there was a problem sending your message. Please try again later.');
           });
+      });
+      
+      // Learn More toggle functionality for service cards
+      const learnMoreLinks = document.querySelectorAll('.learn-more-toggle');
+      learnMoreLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          // Find the corresponding .service-more div within the same card
+          const serviceContent = this.parentElement;
+          const moreContent = serviceContent.querySelector('.service-more');
+          if (moreContent.style.display === 'block') {
+            moreContent.style.display = 'none';
+            this.innerHTML = 'Learn More <i class="fas fa-chevron-down"></i>';
+          } else {
+            moreContent.style.display = 'block';
+            this.innerHTML = 'Show Less <i class="fas fa-chevron-up"></i>';
+          }
+        });
       });
     });
   </script>

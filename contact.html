@@ -109,6 +109,7 @@
       max-width: 1200px;
       margin: 40px auto;
       padding: 0 20px;
+      text-align: center;
     }
     
     .section-headline {
@@ -249,7 +250,7 @@
       border: 0;
     }
     
-    /* Form Container Styles */
+    /* Form Container Styles with Enhanced Border & Overlay */
     .form-container {
       flex: 1.5;
       background: white;
@@ -258,6 +259,7 @@
       box-shadow: var(--shadow);
       position: relative;
       overflow: hidden;
+      border: 2px solid var(--primary-color);
     }
     
     .form-container::before {
@@ -539,8 +541,6 @@
               referrerpolicy="no-referrer-when-downgrade">
             </iframe>
           </div>
-          
-          <!-- Removed Viber Chat Button -->
         </div>
         
         <!-- Contact Form -->
@@ -617,8 +617,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script>
-    // Initialize EmailJS (replace YOUR_PUBLIC_KEY with your actual public key)
-    emailjs.init("YOUR_PUBLIC_KEY");
+    // Initialize EmailJS with provided public key
+    emailjs.init("efRrbEvsWA8_PG5Z0");
     
     // Form submission handling using EmailJS
     document.getElementById('contactForm').addEventListener('submit', function(e) {
@@ -639,8 +639,8 @@
         to_email: "mpalomaresdigitalsultion@gmail.com"
       };
       
-      // Send the email using EmailJS (replace YOUR_SERVICE_ID and YOUR_TEMPLATE_ID with your actual values)
-      emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData)
+      // Send the email using EmailJS with provided service and template IDs
+      emailjs.send('service_tnsgf4p', 'template_ak7vrx4', formData)
         .then(function(response) {
           // Hide spinner and enable button
           document.getElementById('spinner').style.display = 'none';
@@ -678,5 +678,6 @@
       }, 3000);
     }
   </script>
+  <script src="js/script.js"></script>
 </body>
 </html>
