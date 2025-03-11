@@ -158,7 +158,7 @@
       nav ul {
         flex-direction: column;
         display: none;
-        align-items: center; /* Keep mobile navigation links centered */
+        align-items: center;
       }
       nav ul.active {
         display: flex;
@@ -261,7 +261,7 @@
       border-radius: 20px;
       overflow: hidden;
       border: 8px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.3);
       transform: rotate(-3deg);
       transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
@@ -327,7 +327,7 @@
       background: white;
       border-radius: 15px;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
       transition: all 0.3s ease;
       text-align: center;
       position: relative;
@@ -335,7 +335,7 @@
     
     .service-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
     }
     
     .service-icon {
@@ -432,7 +432,7 @@
       justify-content: center;
       color: white;
       font-size: 24px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
       cursor: pointer;
       z-index: 100;
       transition: all 0.3s ease;
@@ -440,7 +440,7 @@
     
     .floating-message-btn:hover {
       transform: scale(1.1);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     }
     
     .message-modal {
@@ -536,7 +536,7 @@
     
     .send-message-btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(52, 152, 219, 0.3);
+      box-shadow: 0 10px 20px rgba(52,152,219,0.3);
     }
     
     /* Footer */
@@ -598,20 +598,24 @@
   <header>
     <div class="headline-banner">🚀 Elevate Your Brand's Social Media Presence Today!</div>
     <nav>
-      <div class="menu-toggle" id="mobile-menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
+      <div class="nav-container">
+        <!-- Menu Toggle for Mobile -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="nav-menu" id="navMenu">
+          <ul>
+            <li style="--i:1"><a href="index.html">Home</a></li>
+            <li style="--i:2"><a href="about.html">About Me</a></li>
+            <li style="--i:3"><a href="hobbies.html">My Hobbies</a></li>
+            <li style="--i:4"><a href="services.html">My Services</a></li>
+            <li style="--i:5"><a href="tools.html">Tools I Use</a></li>
+            <li style="--i:6"><a href="contact.html">Get In Touch</a></li>
+          </ul>
+        </div>
       </div>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Me</a></li>
-        <li><a href="hobbies.html">My Hobbies</a></li>
-        <li><a href="services.html">My Services</a></li>
-        <li><a href="tools.html">Tools I Use</a></li>
-        <li><a href="contact.html">Get In Touch</a></li>
-      </ul>
     </nav>
+    <div class="overlay" id="overlay"></div>
   </header>
   
   <!-- Hero Section -->
@@ -763,73 +767,56 @@
   <!-- External JS Files -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js" defer></script>
   
-  <!-- Main JavaScript -->
+  <!-- Navigation and Animation JavaScript -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Mobile navigation toggle
-      const mobileMenu = document.getElementById('mobile-menu');
-      const navList = document.querySelector('nav ul');
-      mobileMenu.addEventListener('click', function() {
-        navList.classList.toggle('active');
-      });
+      const menuToggle = document.getElementById('menuToggle');
+      const navMenu = document.getElementById('navMenu');
+      const overlay = document.getElementById('overlay');
       
-      // Message Modal functionality
-      const messageBtn = document.getElementById('messageBtn');
-      const messageModal = document.getElementById('messageModal');
-      const closeModal = document.getElementById('closeModal');
-      const messageForm = document.getElementById('messageForm');
-      
-      messageBtn.addEventListener('click', function() {
-        messageModal.classList.add('active');
-      });
-      
-      closeModal.addEventListener('click', function() {
-        messageModal.classList.remove('active');
-      });
-      
-      messageModal.addEventListener('click', function(e) {
-        if (e.target === messageModal) {
-          messageModal.classList.remove('active');
+      // Toggle mobile menu on click
+      menuToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+        overlay.classList.toggle('active');
+        const icon = menuToggle.querySelector('i');
+        if (navMenu.classList.contains('active')) {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-times');
+        } else {
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
         }
       });
       
-      messageForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
-        const templateParams = {
-          from_name: name,
-          from_email: email,
-          message: message
-        };
-        emailjs.send('service_tnsgf4p', 'template_qo5y2ad', templateParams)
-          .then(function(response) {
-            console.log('SUCCESS!', response.status, response.text);
-            alert(`Thank you, ${name}! Your message has been sent. I'll get back to you soon at ${email}.`);
-            messageForm.reset();
-            messageModal.classList.remove('active');
-          }, function(error) {
-            console.log('FAILED...', error);
-            alert('Sorry, there was a problem sending your message. Please try again later.');
-          });
+      // Close menu when clicking on overlay
+      overlay.addEventListener('click', function() {
+        navMenu.classList.remove('active');
+        overlay.classList.remove('active');
+        const icon = menuToggle.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
       });
       
-      // Learn More toggle functionality for service cards
-      const learnMoreLinks = document.querySelectorAll('.learn-more-toggle');
-      learnMoreLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-          e.preventDefault();
-          const serviceContent = this.parentElement;
-          const moreContent = serviceContent.querySelector('.service-more');
-          if (moreContent.style.display === 'block') {
-            moreContent.style.display = 'none';
-            this.innerHTML = 'Learn More <i class="fas fa-chevron-down"></i>';
-          } else {
-            moreContent.style.display = 'block';
-            this.innerHTML = 'Show Less <i class="fas fa-chevron-up"></i>';
+      // Animate elements when they come into view
+      const animatedElements = document.querySelectorAll('.animate-fade-up');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
           }
         });
+      }, { threshold: 0.1 });
+      animatedElements.forEach(element => observer.observe(element));
+      
+      // Close mobile menu on window resize if in desktop mode
+      window.addEventListener('resize', function() {
+        if (window.innerWidth >= 768) {
+          navMenu.classList.remove('active');
+          overlay.classList.remove('active');
+          const icon = menuToggle.querySelector('i');
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
       });
     });
   </script>
