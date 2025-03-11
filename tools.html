@@ -1,34 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tools I Use - Marlon Palomares</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta name="description" content="Discover the professional tools Marlon Palomares uses to boost digital marketing and social media performance—from design and scheduling to analytics." />
+  <meta name="keywords" content="Tools, Digital Marketing, Social Media, Marlon Palomares, Email Marketing, Design, Analytics" />
+  <meta name="author" content="Marlon Palomares" />
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Tools I Use - Marlon Palomares",
+    "description": "A showcase of the digital marketing tools used by Marlon Palomares to create, schedule, and analyze social media content.",
+    "url": "https://example.com/tools.html"
+  }
+  </script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
   <style>
     :root {
       --primary-color: #4a6bff;
       --secondary-color: #ff6b6b;
       --accent-color: #ffd166;
       --dark-color: #2c3e50;
-      --light-color: #f8f9fa;
+      --light-color: #f5f7fa;
       --gradient: linear-gradient(135deg, var(--primary-color), #8c43ff);
+      --border-radius: 25px;
+      --transition: all 0.3s ease;
     }
-    
+
+    /* Global Styles */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-    
+
     body {
-      background-color: #f5f7fa;
+      background-color: var(--light-color);
       color: #333;
       line-height: 1.6;
     }
-    
-    /* Header Styles */
+
+    /* Header & Navigation */
     .headline-banner {
       background: var(--gradient);
       color: white;
@@ -36,16 +56,16 @@
       padding: 10px;
       font-weight: bold;
       letter-spacing: 1px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       animation: pulse 2s infinite;
     }
-    
+
     @keyframes pulse {
       0% { transform: scale(1); }
       50% { transform: scale(1.01); }
       100% { transform: scale(1); }
     }
-    
+
     header {
       background-color: white;
       position: sticky;
@@ -53,26 +73,26 @@
       z-index: 1000;
       box-shadow: 0 2px 15px rgba(0,0,0,0.1);
     }
-    
+
     nav {
       max-width: 1200px;
       margin: 0 auto;
       padding: 15px;
     }
-    
-    /* Enhanced Navigation Links */
+
     nav ul {
       display: flex;
       justify-content: center;
+      align-items: center;
       list-style: none;
       flex-wrap: wrap;
       text-align: center;
     }
-    
+
     nav ul li {
       margin: 0 15px;
     }
-    
+
     nav ul li a {
       display: inline-flex;
       align-items: center;
@@ -80,19 +100,20 @@
       color: var(--dark-color);
       font-weight: 600;
       padding: 8px 15px;
-      border-radius: 25px;
+      border-radius: var(--border-radius);
       border: 1px solid transparent;
       position: relative;
-      transition: all 0.3s ease;
+      transition: var(--transition);
     }
-    
+
     /* Navigation Icons */
     .nav-icon {
       margin-right: 5px;
       font-size: 1rem;
+      transition: transform 0.3s ease;
     }
-    
-    /* Overlay effect using pseudo-element */
+
+    /* Overlay & Underline Effects */
     nav ul li a::before {
       content: "";
       position: absolute;
@@ -101,44 +122,45 @@
       width: 100%;
       height: 100%;
       background: rgba(74,107,255,0.2);
-      border-radius: 25px;
+      border-radius: var(--border-radius);
       opacity: 0;
-      transition: all 0.3s ease;
+      transition: var(--transition);
       z-index: -1;
     }
-    
     nav ul li a:hover {
       color: var(--primary-color);
       border-color: var(--primary-color);
     }
-    
     nav ul li a:hover::before {
       opacity: 1;
     }
-    
     nav ul li a::after {
       content: '';
       position: absolute;
-      width: 0;
-      height: 2px;
-      background: var(--primary-color);
       bottom: 0;
       left: 50%;
       transform: translateX(-50%);
+      width: 0;
+      height: 2px;
+      background: var(--primary-color);
       transition: width 0.3s ease;
     }
-    
     nav ul li a:hover::after {
       width: 70%;
     }
-    
-    /* Main Content Styles */
+    nav ul li a:focus {
+      outline: 2px dashed var(--primary-color);
+      outline-offset: 4px;
+    }
+
+    /* Main Content */
     main {
       max-width: 1200px;
       margin: 40px auto;
       padding: 0 20px;
+      text-align: center;
     }
-    
+
     .section-headline {
       font-size: 1.2rem;
       color: var(--primary-color);
@@ -150,8 +172,9 @@
       display: inline-block;
       padding: 0 20px;
     }
-    
-    .section-headline::before, .section-headline::after {
+
+    .section-headline::before,
+    .section-headline::after {
       content: '';
       height: 1px;
       width: 30px;
@@ -160,7 +183,7 @@
       vertical-align: middle;
       margin: 0 10px;
     }
-    
+
     h2 {
       text-align: center;
       font-size: 2.5rem;
@@ -168,19 +191,19 @@
       color: var(--dark-color);
       position: relative;
     }
-    
+
     h2::after {
       content: '';
       position: absolute;
-      height: 4px;
-      width: 60px;
-      background: var(--gradient);
       bottom: -10px;
       left: 50%;
       transform: translateX(-50%);
+      height: 4px;
+      width: 60px;
+      background: var(--gradient);
       border-radius: 2px;
     }
-    
+
     /* Portfolio Grid Styles */
     .portfolio-grid {
       display: grid;
@@ -188,7 +211,7 @@
       gap: 30px;
       margin-top: 40px;
     }
-    
+
     .portfolio-item {
       background: white;
       border-radius: 15px;
@@ -198,12 +221,12 @@
       position: relative;
       border: 1px solid rgba(0,0,0,0.05);
     }
-    
+
     .portfolio-item:hover {
       transform: translateY(-10px);
       box-shadow: 0 15px 40px rgba(0,0,0,0.15);
     }
-    
+
     .portfolio-cta {
       position: absolute;
       top: 10px;
@@ -217,90 +240,51 @@
       z-index: 2;
       box-shadow: 0 3px 10px rgba(0,0,0,0.2);
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: var(--transition);
     }
-    
+
     .portfolio-cta:hover {
       background: var(--dark-color);
       transform: scale(1.05);
     }
-    
+
     .portfolio-item img {
       width: 100%;
       height: 180px;
       object-fit: cover;
       transition: transform 0.5s ease;
     }
-    
+
     .portfolio-item:hover img {
       transform: scale(1.05);
     }
-    
+
     .portfolio-overlay {
       padding: 20px;
       background: white;
       border-top: 4px solid var(--primary-color);
     }
-    
+
     .portfolio-overlay h3 {
       color: var(--dark-color);
       margin-bottom: 10px;
       display: flex;
       align-items: center;
       gap: 10px;
+      justify-content: center;
     }
-    
+
     .portfolio-overlay h3 i {
       color: var(--primary-color);
       font-size: 1.2rem;
     }
-    
+
     .portfolio-overlay p {
       color: #666;
       font-size: 0.95rem;
       line-height: 1.6;
     }
-    
-    /* Footer Styles */
-    footer {
-      background: var(--dark-color);
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
-      margin-top: 60px;
-      position: relative;
-    }
-    
-    .social-icons {
-      margin: 20px 0;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
-    
-    .social-icons a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      background: rgba(255,255,255,0.1);
-      color: white;
-      border-radius: 50%;
-      transition: all 0.3s ease;
-      text-decoration: none;
-    }
-    
-    .social-icons a:hover {
-      background: var(--primary-color);
-      transform: translateY(-5px);
-    }
-    
-    footer p {
-      margin-top: 20px;
-      opacity: 0.7;
-    }
-    
+
     /* CTA Button */
     .cta-button {
       display: block;
@@ -313,26 +297,86 @@
       text-decoration: none;
       font-weight: bold;
       box-shadow: 0 5px 20px rgba(74,107,255,0.4);
-      transition: all 0.3s ease;
+      transition: var(--transition);
       border: none;
       cursor: pointer;
       text-align: center;
     }
-    
+
     .cta-button:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 25px rgba(74,107,255,0.5);
     }
-    
+
     .cta-button i {
       margin-right: 8px;
+    }
+
+    /* Footer Styles */
+    footer {
+      background: var(--dark-color);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 60px;
+    }
+
+    .social-icons {
+      margin: 20px 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .social-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.1);
+      color: white;
+      border-radius: 50%;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    .social-icons a:hover {
+      background: var(--primary-color);
+      transform: translateY(-5px);
+    }
+
+    footer p {
+      margin-top: 20px;
+      opacity: 0.7;
+    }
+
+    /* Footer Navigation Links */
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .footer-links a {
+      color: #a3c1e0;
+      text-decoration: none;
+      transition: var(--transition);
+      border-bottom: 1px solid transparent;
+    }
+    .footer-links a:hover {
+      color: var(--primary-color);
+      border-bottom: 1px solid var(--primary-color);
     }
   </style>
 </head>
 <body>
   <!-- Header with Navigation -->
   <header>
-    <div class="headline-banner">🚀 Elevate Your Brand's Social Media Presence Today!</div>
+    <div class="headline-banner">
+      🚀 Elevate Your Brand's Social Media Presence Today!
+    </div>
     <nav>
       <ul>
         <li>
@@ -378,7 +422,7 @@
         <!-- Portfolio Item: Mailchimp -->
         <div class="portfolio-item">
           <div class="portfolio-cta">Optimize Your Email Marketing</div>
-          <img src="images/mailchimp.png" alt="Mailchimp">
+          <img src="images/mailchimp.png" alt="Mailchimp" loading="lazy">
           <div class="portfolio-overlay">
             <h3><i class="fa-solid fa-envelope"></i> Mailchimp</h3>
             <p>Email marketing automation platform for creating targeted campaigns and analyzing audience engagement.</p>
@@ -387,7 +431,7 @@
         <!-- Portfolio Item: Canva -->
         <div class="portfolio-item">
           <div class="portfolio-cta">Create Eye-Catching Content</div>
-          <img src="images/canva.png" alt="Canva">
+          <img src="images/canva.png" alt="Canva" loading="lazy">
           <div class="portfolio-overlay">
             <h3><i class="fa-solid fa-palette"></i> Canva</h3>
             <p>Design platform for creating stunning social media graphics, presentations, and visual content.</p>
@@ -396,7 +440,7 @@
         <!-- Portfolio Item: CapCut -->
         <div class="portfolio-item">
           <div class="portfolio-cta">Produce Viral-Worthy Videos</div>
-          <img src="images/capcut.png" alt="CapCut">
+          <img src="images/capcut.png" alt="CapCut" loading="lazy">
           <div class="portfolio-overlay">
             <h3><i class="fa-solid fa-video"></i> CapCut</h3>
             <p>Video editing software for creating engaging social media videos with professional effects and transitions.</p>
@@ -405,7 +449,7 @@
         <!-- Portfolio Item: Calendly -->
         <div class="portfolio-item">
           <a href="https://calendly.com/marlon-palomares02/30min" class="portfolio-cta">Book Now</a>
-          <img src="images/calendly.png" alt="Calendly">
+          <img src="images/calendly.png" alt="Calendly" loading="lazy">
           <div class="portfolio-overlay">
             <h3><i class="fa-solid fa-calendar-alt"></i> Calendly</h3>
             <p>Scheduling tool to efficiently manage client meetings and content planning sessions.</p>
@@ -414,16 +458,16 @@
         <!-- Portfolio Item: ChatGPT -->
         <div class="portfolio-item">
           <div class="portfolio-cta">Generate Engaging Content</div>
-          <img src="images/chatgpt.png" alt="ChatGPT">
+          <img src="images/chatgpt.png" alt="ChatGPT" loading="lazy">
           <div class="portfolio-overlay">
             <h3><i class="fa-solid fa-robot"></i> ChatGPT</h3>
-            <p>AI assistant for content ideation, copywriting assistance, and creating engaging social captions.</p>
+            <p>AI assistant for content ideation, copywriting, and creating engaging social captions.</p>
           </div>
         </div>
         <!-- Portfolio Item: Google Sheets -->
         <div class="portfolio-item">
           <div class="portfolio-cta">Track Your Performance</div>
-          <img src="images/docs.jpeg" alt="Google Sheets">
+          <img src="images/docs.jpeg" alt="Google Sheets" loading="lazy">
           <div class="portfolio-overlay">
             <h3><i class="fa-solid fa-table"></i> Google Sheets</h3>
             <p>Spreadsheet tool for tracking campaign metrics, content calendars, and ROI analysis.</p>
@@ -432,7 +476,7 @@
         <!-- Portfolio Item: Google Docs -->
         <div class="portfolio-item">
           <div class="portfolio-cta">Outline Winning Strategies</div>
-          <img src="images/Sheet.jpeg" alt="Google Docs">
+          <img src="images/Sheet.jpeg" alt="Google Docs" loading="lazy">
           <div class="portfolio-overlay">
             <h3><i class="fa-solid fa-file-alt"></i> Google Docs</h3>
             <p>Collaborative document editor for content strategy planning and client proposals.</p>
@@ -441,19 +485,19 @@
         <!-- Portfolio Item: Google Forms -->
         <div class="portfolio-item">
           <div class="portfolio-cta">Gather Audience Insights</div>
-          <img src="images/forms.png" alt="Google Forms">
+          <img src="images/forms.png" alt="Google Forms" loading="lazy">
           <div class="portfolio-overlay">
             <h3><i class="fa-solid fa-poll"></i> Google Forms</h3>
             <p>Survey tool for collecting audience feedback and conducting social media audits.</p>
           </div>
         </div>
-        <!-- Portfolio Item: Metricool (Added) -->
+        <!-- Portfolio Item: Metricool -->
         <div class="portfolio-item">
           <div class="portfolio-cta">Analyze Your Metrics</div>
-          <img src="images/metricool.jpeg" alt="Metricool">
+          <img src="images/metricool.jpeg" alt="Metricool" loading="lazy">
           <div class="portfolio-overlay">
             <h3><i class="fa-solid fa-chart-line"></i> Metricool</h3>
-            <p>Advanced social media analytics and scheduling tool to monitor performance and optimize your strategy.</p>
+            <p>Advanced social media analytics and scheduling tool to monitor performance and optimize strategy.</p>
           </div>
         </div>
       </div>
@@ -466,6 +510,16 @@
   
   <!-- Footer -->
   <footer>
+    <div class="footer-links">
+      <a href="index.html" class="footer-link">Home</a>
+      <a href="about.html" class="footer-link">About Me</a>
+      <a href="hobbies.html" class="footer-link">My Hobbies</a>
+      <a href="services.html" class="footer-link">My Services</a>
+      <a href="tools.html" class="footer-link">Tools I Use</a>
+      <a href="contact.html" class="footer-link">Get In Touch</a>
+      <a href="privacy.html" class="footer-link">Privacy Policy</a>
+      <a href="terms.html" class="footer-link">Terms of Service</a>
+    </div>
     <div class="social-icons">
       <a href="https://www.facebook.com/marlon.palomares.2024/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
       <a href="https://www.instagram.com/palomares523/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>

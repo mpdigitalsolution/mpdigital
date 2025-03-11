@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Me - Marlon Palomares</title>
-  <meta name="description" content="Social Media Strategist &amp; Brand Builder - Marlon Palomares. Connect with me to elevate your brand's social media presence.">
-  <meta name="keywords" content="Social Media, Digital Marketing, Lead Generation, Marlon Palomares, Brand Builder">
-  <meta name="author" content="Marlon Palomares">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get In Touch - Marlon Palomares</title>
+  <meta name="description" content="Get in touch with Marlon Palomares, a Social Media Strategist &amp; Brand Builder. Connect today to elevate your brand's digital presence." />
+  <meta name="keywords" content="Social Media, Digital Marketing, Contact, Marlon Palomares, Brand Builder" />
+  <meta name="author" content="Marlon Palomares" />
   
-  <!-- Schema Markup for structured data -->
+  <!-- Schema Markup for Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -17,831 +17,685 @@
     "url": "https://example.com/",
     "sameAs": [
       "https://www.facebook.com/marlon.palomares.2024/",
-      "https://www.linkedin.com/in/mpdigital/",
       "https://www.instagram.com/palomares523/",
-      "https://x.com/home"
+      "https://x.com/home",
+      "https://www.linkedin.com/in/mpdigital/"
     ],
-    "jobTitle": "Social Media Strategist &amp; Brand Builder"
+    "jobTitle": "Social Media Strategist &amp; Brand Builder",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+639913062370",
+      "contactType": "Customer Service",
+      "email": "mpalomaresdigitalsolution@gmail.com"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Sitio Bayan-Bayanan, Brgy San Vicente",
+      "addressLocality": "San Pedro",
+      "addressRegion": "Laguna",
+      "addressCountry": "PH"
+    }
   }
   </script>
   
-  <link rel="stylesheet" href="css/style.css">
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   
   <style>
-    /* Global Reset and Base Styles */
+    :root {
+      --primary-color: #4a6bff;
+      --secondary-color: #ff6b6b;
+      --accent-color: #ffd166;
+      --dark-color: #2c3e50;
+      --light-color: #f8f9fa;
+      --gradient: linear-gradient(135deg, var(--primary-color), #8c43ff);
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+    }
+    
+    /* Global Reset */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
     body {
-      font-family: 'Poppins', sans-serif;
-      line-height: 1.6;
+      background-color: #f5f7fa;
       color: #333;
-      background-color: #f9fafb;
+      line-height: 1.6;
       overflow-x: hidden;
-      text-align: center;
-    }
-    
-    /* Headline Banner */
-    .headline-banner {
-      background: linear-gradient(135deg, #3498db, #9b59b6);
-      color: white;
-      padding: 12px;
-      font-weight: 600;
-      font-size: 14px;
-      letter-spacing: 0.5px;
-      position: relative;
-      overflow: hidden;
-    }
-    .headline-banner:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 50%;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.2);
-      transform: skewX(-25deg);
-      animation: shimmer 3s infinite;
-    }
-    @keyframes shimmer {
-      100% { left: 150%; }
     }
     
     /* Header & Navigation */
+    .headline-banner {
+      background: var(--gradient);
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.01); }
+      100% { transform: scale(1); }
+    }
     header {
       background-color: white;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
       position: sticky;
       top: 0;
       z-index: 1000;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
     }
     nav {
-      position: relative;
-    }
-    .nav-container {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      align-items: center;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 15px 20px;
+      padding: 15px;
     }
-    /* Left: Logo */
-    .nav-left {
-      text-align: left;
-    }
-    .logo {
-      text-decoration: none;
-      font-size: 22px;
-      color: #2c3e50;
-    }
-    .logo-icon {
-      color: #3498db;
-    }
-    /* Center: Navigation Links */
-    .nav-center {
+    nav ul {
       display: flex;
       justify-content: center;
-    }
-    .nav-links {
       list-style: none;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    nav ul li a {
       display: flex;
-      gap: 20px;
-    }
-    .nav-links li a {
-      display: inline-flex;
       align-items: center;
+      gap: 8px;
       text-decoration: none;
-      color: #2c3e50;
-      font-size: 16px;
-      padding: 10px 15px;
-      border: 1px solid transparent;
-      border-radius: 5px;
-      transition: background 0.3s ease, border-color 0.3s ease;
-    }
-    .nav-links li a i {
-      margin-right: 8px;
-    }
-    .nav-links li a:hover {
-      background-color: rgba(52, 152, 219, 0.1);
-      border-color: #3498db;
-    }
-    /* Right: Mobile Menu Toggle */
-    .nav-right {
-      text-align: right;
-    }
-    .menu-toggle {
-      display: none;
-      font-size: 24px;
-      background: none;
-      border: none;
-      color: #2c3e50;
-      cursor: pointer;
-      transition: color 0.3s ease;
-    }
-    .menu-toggle:hover {
-      color: #3498db;
-    }
-    
-    /* Mobile Navigation Menu (Slide-out) */
-    .nav-menu {
-      position: fixed;
-      top: 0;
-      right: -100%;
-      width: 80%;
-      max-width: 300px;
-      height: 100vh;
-      background: #2c3e50;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      transition: right 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-      box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-      z-index: 1000;
-    }
-    .nav-menu.active {
-      right: 0;
-    }
-    .nav-menu ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      text-align: center;
-    }
-    .nav-menu ul li {
-      margin: 20px 0;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.4s ease;
-      transition-delay: calc(0.1s * var(--i));
-    }
-    .nav-menu.active ul li {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .nav-menu ul li a {
-      display: inline-flex;
-      align-items: center;
-      color: white;
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: 500;
-      padding: 8px 15px;
-      border: 1px solid transparent;
+      color: var(--dark-color);
+      font-weight: 600;
+      padding: 10px 20px;
       border-radius: 30px;
-      transition: background 0.3s ease, border-color 0.3s ease;
+      transition: var(--transition);
       position: relative;
+      border: 2px solid transparent;
     }
-    .nav-menu ul li a i {
-      margin-right: 8px;
+    nav ul li a:hover,
+    nav ul li a:focus {
+      background: rgba(74, 107, 255, 0.1);
+      box-shadow: 0 4px 8px rgba(74, 107, 255, 0.2);
+      color: var(--primary-color);
+      border-color: var(--primary-color);
     }
-    .nav-menu ul li a:before {
+    nav ul li a::after {
       content: '';
       position: absolute;
       bottom: 0;
       left: 50%;
       width: 0;
       height: 2px;
-      background: #3498db;
+      background: var(--primary-color);
       transform: translateX(-50%);
       transition: width 0.3s ease;
+      border-radius: 2px;
     }
-    .nav-menu ul li a:hover:before {
+    nav ul li a:hover::after,
+    nav ul li a:focus::after {
       width: 70%;
     }
-    .nav-menu ul li a:hover {
-      background-color: rgba(52, 152, 219, 0.2);
-      border-color: #3498db;
-    }
-    /* Overlay for Mobile Menu */
-    .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
-      z-index: 999;
-    }
-    .overlay.active {
-      opacity: 1;
-      visibility: visible;
-    }
     
-    /* Hero Section */
-    .hero {
-      position: relative;
-      height: 80vh;
-      min-height: 600px;
-      background: linear-gradient(135deg, #2c3e50, #3498db);
-      color: white;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .hero:after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 100px;
-      background: linear-gradient(to top, white, transparent);
-    }
-    .hero-content {
-      position: relative;
+    /* Main Content & Headlines */
+    main {
       max-width: 1200px;
-      margin: 0 auto;
+      margin: 40px auto;
       padding: 0 20px;
-      z-index: 2;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .hero-text {
-      flex: 1;
-      max-width: 600px;
-    }
-    .hero-title {
-      font-size: 48px;
-      font-weight: bold;
-      margin-bottom: 20px;
-      line-height: 1.2;
-      background: linear-gradient(45deg, #ff6b6b, #f06595);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .hero-subtitle {
-      font-size: 20px;
-      margin-bottom: 30px;
-      line-height: 1.6;
-      color: #fff;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
-    }
-    .hero-cta a {
-      margin: 0 10px;
       text-align: center;
-      display: inline-block;
-      padding: 12px 24px;
-      border-radius: 30px;
-      font-weight: bold;
-      color: white;
-      background: linear-gradient(45deg, #ff6b6b, #f06595);
-      transition: background 0.3s ease;
-      text-decoration: none;
     }
-    .hero-cta a:hover {
-      background: linear-gradient(45deg, #f06595, #ff6b6b);
-    }
-    .hero-image {
-      flex: 1;
-      max-width: 500px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 20px;
-    }
-    .profile-display {
-      position: relative;
-      width: 320px;
-      height: 320px;
-      border-radius: 20px;
-      overflow: hidden;
-      border: 8px solid rgba(255,255,255,0.2);
-      box-shadow: 0 30px 60px rgba(0,0,0,0.3);
-      transform: rotate(-3deg);
-      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-    .profile-display:hover {
-      transform: rotate(0deg) scale(1.05);
-    }
-    .profile-display img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      loading: lazy;
-    }
-    
-    /* Expertise Accordion */
-    .expertise-accordion {
-      max-width: 800px;
-      margin: 30px auto;
-      text-align: left;
-    }
-    .accordion-item {
-      border-bottom: 1px solid #ddd;
-      padding: 10px 20px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    .accordion-item:hover {
-      background: #f1f1f1;
-    }
-    .accordion-header {
-      font-size: 16px;
+    .section-headline {
+      font-size: 1.2rem;
+      color: var(--primary-color);
+      margin-bottom: 10px;
       font-weight: 600;
-      color: #2c3e50;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .accordion-header i {
-      transition: transform 0.3s ease;
-    }
-    .accordion-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
-      font-size: 14px;
-      color: #555;
+      letter-spacing: 1px;
+      display: inline-block;
       padding: 0 20px;
     }
-    .accordion-item.active .accordion-content {
-      max-height: 200px;
-      margin-top: 10px;
+    .section-headline::before,
+    .section-headline::after {
+      content: '';
+      display: inline-block;
+      width: 30px;
+      height: 1px;
+      background: var(--primary-color);
+      vertical-align: middle;
+      margin: 0 10px;
     }
-    .accordion-item.active .accordion-header i {
-      transform: rotate(180deg);
-    }
-    
-    /* About Content */
-    .about-content {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    .headline {
-      font-size: 28px;
-      font-weight: bold;
-      color: #2c3e50;
-      margin-bottom: 25px;
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: var(--dark-color);
       position: relative;
-      padding-bottom: 15px;
-      letter-spacing: 0.5px;
-      text-align: center;
     }
-    .headline:after {
+    h2::after {
       content: '';
       position: absolute;
-      bottom: 0;
+      height: 4px;
+      width: 60px;
+      background: var(--gradient);
+      bottom: -10px;
       left: 50%;
       transform: translateX(-50%);
-      width: 120px;
-      height: 5px;
-      background: linear-gradient(to right, #3498db, #9b59b6, #e74c3c);
-      border-radius: 3px;
+      border-radius: 2px;
     }
-    .about-content p {
+    
+    /* Contact Section */
+    .contact {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 0;
+    }
+    .contact > p {
+      max-width: 700px;
+      margin-bottom: 30px;
+      color: #666;
+      font-size: 1.1rem;
+    }
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, rgba(74,107,255,0.05), rgba(140,67,255,0.05));
+      border: 2px solid rgba(74,107,255,0.1);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+    
+    /* Contact Info Styles */
+    .contact-info {
+      flex: 1;
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      border-left: 5px solid var(--primary-color);
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-info::before {
+      content: '';
+      position: absolute;
+      top: -30px;
+      right: -30px;
+      width: 100px;
+      height: 100px;
+      background: var(--gradient);
+      opacity: 0.1;
+      border-radius: 50%;
+      z-index: 0;
+    }
+    .contact-info h3 {
+      font-size: 1.4rem;
+      color: var(--dark-color);
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #eee;
+      position: relative;
+      z-index: 2;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
       margin-bottom: 20px;
       color: #555;
-      font-size: 16px;
+      position: relative;
+      z-index: 2;
     }
-    
-    /* CTA Section */
-    .cta-section {
-      padding: 80px 20px;
-      background: linear-gradient(135deg, #3498db, #9b59b6);
-      color: white;
-      text-align: center;
-    }
-    .cta-container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    .cta-title {
-      font-size: 36px;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-    .cta-text {
-      font-size: 18px;
-      margin-bottom: 40px;
-      opacity: 0.9;
-    }
-    .cta-primary {
-      margin: 0 10px;
-      text-align: center;
-      display: inline-block;
-      padding: 12px 24px;
-      border-radius: 30px;
-      font-weight: bold;
-      color: white;
-      background: linear-gradient(45deg, #ff6b6b, #f06595);
-      transition: background 0.3s ease;
-      text-decoration: none;
-    }
-    .cta-primary:hover {
-      background: linear-gradient(45deg, #f06595, #ff6b6b);
-    }
-    
-    /* Floating Message Button & Modal */
-    .floating-message-btn {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      width: 60px;
-      height: 60px;
-      background: linear-gradient(135deg, #3498db, #2980b9);
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--gradient);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
+      margin-right: 15px;
       color: white;
-      font-size: 24px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-      cursor: pointer;
-      z-index: 100;
-      transition: all 0.3s ease;
+      font-size: 1.2rem;
+      box-shadow: 0 5px 15px rgba(74,107,255,0.3);
+      transition: transform 0.3s;
     }
-    .floating-message-btn:hover {
+    .contact-icon:hover {
       transform: scale(1.1);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     }
-    .message-modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
+    .contact-text {
+      text-align: left;
+    }
+    .contact-text strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--dark-color);
+      font-size: 1.05rem;
+    }
+    
+    /* Map Embed */
+    .map-container {
+      margin-top: 20px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 3px solid var(--primary-color);
+      transition: var(--transition);
+      position: relative;
+      z-index: 2;
+    }
+    .map-container:hover {
+      transform: scale(1.02);
+      box-shadow: 0 12px 30px rgba(74,107,255,0.4);
+    }
+    .map-container iframe {
       width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.7);
-      z-index: 1000;
-      justify-content: center;
-      align-items: center;
+      height: 300px;
+      border: 0;
+      loading: lazy;
     }
-    .message-modal.active {
-      display: flex;
-    }
-    .message-form-container {
-      background-color: white;
+    
+    /* Form Container */
+    .form-container {
+      flex: 1.5;
+      background: white;
       border-radius: 15px;
       padding: 30px;
-      width: 90%;
-      max-width: 500px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+      box-shadow: var(--shadow);
       position: relative;
+      overflow: hidden;
+      border: 2px solid var(--primary-color);
+      z-index: 2;
     }
-    .close-modal {
+    .form-container::before {
+      content: '';
       position: absolute;
-      top: 15px;
-      right: 15px;
-      font-size: 24px;
-      color: #7f8c8d;
-      cursor: pointer;
-      transition: color 0.3s ease;
+      top: -40px;
+      left: -40px;
+      width: 150px;
+      height: 150px;
+      background: var(--gradient);
+      opacity: 0.1;
+      border-radius: 50%;
+      z-index: 1;
     }
-    .close-modal:hover {
-      color: #e74c3c;
-    }
-    .message-form h3 {
-      margin-bottom: 20px;
-      color: #2c3e50;
-      font-size: 24px;
+    #contactForm {
+      position: relative;
+      z-index: 2;
     }
     .form-group {
       margin-bottom: 20px;
+      position: relative;
+      text-align: left;
     }
     .form-group label {
       display: block;
       margin-bottom: 8px;
-      color: #2c3e50;
-      font-weight: bold;
+      font-weight: 600;
+      color: var(--dark-color);
+      font-size: 0.95rem;
+    }
+    .form-group label i {
+      color: var(--primary-color);
+      margin-right: 8px;
+      font-size: 1rem;
     }
     .form-group input,
-    .form-group textarea {
+    .form-group textarea,
+    .form-group select {
       width: 100%;
-      padding: 12px;
-      border-radius: 8px;
+      padding: 12px 15px;
       border: 1px solid #ddd;
-      font-size: 16px;
-      transition: border 0.3s ease;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: var(--transition);
     }
     .form-group input:focus,
-    .form-group textarea:focus {
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(74,107,255,0.2);
       outline: none;
-      border-color: #3498db;
     }
-    .form-group textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-    .send-message-btn {
-      background: linear-gradient(to right, #3498db, #2980b9);
-      color: white;
-      border: none;
-      padding: 14px 28px;
-      border-radius: 50px;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    .send-message-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(52,152,219,0.3);
-    }
-    
-    /* Footer Styling */
-    footer {
-      background-color: #2c3e50;
-      color: white;
-      text-align: center;
-      padding: 30px 20px;
-      margin-top: 60px;
-    }
-    footer p {
-      margin-bottom: 15px;
-    }
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-bottom: 20px;
-      flex-wrap: wrap;
-    }
-    .footer-link {
-      color: #a3c1e0;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-    .footer-link:hover {
-      color: #3498db;
-    }
-    .social-icons {
-      margin: 10px 0;
-    }
-    .social-icons a {
-      margin: 0 10px;
-      font-size: 1.5rem;
-      color: white;
-      text-decoration: none;
-      border: 2px solid white;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
+    button[type="submit"] {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      transition: all 0.3s ease;
-    }
-    .social-icons a:hover {
-      background: #3498db;
-      border-color: #3498db;
+      background: var(--gradient);
       color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: 0 5px 15px rgba(74,107,255,0.3);
+    }
+    button[type="submit"]:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(74,107,255,0.4);
+    }
+    button[type="submit"] i {
+      margin-right: 8px;
+    }
+    .spinner {
+      display: none;
+      width: 20px;
+      height: 20px;
+      border: 3px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      border-top-color: white;
+      animation: spin 1s ease-in-out infinite;
+      margin-right: 8px;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    .form-status {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      display: none;
+      text-align: center;
+      font-weight: 500;
+    }
+    .form-success {
+      background-color: rgba(39,174,96,0.1);
+      color: #27ae60;
+      border: 1px solid #27ae60;
+    }
+    .form-error {
+      background-color: rgba(231,76,60,0.1);
+      color: #e74c3c;
+      border: 1px solid #e74c3c;
     }
     
-    /* Animations */
-    .animate-fade-up {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.8s ease-out;
+    /* Notification Toast */
+    .notification {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: white;
+      color: var(--dark-color);
+      padding: 15px 25px;
+      border-radius: 8px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+      transform: translateY(150%);
+      transition: transform 0.3s ease;
+      z-index: 1000;
+      font-weight: 500;
     }
-    .animate-fade-up.active {
-      opacity: 1;
+    .notification.show {
       transform: translateY(0);
     }
     
-    /* Responsive Typography and Layout Adjustments */
-    @media (min-width: 768px) {
-      .headline-banner {
-        font-size: 16px;
-        padding: 14px;
-      }
-      .profile-display {
-        width: 320px;
-        height: 320px;
-      }
-      .headline {
-        font-size: 32px;
-      }
+    /* Footer Styles */
+    footer {
+      background: var(--dark-color);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 60px;
     }
-    @media (min-width: 992px) {
-      .nav-links li a {
-        font-size: 16px;
-        padding: 10px 15px;
-      }
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+    .footer-links {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .footer-links a {
+      color: #a3c1e0;
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+      padding: 8px 12px;
+      border: 2px solid transparent;
+      border-radius: 8px;
+    }
+    .footer-links a:hover {
+      color: var(--primary-color);
+      border-color: var(--primary-color);
+    }
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 20px 0;
+    }
+    .social-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.1);
+      color: white;
+      border-radius: 50%;
+      transition: var(--transition);
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+    .social-icons a:hover {
+      background: var(--primary-color);
+      transform: translateY(-5px);
+    }
+    footer p {
+      margin-top: 20px;
+      opacity: 0.7;
     }
     
-    /* Mobile Styles */
-    @media (max-width: 767px) {
-      .nav-center {
-        display: none;
+    /* Responsive Styles */
+    @media (max-width: 992px) {
+      .contact-container {
+        flex-direction: column;
+        padding: 20px;
       }
-      .nav-right {
-        display: block;
+      .contact-info,
+      .form-container {
+        width: 100%;
+        margin-bottom: 20px;
       }
-      .menu-toggle {
-        display: block;
+    }
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+      nav ul li {
+        margin: 5px 0;
+      }
+      h2 {
+        font-size: 2rem;
+      }
+      .contact > p {
+        font-size: 1rem;
+        padding: 0 20px;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Header Section -->
+  <!-- Header with Centered Navigation -->
   <header>
     <div class="headline-banner">🚀 Elevate Your Brand's Social Media Presence Today!</div>
     <nav>
-      <div class="nav-container">
-        <div class="nav-left">
-          <a href="index.html" class="logo"><i class="fas fa-hashtag logo-icon"></i></a>
-        </div>
-        <div class="nav-center">
-          <ul class="nav-links">
-            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-            <li><a href="about.html"><i class="fas fa-user"></i> About Me</a></li>
-            <li><a href="hobbies.html"><i class="fas fa-heart"></i> My Hobbies</a></li>
-            <li><a href="services.html"><i class="fas fa-briefcase"></i> My Services</a></li>
-            <li><a href="tools.html"><i class="fas fa-tools"></i> Tools I Use</a></li>
-            <li><a href="contact.html"><i class="fas fa-envelope"></i> Get In Touch</a></li>
-          </ul>
-        </div>
-        <div class="nav-right">
-          <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
-            <i class="fas fa-bars"></i>
-          </button>
-        </div>
-      </div>
-      <!-- Mobile Navigation Menu -->
-      <div class="nav-menu" id="navMenu">
-        <ul>
-          <li style="--i:1"><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-          <li style="--i:2"><a href="about.html"><i class="fas fa-user"></i> About Me</a></li>
-          <li style="--i:3"><a href="hobbies.html"><i class="fas fa-heart"></i> My Hobbies</a></li>
-          <li style="--i:4"><a href="services.html"><i class="fas fa-briefcase"></i> My Services</a></li>
-          <li style="--i:5"><a href="tools.html"><i class="fas fa-tools"></i> Tools I Use</a></li>
-          <li style="--i:6"><a href="contact.html"><i class="fas fa-envelope"></i> Get In Touch</a></li>
-        </ul>
-      </div>
-      <div class="overlay" id="overlay"></div>
+      <ul>
+        <li><a href="index.html"><i class="fas fa-home" aria-hidden="true"></i><span>Home</span></a></li>
+        <li><a href="about.html"><i class="fas fa-user" aria-hidden="true"></i><span>About Me</span></a></li>
+        <li><a href="hobbies.html"><i class="fas fa-heart" aria-hidden="true"></i><span>My Hobbies</span></a></li>
+        <li><a href="services.html"><i class="fas fa-briefcase" aria-hidden="true"></i><span>My Services</span></a></li>
+        <li><a href="tools.html"><i class="fas fa-tools" aria-hidden="true"></i><span>Tools I Use</span></a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope" aria-hidden="true"></i><span>Get In Touch</span></a></li>
+      </ul>
     </nav>
   </header>
   
   <!-- Main Content -->
   <main>
-    <section class="about">
-      <div class="section-headline animate-fade-up">💼 Your Social Media Success Story Starts Here</div>
-      <div class="about-content">
-        <!-- Profile Picture with Overlay and Badges -->
-        <div class="profile-container animate-fade-up">
-          <img src="images/home.png" alt="Profile image of Marlon Palomares" class="profile-image" loading="lazy">
-          <div class="profile-overlay">
-            <div class="overlay-text">Expert in Leads</div>
-            <div class="overlay-subtext">Digital Marketing Expert</div>
+    <section class="contact" id="contact">
+      <div class="section-headline">📱 Let's Connect and Grow Together</div>
+      <h2>Get In Touch</h2>
+      <p>
+        Ready to elevate your social media presence? I'm here to help you achieve your digital marketing goals. Fill out the form below, and I'll get back to you with personalized strategies for your brand.
+      </p>
+      
+      <div class="contact-container">
+        <!-- Contact Information -->
+        <div class="contact-info">
+          <h3><i class="fas fa-id-card" aria-hidden="true"></i> Contact Information</h3>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
+            <div class="contact-text"><strong>Location</strong> Sitio Bayan-Bayanan, Brgy San Vicente, San Pedro, Laguna</div>
           </div>
-          <div class="profile-badges">
-            <div class="profile-badge"><i class="fas fa-crown"></i></div>
-            <div class="profile-badge"><i class="fas fa-bolt"></i></div>
-            <div class="profile-badge"><i class="fas fa-chart-line"></i></div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-envelope" aria-hidden="true"></i></div>
+            <div class="contact-text"><strong>Email</strong> mpalomaresdigitalsolution@gmail.com</div>
           </div>
-        </div>
-        <div class="headline animate-fade-up">Social Media Strategist &amp; Brand Builder</div>
-        <!-- Social Media Links -->
-        <div class="social-links animate-fade-up">
-          <a href="https://www.facebook.com/marlon.palomares.2024/" class="social-link facebook" target="_blank" aria-label="Facebook profile">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/mpdigital/" class="social-link linkedin" target="_blank" aria-label="LinkedIn profile">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-          <a href="https://www.instagram.com/palomares523/" class="social-link instagram" target="_blank" aria-label="Instagram profile">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="https://x.com/home" class="social-link twitter" target="_blank" aria-label="Twitter/X profile">
-            <i class="fab fa-x-twitter"></i>
-          </a>
-        </div>
-        <h2 class="animate-fade-up">About Me</h2>
-        <p class="animate-fade-up">
-          Hi there, I'm Marlon Palomares. I come from a strong background in customer service and digital outreach, and I've always been passionate about connecting with people. I recently invested in a lead generation course at The VA BAR, where I learned to use essential tools like Mailchimp for email campaigns, Apollo.io for lead discovery, Canva for graphic design, and CapCut for basic video editing.
-        </p>
-        <p class="animate-fade-up">
-          While I haven't held a dedicated lead generation role yet, I'm already familiar with finding quality leads on platforms like LinkedIn and Instagram using Boolean search methods. I'm also passionate about artificial intelligence, which helps me work smarter and more efficiently.
-        </p>
-        <!-- Expertise Accordion -->
-        <div class="expertise-accordion animate-fade-up">
-          <div class="accordion-item">
-            <div class="accordion-header">Brand Strategy <i class="fas fa-chevron-down"></i></div>
-            <div class="accordion-content">
-              Detailed insights on crafting tailored brand strategies to boost recognition and drive engagement.
-            </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-phone-alt" aria-hidden="true"></i></div>
+            <div class="contact-text"><strong>Phone</strong> 09913062370</div>
           </div>
-          <div class="accordion-item">
-            <div class="accordion-header">Content Creation <i class="fas fa-chevron-down"></i></div>
-            <div class="accordion-content">
-              Strategies for producing engaging, platform-specific content that resonates with your audience.
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">Community Management <i class="fas fa-chevron-down"></i></div>
-            <div class="accordion-content">
-              Tactics for nurturing an active community and fostering lasting relationships with your audience.
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">Analytics <i class="fas fa-chevron-down"></i></div>
-            <div class="accordion-content">
-              Tools and methodologies to track, analyze, and optimize social media performance for maximum ROI.
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">Paid Campaigns <i class="fas fa-chevron-down"></i></div>
-            <div class="accordion-content">
-              Approaches to create, manage, and scale paid social campaigns to reach and convert your target audience.
-            </div>
+          <!-- Google Maps Embed -->
+          <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.9999999999995!2d121.005!3d14.123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c8a24f9a5c1f%3A0xabcdef1234567890!2sSitio+Bayan-Bayanan%2C+Brgy+San+Vicente%2C+San+Pedro%2C+Laguna!5e0!3m2!1sen!2sph!4v1600000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of Sitio Bayan-Bayanan, Brgy San Vicente, San Pedro, Laguna"></iframe>
           </div>
         </div>
-        <p class="animate-fade-up">
-          I specialize in developing and implementing comprehensive social media strategies that align with business objectives—from increasing brand awareness to driving conversions. My expertise spans across multiple platforms including Instagram, Facebook, Twitter, and LinkedIn.
-        </p>
-        <a href="https://calendly.com/marlon-palomares02/30min" class="cta-button animate-fade-up">Let's Grow Your Brand <i class="fas fa-rocket"></i></a>
+        
+        <!-- Contact Form -->
+        <div class="form-container">
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="name"><i class="fas fa-user" aria-hidden="true"></i> Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label for="email"><i class="fas fa-envelope" aria-hidden="true"></i> Email Address</label>
+              <input type="email" id="email" name="email" placeholder="your.email@example.com" required />
+            </div>
+            <div class="form-group">
+              <label for="company"><i class="fas fa-building" aria-hidden="true"></i> Company / Brand</label>
+              <input type="text" id="company" name="company" placeholder="Your company or brand name" />
+            </div>
+            <div class="form-group">
+              <label for="service"><i class="fas fa-briefcase" aria-hidden="true"></i> Service You're Interested In</label>
+              <select id="service" name="service" required>
+                <option value="" disabled selected>Select a service</option>
+                <option value="social-media-management">Social Media Management</option>
+                <option value="content-creation">Content Creation</option>
+                <option value="influencer-marketing">Influencer Marketing</option>
+                <option value="paid-advertising">Paid Advertising</option>
+                <option value="social-strategy">Social Media Strategy</option>
+                <option value="other">Other (Please specify)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message"><i class="fas fa-comment" aria-hidden="true"></i> How can I help you?</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about your project, goals, or challenges..." required></textarea>
+            </div>
+            <button type="submit" id="submitBtn">
+              <div id="spinner" class="spinner"></div>
+              <i class="fas fa-paper-plane" aria-hidden="true"></i> Send Message
+            </button>
+            <div id="formSuccess" class="form-status form-success">
+              <i class="fas fa-check-circle" aria-hidden="true"></i> Thank you for your message! I'll get back to you soon.
+            </div>
+            <div id="formError" class="form-status form-error">
+              <i class="fas fa-exclamation-circle" aria-hidden="true"></i> Oops! Something went wrong. Please try again later.
+            </div>
+          </form>
+        </div>
       </div>
     </section>
   </main>
   
-  <!-- Footer -->
+  <!-- Notification Toast -->
+  <div id="notification" class="notification"></div>
+  
+  <!-- Footer with Additional Links -->
   <footer>
-    <div class="footer-links">
-      <a href="privacy-and-policy.html" class="footer-link">Privacy Policy</a>
-      <a href="terms-and-conditions.html" class="footer-link">Terms &amp; Conditions</a>
-      <a href="contact.html" class="footer-link">Contact</a>
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="privacy-policy.html"><i class="fas fa-user-shield" aria-hidden="true"></i> Privacy Policy</a>
+        <a href="terms-conditions.html"><i class="fas fa-file-contract" aria-hidden="true"></i> Terms &amp; Conditions</a>
+        <a href="sitemap.html"><i class="fas fa-sitemap" aria-hidden="true"></i> Sitemap</a>
+      </div>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/marlon.palomares.2024/" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+        <a href="https://www.instagram.com/palomares523/" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+        <a href="https://x.com/home" aria-label="X (Twitter)"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/mpdigital/" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+      </div>
+      <p>&copy; 2025 Marlon Palomares. All rights reserved.</p>
     </div>
-    <p>&copy; 2025 Marlon Palomares. All rights reserved.</p>
   </footer>
   
   <!-- External JS Files -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
-  
-  <!-- Navigation, Animation, and Accordion JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Mobile Menu Toggle
-      const menuToggle = document.getElementById('menuToggle');
-      const navMenu = document.getElementById('navMenu');
-      const overlay = document.getElementById('overlay');
+    // Initialize EmailJS with provided public key
+    emailjs.init("efRrbEvsWA8_PG5Z0");
+    
+    // Handle form submission using EmailJS
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Show spinner and disable button
+      document.getElementById('spinner').style.display = 'block';
+      document.getElementById('submitBtn').disabled = true;
       
-      menuToggle.addEventListener('click', function() {
-        navMenu.classList.toggle('active');
-        overlay.classList.toggle('active');
-        const icon = menuToggle.querySelector('i');
-        if (navMenu.classList.contains('active')) {
-          icon.classList.remove('fa-bars');
-          icon.classList.add('fa-times');
-        } else {
-          icon.classList.remove('fa-times');
-          icon.classList.add('fa-bars');
-        }
-      });
+      // Collect form data
+      const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        company: document.getElementById('company').value,
+        service: document.getElementById('service').value,
+        message: document.getElementById('message').value,
+        to_email: "mpalomaresdigitalsolution@gmail.com"
+      };
       
-      overlay.addEventListener('click', function() {
-        navMenu.classList.remove('active');
-        overlay.classList.remove('active');
-        const icon = menuToggle.querySelector('i');
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
-      });
-      
-      // Intersection Observer for animations
-      const animatedElements = document.querySelectorAll('.animate-fade-up');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-          }
+      // Send the email using EmailJS
+      emailjs.send('service_tnsgf4p', 'template_ak7vrx4', formData)
+        .then(function(response) {
+          document.getElementById('spinner').style.display = 'none';
+          document.getElementById('submitBtn').disabled = false;
+          document.getElementById('formSuccess').style.display = 'block';
+          document.getElementById('contactForm').reset();
+          setTimeout(() => {
+            document.getElementById('formSuccess').style.display = 'none';
+          }, 5000);
+        }, function(error) {
+          document.getElementById('spinner').style.display = 'none';
+          document.getElementById('submitBtn').disabled = false;
+          document.getElementById('formError').style.display = 'block';
+          setTimeout(() => {
+            document.getElementById('formError').style.display = 'none';
+          }, 5000);
         });
-      }, { threshold: 0.1 });
-      animatedElements.forEach(element => observer.observe(element));
-      
-      // Accordion Functionality
-      const accordionItems = document.querySelectorAll('.accordion-item');
-      accordionItems.forEach(item => {
-        const header = item.querySelector('.accordion-header');
-        header.addEventListener('click', () => {
-          item.classList.toggle('active');
-        });
-      });
-      
-      // Close mobile menu on window resize if in desktop view
-      window.addEventListener('resize', function() {
-        if (window.innerWidth >= 768) {
-          navMenu.classList.remove('active');
-          overlay.classList.remove('active');
-          const icon = menuToggle.querySelector('i');
-          icon.classList.remove('fa-times');
-          icon.classList.add('fa-bars');
-        }
-      });
     });
+    
+    // Optional: Notification function for additional feedback
+    function showNotification(message) {
+      const notification = document.getElementById('notification');
+      notification.textContent = message;
+      notification.classList.add('show');
+      setTimeout(() => {
+        notification.classList.remove('show');
+      }, 3000);
+    }
   </script>
-  
-  <script src="js/script.js" defer></script>
+  <script src="js/script.js"></script>
 </body>
 </html>

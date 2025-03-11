@@ -1,17 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy - Marlon Palomares</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta name="description" content="Review our Privacy Policy to learn how Marlon Palomares protects your personal information. Discover our practices regarding data collection, usage, and security." />
+  <meta name="keywords" content="Privacy Policy, Marlon Palomares, Data Protection, Terms of Service" />
+  <meta name="author" content="Marlon Palomares" />
+
+  <!-- Schema Markup for Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Privacy Policy - Marlon Palomares",
+    "description": "Our Privacy Policy explains how Marlon Palomares collects, uses, and protects your personal data.",
+    "url": "https://example.com/privacy.html"
+  }
+  </script>
+
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
   <style>
     :root {
       --primary-color: #3498db;
       --secondary-color: #9b59b6;
       --dark-color: #2c3e50;
       --light-color: #f9fafb;
+      --accent-color: #ffd166;
       --border-radius: 25px;
       --transition: all 0.3s ease;
     }
@@ -44,14 +61,14 @@
       overflow: hidden;
     }
     
-    .headline-banner:before {
+    .headline-banner::before {
       content: '';
       position: absolute;
       top: 0;
       left: -100%;
       width: 50%;
       height: 100%;
-      background: rgba(255,255,255,0.2);
+      background: rgba(255, 255, 255, 0.2);
       transform: skewX(-25deg);
       animation: shimmer 3s infinite;
     }
@@ -62,39 +79,42 @@
     
     header {
       background-color: white;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
       position: sticky;
       top: 0;
       z-index: 1000;
+      padding: 0 20px;
     }
     
+    /* Navigation Container: Mobile toggle is absolutely positioned while the nav links remain centered */
     .nav-container {
       position: relative;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 15px 20px;
+      padding: 15px 0;
     }
     
-    /* Mobile Menu Toggle */
+    /* Mobile Menu Toggle (positioned on the left) */
     .menu-toggle {
-      display: block;
+      position: absolute;
+      left: 20px;
       font-size: 24px;
       background: none;
       border: none;
       color: var(--dark-color);
       cursor: pointer;
-      z-index: 1001;
       transition: var(--transition);
+      z-index: 1100;
     }
     
     .menu-toggle:hover {
       color: var(--primary-color);
     }
     
-    /* Mobile Navigation */
+    /* Mobile Navigation (Off-canvas) */
     .nav-menu {
       position: fixed;
       top: 0;
@@ -107,9 +127,9 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      transition: right 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-      box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-      z-index: 1000;
+      transition: right 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+      box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+      z-index: 1050;
     }
     
     .nav-menu.active {
@@ -120,8 +140,6 @@
       list-style: none;
       text-align: center;
       width: 100%;
-      margin: 0;
-      padding: 0;
     }
     
     .nav-menu ul li {
@@ -138,12 +156,24 @@
     }
     
     /* Enhanced Navigation Links with Icons, Overlay & Borders */
+    nav ul {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    nav ul li {
+      margin: 0 10px;
+    }
+    
     nav ul li a {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       text-decoration: none;
-      color: white;
-      font-size: 18px;
+      color: var(--dark-color);
+      font-size: 16px;
       font-weight: 500;
       padding: 8px 15px;
       border-radius: var(--border-radius);
@@ -167,7 +197,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(52,152,219,0.2);
+      background: rgba(52, 152, 219, 0.2);
       border-radius: var(--border-radius);
       opacity: 0;
       transition: var(--transition);
@@ -186,12 +216,12 @@
     nav ul li a::after {
       content: '';
       position: absolute;
-      width: 0;
-      height: 2px;
-      background: var(--primary-color);
       bottom: 0;
       left: 50%;
       transform: translateX(-50%);
+      width: 0;
+      height: 2px;
+      background: var(--primary-color);
       transition: width 0.3s ease;
     }
     
@@ -204,14 +234,11 @@
       outline-offset: 4px;
     }
     
-    /* Responsive: Desktop Navigation */
+    /* Desktop Navigation: Hide Mobile Toggle & Display links in center */
     @media (min-width: 768px) {
       .menu-toggle { display: none; }
       .nav-menu {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
+        position: static;
         width: auto;
         height: auto;
         background: transparent;
@@ -220,8 +247,6 @@
       }
       .nav-menu ul {
         display: flex;
-        align-items: center;
-        justify-content: center;
       }
       .nav-menu ul li {
         margin: 0 8px;
@@ -243,9 +268,6 @@
       nav ul li a {
         font-size: 16px;
         padding: 10px 15px;
-      }
-      .nav-menu ul li {
-        margin: 0 8px;
       }
     }
     
@@ -269,7 +291,7 @@
       text-align: center;
     }
     
-    .page-title:after {
+    .page-title::after {
       content: '';
       position: absolute;
       bottom: 0;
@@ -333,10 +355,6 @@
       margin-top: 60px;
     }
     
-    footer p {
-      margin-bottom: 15px;
-    }
-    
     .footer-links {
       display: flex;
       justify-content: center;
@@ -353,6 +371,10 @@
     
     .footer-link:hover {
       color: var(--primary-color);
+    }
+    
+    footer p {
+      margin-bottom: 15px;
     }
     
     /* Animations for Page Content */
@@ -379,10 +401,7 @@
       }
       
       .nav-menu {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
+        position: static;
         width: auto;
         height: auto;
         background: transparent;
@@ -432,11 +451,9 @@
     <div class="headline-banner">🚀 Elevate Your Brand's Social Media Presence Today!</div>
     <nav>
       <div class="nav-container">
-        <!-- Logo element removed as per instructions -->
         <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
           <i class="fas fa-bars"></i>
         </button>
-        
         <div class="nav-menu" id="navMenu">
           <ul>
             <li style="--i:1">
@@ -553,11 +570,16 @@
   <!-- Footer -->
   <footer>
     <div class="footer-links">
+      <a href="index.html" class="footer-link">Home</a>
+      <a href="about.html" class="footer-link">About</a>
+      <a href="hobbies.html" class="footer-link">Hobbies</a>
+      <a href="services.html" class="footer-link">Services</a>
+      <a href="tools.html" class="footer-link">Tools</a>
+      <a href="contact.html" class="footer-link">Contact</a>
       <a href="privacy.html" class="footer-link">Privacy Policy</a>
       <a href="terms.html" class="footer-link">Terms of Service</a>
-      <a href="contact.html" class="footer-link">Contact</a>
     </div>
-    <p>&copy; 2025. All rights reserved.</p>
+    <p>&copy; 2025 Marlon Palomares. All rights reserved.</p>
   </footer>
   
   <!-- External JS Files -->
@@ -570,12 +592,12 @@
       const navMenu = document.getElementById('navMenu');
       const overlay = document.getElementById('overlay');
       
-      // Toggle menu on click
+      // Toggle mobile menu on click
       menuToggle.addEventListener('click', function() {
         navMenu.classList.toggle('active');
         overlay.classList.toggle('active');
         
-        // Change icon based on menu state
+        // Change icon based on state
         const icon = menuToggle.querySelector('i');
         if (navMenu.classList.contains('active')) {
           icon.classList.remove('fa-bars');
@@ -586,37 +608,33 @@
         }
       });
       
-      // Close menu when clicking on overlay
-      overlay.addEventListener('click', function() {
-        navMenu.classList.remove('active');
-        overlay.classList.remove('active');
-        const icon = menuToggle.querySelector('i');
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
-      });
+      // Close mobile menu when clicking on overlay
+      if (overlay) {
+        overlay.addEventListener('click', function() {
+          navMenu.classList.remove('active');
+          overlay.classList.remove('active');
+          const icon = menuToggle.querySelector('i');
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        });
+      }
       
-      // Animate elements when they come into view
+      // Animate content when in view
       const animatedElements = document.querySelectorAll('.animate-fade-up');
-      
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('active');
           }
         });
-      }, {
-        threshold: 0.1
-      });
+      }, { threshold: 0.1 });
+      animatedElements.forEach(el => observer.observe(el));
       
-      animatedElements.forEach(element => {
-        observer.observe(element);
-      });
-      
-      // Close menu on window resize (if in desktop mode)
+      // Reset mobile menu on window resize (for desktop)
       window.addEventListener('resize', function() {
         if (window.innerWidth >= 768) {
           navMenu.classList.remove('active');
-          overlay.classList.remove('active');
+          if (overlay) overlay.classList.remove('active');
           const icon = menuToggle.querySelector('i');
           icon.classList.remove('fa-times');
           icon.classList.add('fa-bars');
