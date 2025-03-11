@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Get In Touch - Marlon Palomares</title>
-  <meta name="description" content="Get in touch with Marlon Palomares, a Social Media Strategist &amp; Brand Builder. Connect today to elevate your brand's digital presence.">
+  <meta name="description" content="Get in touch with Marlon Palomares, a Social Media Strategist & Brand Builder. Connect today to elevate your brand's digital presence.">
   <meta name="keywords" content="Social Media, Digital Marketing, Contact, Marlon Palomares, Brand Builder">
   <meta name="author" content="Marlon Palomares">
   
@@ -21,7 +21,7 @@
       "https://x.com/home",
       "https://www.linkedin.com/in/mpdigital/"
     ],
-    "jobTitle": "Social Media Strategist &amp; Brand Builder",
+    "jobTitle": "Social Media Strategist & Brand Builder",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+639913062370",
@@ -38,9 +38,8 @@
   }
   </script>
   
-  <!-- Font Awesome CDN -->
+  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
   <style>
     :root {
       --primary-color: #4a6bff;
@@ -51,10 +50,8 @@
       --gradient: linear-gradient(135deg, var(--primary-color), #8c43ff);
       --shadow: 0 10px 30px rgba(0,0,0,0.1);
       --transition: all 0.3s ease;
-      --border-radius: 25px;
     }
     
-    /* Global Styles */
     * {
       margin: 0;
       padding: 0;
@@ -68,7 +65,7 @@
       line-height: 1.6;
     }
     
-    /* Header & Navigation */
+    /* Header Styles */
     .headline-banner {
       background: var(--gradient);
       color: white;
@@ -94,86 +91,57 @@
       box-shadow: 0 2px 15px rgba(0,0,0,0.1);
     }
     
-    /* Navigation Container */
-    .main-nav {
-      background: var(--light-color);
-      padding: 15px 0;
-      margin-bottom: 30px;
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 15px;
     }
     
-    .main-nav ul {
-      list-style: none;
+    nav ul {
       display: flex;
       justify-content: center;
-      gap: 30px;
-      margin: 0;
-      padding: 0;
+      list-style: none;
+      flex-wrap: wrap;
     }
     
-    /* Enhanced Navigation Links */
-    .main-nav ul li a {
-      display: inline-flex;
-      align-items: center;
+    nav ul li {
+      margin: 0 15px;
+    }
+    
+    nav ul li a {
       text-decoration: none;
       color: var(--dark-color);
       font-weight: 600;
       padding: 8px 15px;
-      border-radius: var(--border-radius);
-      border: 1px solid transparent;
+      border-radius: 25px;
+      transition: var(--transition);
       position: relative;
-      transition: var(--transition);
     }
     
-    /* Add icons before link text */
-    .main-nav ul li a .nav-icon {
-      margin-right: 5px;
-      font-size: 16px;
+    /* Focus state for accessibility */
+    nav ul li a:focus {
+      outline: 2px dashed var(--primary-color);
+      outline-offset: 4px;
     }
     
-    /* Overlay effect using ::before */
-    .main-nav ul li a::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(74,107,255,0.2);
-      border-radius: var(--border-radius);
-      opacity: 0;
-      transition: var(--transition);
-      z-index: -1;
-    }
-    
-    .main-nav ul li a:hover {
-      border-color: var(--primary-color);
+    nav ul li a:hover {
       color: var(--primary-color);
     }
     
-    .main-nav ul li a:hover::before {
-      opacity: 1;
-    }
-    
-    /* Underline effect using ::after */
-    .main-nav ul li a::after {
-      content: "";
+    nav ul li a::after {
+      content: '';
       position: absolute;
-      bottom: 0;
-      left: 50%;
       width: 0;
       height: 2px;
       background: var(--primary-color);
+      bottom: 0;
+      left: 50%;
       transform: translateX(-50%);
       transition: width 0.3s ease;
     }
     
-    .main-nav ul li a:hover::after {
+    nav ul li a:hover::after {
       width: 70%;
-    }
-    
-    .main-nav ul li a:focus {
-      outline: 2px dashed var(--primary-color);
-      outline-offset: 4px;
     }
     
     /* Main Content Styles */
@@ -184,7 +152,48 @@
       text-align: center;
     }
     
-    /* Contact Section Styles */
+    .section-headline {
+      font-size: 1.2rem;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-align: center;
+      position: relative;
+      display: inline-block;
+      padding: 0 20px;
+    }
+    
+    .section-headline::before, .section-headline::after {
+      content: '';
+      height: 1px;
+      width: 30px;
+      background: var(--primary-color);
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 10px;
+    }
+    
+    h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: var(--dark-color);
+      position: relative;
+    }
+    
+    h2::after {
+      content: '';
+      position: absolute;
+      height: 4px;
+      width: 60px;
+      background: var(--gradient);
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+    
     .contact {
       display: flex;
       flex-direction: column;
@@ -200,7 +209,7 @@
       font-size: 1.1rem;
     }
     
-    /* Contact Container */
+    /* Contact Form & Info Container */
     .contact-container {
       display: flex;
       width: 100%;
@@ -208,6 +217,8 @@
       gap: 30px;
       margin: 0 auto;
       flex-wrap: wrap;
+      position: relative;
+      /* Subtle overlay background */
       background: linear-gradient(135deg, rgba(74,107,255,0.05), rgba(140,67,255,0.05));
       border: 2px solid rgba(74,107,255,0.1);
       border-radius: 20px;
@@ -215,7 +226,7 @@
       box-shadow: var(--shadow);
     }
     
-    /* Contact Info */
+    /* Contact Info Styles */
     .contact-info {
       flex: 1;
       background: white;
@@ -270,12 +281,16 @@
       margin-right: 15px;
       color: white;
       font-size: 1.2rem;
-      box-shadow: 0 5px 15px rgba(74,107,255,0.3);
+      box-shadow: 0 5px 15px rgba(74, 107, 255, 0.3);
       transition: transform 0.3s;
     }
     
     .contact-icon:hover {
       transform: scale(1.1);
+    }
+    
+    .contact-text {
+      flex: 1;
     }
     
     .contact-text strong {
@@ -285,7 +300,32 @@
       font-size: 1.05rem;
     }
     
-    /* Form Container */
+    /* Enhanced Google Maps Embed Container */
+    .map-container {
+      margin-top: 20px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 3px solid var(--primary-color);
+      transition: var(--transition);
+      position: relative;
+      z-index: 2;
+    }
+    
+    .map-container:hover {
+      transform: scale(1.02);
+      box-shadow: 0 12px 30px rgba(74, 107, 255, 0.4);
+    }
+    
+    .map-container iframe {
+      width: 100%;
+      height: 300px;
+      border: 0;
+      /* Ensure lazy loading for performance */
+      loading: lazy;
+    }
+    
+    /* Form Container Styles with Enhanced Borders & Overlay */
     .form-container {
       flex: 1.5;
       background: white;
@@ -350,7 +390,7 @@
     .form-group textarea:focus, 
     .form-group select:focus {
       border-color: var(--primary-color);
-      box-shadow: 0 0 0 3px rgba(74,107,255,0.2);
+      box-shadow: 0 0 0 3px rgba(74, 107, 255, 0.2);
       outline: none;
     }
     
@@ -367,12 +407,12 @@
       font-weight: 600;
       cursor: pointer;
       transition: var(--transition);
-      box-shadow: 0 5px 15px rgba(74,107,255,0.3);
+      box-shadow: 0 5px 15px rgba(74, 107, 255, 0.3);
     }
     
     button[type="submit"]:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(74,107,255,0.4);
+      box-shadow: 0 8px 20px rgba(74, 107, 255, 0.4);
     }
     
     button[type="submit"] i {
@@ -383,7 +423,7 @@
       display: none;
       width: 20px;
       height: 20px;
-      border: 3px solid rgba(255,255,255,0.3);
+      border: 3px solid rgba(255, 255, 255, 0.3);
       border-radius: 50%;
       border-top-color: white;
       animation: spin 1s ease-in-out infinite;
@@ -404,13 +444,13 @@
     }
     
     .form-success {
-      background-color: rgba(39,174,96,0.1);
+      background-color: rgba(39, 174, 96, 0.1);
       color: #27ae60;
       border: 1px solid #27ae60;
     }
     
     .form-error {
-      background-color: rgba(231,76,60,0.1);
+      background-color: rgba(231, 76, 60, 0.1);
       color: #e74c3c;
       border: 1px solid #e74c3c;
     }
@@ -424,7 +464,7 @@
       color: var(--dark-color);
       padding: 15px 25px;
       border-radius: 8px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
       transform: translateY(150%);
       transition: transform 0.3s ease;
       z-index: 1000;
@@ -506,10 +546,6 @@
         margin: 5px 0;
       }
       
-      .content-container {
-        padding: 20px;
-      }
-      
       h2 {
         font-size: 2rem;
       }
@@ -522,199 +558,209 @@
   </style>
 </head>
 <body>
-  <!-- Header with Mobile-Friendly Navigation -->
+  <!-- Header with Navigation -->
   <header>
     <div class="headline-banner">🚀 Elevate Your Brand's Social Media Presence Today!</div>
     <nav>
-      <div class="nav-container">
-        <!-- Logo element removed as per instructions -->
-        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
-          <i class="fas fa-bars"></i>
-        </button>
-        
-        <div class="nav-menu" id="navMenu">
-          <ul>
-            <li style="--i:1">
-              <a href="index.html">
-                <i class="fa-solid fa-house nav-icon"></i> Home
-              </a>
-            </li>
-            <li style="--i:2">
-              <a href="about.html">
-                <i class="fa-solid fa-user nav-icon"></i> About Me
-              </a>
-            </li>
-            <li style="--i:3">
-              <a href="hobbies.html">
-                <i class="fa-solid fa-heart nav-icon"></i> My Hobbies
-              </a>
-            </li>
-            <li style="--i:4">
-              <a href="services.html">
-                <i class="fa-solid fa-cogs nav-icon"></i> My Services
-              </a>
-            </li>
-            <li style="--i:5">
-              <a href="tools.html">
-                <i class="fa-solid fa-wrench nav-icon"></i> Tools I Use
-              </a>
-            </li>
-            <li style="--i:6">
-              <a href="contact.html">
-                <i class="fa-solid fa-envelope nav-icon"></i> Get In Touch
-              </a>
-            </li>
-            <li style="--i:7">
-              <a href="privacy.html">
-                <i class="fa-solid fa-shield-halved nav-icon"></i> Privacy Policy
-              </a>
-            </li>
-            <li style="--i:8">
-              <a href="terms.html">
-                <i class="fa-solid fa-file-contract nav-icon"></i> Terms of Service
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="hobbies.html">My Hobbies</a></li>
+        <li><a href="services.html">My Services</a></li>
+        <li><a href="tools.html">Tools I Use</a></li>
+        <li><a href="contact.html">Get In Touch</a></li>
+      </ul>
     </nav>
-    <div class="overlay" id="overlay"></div>
   </header>
   
   <!-- Main Content -->
   <main>
-    <div class="content-container animate-fade-up">
-      <h1 class="page-title">Privacy Policy</h1>
-      <p class="last-updated">Last Updated: March 10, 2025</p>
+    <section class="contact" id="contact">
+      <div class="section-headline">📱 Let's Connect and Grow Together</div>
+      <h2>Get In Touch</h2>
+      <p>Ready to elevate your social media presence? I'm here to help you achieve your digital marketing goals. Fill out the form below, and I'll get back to you with personalized strategies for your brand.</p>
       
-      <div class="highlight-box">
-        <p>We take your privacy seriously. This Privacy Policy explains how we collect, use, and protect your personal information when you use our services.</p>
+      <div class="contact-container">
+        <!-- Contact Information with Enhanced Overlay & Icons -->
+        <div class="contact-info">
+          <h3><i class="fas fa-id-card"></i> Contact Information</h3>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-text">
+              <strong>Location</strong>
+              Sitio Bayan-Bayanan, Brgy San Vicente, San Pedro, Laguna
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-text">
+              <strong>Email</strong>
+              mpalomaresdigitalsolution@gmail.com
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div class="contact-text">
+              <strong>Phone</strong>
+              09913062370
+            </div>
+          </div>
+          
+          <!-- Enhanced Google Maps Embed -->
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.9999999999995!2d121.005!3d14.123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c8a24f9a5c1f%3A0xabcdef1234567890!2sSitio+Bayan-Bayanan%2C+Brgy+San+Vicente%2C+San+Pedro%2C+Laguna!5e0!3m2!1sen!2sph!4v1600000000000" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+        
+        <!-- Contact Form with Overlay & Enhanced Borders -->
+        <div class="form-container">
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="name"><i class="fas fa-user"></i> Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email"><i class="fas fa-envelope"></i> Email Address</label>
+              <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="company"><i class="fas fa-building"></i> Company / Brand</label>
+              <input type="text" id="company" name="company" placeholder="Your company or brand name">
+            </div>
+            
+            <div class="form-group">
+              <label for="service"><i class="fas fa-briefcase"></i> Service You're Interested In</label>
+              <select id="service" name="service" required>
+                <option value="" disabled selected>Select a service</option>
+                <option value="social-media-management">Social Media Management</option>
+                <option value="content-creation">Content Creation</option>
+                <option value="influencer-marketing">Influencer Marketing</option>
+                <option value="paid-advertising">Paid Advertising</option>
+                <option value="social-strategy">Social Media Strategy</option>
+                <option value="other">Other (Please specify)</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="message"><i class="fas fa-comment"></i> How can I help you?</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about your project, goals, or challenges..." required></textarea>
+            </div>
+            
+            <button type="submit" id="submitBtn">
+              <div id="spinner" class="spinner"></div>
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+            
+            <div id="formSuccess" class="form-status form-success">
+              <i class="fas fa-check-circle"></i> Thank you for your message! I'll get back to you soon.
+            </div>
+            
+            <div id="formError" class="form-status form-error">
+              <i class="fas fa-exclamation-circle"></i> Oops! Something went wrong. Please try again later.
+            </div>
+          </form>
+        </div>
       </div>
-      
-      <h2 class="section-title">Information We Collect</h2>
-      <p>We may collect the following types of information:</p>
-      <ul>
-        <li><strong>Personal Information:</strong> Name, email address, phone number, and other contact details provided when contacting us or signing up for our services.</li>
-        <li><strong>Usage Data:</strong> Information about how you interact with our website, including pages visited, time spent, and actions taken.</li>
-        <li><strong>Device Information:</strong> Details about your device, including IP address, browser type, and operating system.</li>
-      </ul>
-      
-      <h2 class="section-title">How We Use Your Information</h2>
-      <p>We use the collected information for various purposes:</p>
-      <ul>
-        <li>To provide and maintain our services</li>
-        <li>To notify you about changes to our services</li>
-        <li>To provide customer support</li>
-        <li>To gather insights to improve our services</li>
-        <li>To monitor service usage</li>
-        <li>To detect, prevent, and address technical issues</li>
-        <li>For any other purpose for which you provide it</li>
-      </ul>
-      
-      <h2 class="section-title">Information Security</h2>
-      <p>While we strive to use commercially acceptable means to protect your information, no method of transmission over the Internet or electronic storage is 100% secure.</p>
-      
-      <h2 class="section-title">Third-Party Services</h2>
-      <p>We may employ third-party companies and individuals for the following purposes:</p>
-      <ul>
-        <li>To facilitate our service</li>
-        <li>To provide the service on our behalf</li>
-        <li>To perform service-related tasks</li>
-        <li>To assist in analyzing service usage</li>
-      </ul>
-      <p>These third parties have access to your personal information solely to perform these tasks and are obligated not to disclose or use it for any other purpose.</p>
-      
-      <h2 class="section-title">Analytics</h2>
-      <p>We may use third-party service providers to monitor and analyze the use of our service.</p>
-      
-      <h2 class="section-title">Cookies</h2>
-      <p>Cookies are small files with a small amount of data that may include a unique identifier. Cookies are sent to your browser from a website and stored on your device. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent; however, some parts of our service may not function properly if you do so.</p>
-      
-      <h2 class="section-title">Children's Privacy</h2>
-      <p>Our service does not address anyone under the age of 18. We do not knowingly collect personal information from children under 18. If you are a parent or guardian and you believe your child has provided us with personal information, please contact us. We will take steps to remove that information from our servers.</p>
-      
-      <h2 class="section-title">Changes to This Privacy Policy</h2>
-      <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the updated policy on this page and, if appropriate, via email or a prominent notice on our service. The "Last Updated" date at the top will reflect the latest changes.</p>
-      
-      <h2 class="section-title">Contact Us</h2>
-      <p>If you have any questions about this Privacy Policy, please contact us:</p>
-      <ul>
-        <li>By email: example@example.com</li>
-        <li>By visiting our Contact page</li>
-      </ul>
-    </div>
+    </section>
   </main>
+  
+  <!-- Notification Toast -->
+  <div id="notification" class="notification"></div>
   
   <!-- Footer -->
   <footer>
-    <div class="footer-links">
-      <a href="privacy.html" class="footer-link">Privacy Policy</a>
-      <a href="terms.html" class="footer-link">Terms of Service</a>
-      <a href="contact.html" class="footer-link">Contact</a>
+    <div class="footer-content">
+      <div class="social-icons">
+        <a href="https://www.facebook.com/marlon.palomares.2024/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/palomares523/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://x.com/home" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/mpdigital/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <p>&copy; 2025 Marlon Palomares. All rights reserved.</p>
     </div>
-    <p>&copy; 2025. All rights reserved.</p>
   </footer>
   
   <!-- External JS Files -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
-  
-  <!-- Navigation JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const menuToggle = document.getElementById('menuToggle');
-      const navMenu = document.getElementById('navMenu');
-      const overlay = document.getElementById('overlay');
+    // Initialize EmailJS with provided public key
+    emailjs.init("efRrbEvsWA8_PG5Z0");
+    
+    // Form submission handling using EmailJS
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
       
-      // Toggle menu on click
-      menuToggle.addEventListener('click', function() {
-        navMenu.classList.toggle('active');
-        overlay.classList.toggle('active');
-        
-        // Change icon based on menu state
-        const icon = menuToggle.querySelector('i');
-        if (navMenu.classList.contains('active')) {
-          icon.classList.remove('fa-bars');
-          icon.classList.add('fa-times');
-        } else {
-          icon.classList.remove('fa-times');
-          icon.classList.add('fa-bars');
-        }
-      });
+      // Show spinner and disable button
+      document.getElementById('spinner').style.display = 'block';
+      document.getElementById('submitBtn').disabled = true;
       
-      // Close menu when clicking on overlay
-      overlay.addEventListener('click', function() {
-        navMenu.classList.remove('active');
-        overlay.classList.remove('active');
-        const icon = menuToggle.querySelector('i');
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
-      });
+      // Collect form data
+      const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        company: document.getElementById('company').value,
+        service: document.getElementById('service').value,
+        message: document.getElementById('message').value,
+        // "to_email" is used in your EmailJS template
+        to_email: "mpalomaresdigitalsolution@gmail.com"
+      };
       
-      // Animate elements when they come into view
-      const animatedElements = document.querySelectorAll('.animate-fade-up');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-          }
+      // Send the email using EmailJS with provided service and template IDs
+      emailjs.send('service_tnsgf4p', 'template_ak7vrx4', formData)
+        .then(function(response) {
+          // Hide spinner and enable button
+          document.getElementById('spinner').style.display = 'none';
+          document.getElementById('submitBtn').disabled = false;
+          
+          // Show success message and reset form
+          document.getElementById('formSuccess').style.display = 'block';
+          document.getElementById('contactForm').reset();
+          
+          // Hide success message after 5 seconds
+          setTimeout(() => {
+            document.getElementById('formSuccess').style.display = 'none';
+          }, 5000);
+        }, function(error) {
+          // Hide spinner and enable button
+          document.getElementById('spinner').style.display = 'none';
+          document.getElementById('submitBtn').disabled = false;
+          
+          // Show error message
+          document.getElementById('formError').style.display = 'block';
+          setTimeout(() => {
+            document.getElementById('formError').style.display = 'none';
+          }, 5000);
         });
-      }, { threshold: 0.1 });
-      
-      animatedElements.forEach(element => {
-        observer.observe(element);
-      });
-      
-      // Close menu on window resize (if in desktop mode)
-      window.addEventListener('resize', function() {
-        if (window.innerWidth >= 768) {
-          navMenu.classList.remove('active');
-          overlay.classList.remove('active');
-          const icon = menuToggle.querySelector('i');
-          icon.classList.remove('fa-times');
-          icon.classList.add('fa-bars');
-        }
-      });
     });
+    
+    // Optional notification function for additional feedback
+    function showNotification(message) {
+      const notification = document.getElementById('notification');
+      notification.textContent = message;
+      notification.classList.add('show');
+      
+      setTimeout(() => {
+        notification.classList.remove('show');
+      }, 3000);
+    }
   </script>
+  <script src="js/script.js"></script>
 </body>
 </html>
