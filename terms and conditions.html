@@ -198,6 +198,34 @@
       border: 1px dashed var(--primary);
     }
     
+    /* Navigation: Centered Links */
+    .main-nav {
+      background: var(--light);
+      padding: 15px 0;
+      margin-bottom: 30px;
+    }
+    
+    .main-nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .main-nav ul li a {
+      text-decoration: none;
+      color: var(--secondary);
+      font-weight: 600;
+      transition: var(--transition);
+    }
+    
+    .main-nav ul li a:hover {
+      color: var(--primary);
+    }
+    
+    /* Social Media Section */
     .social-icons {
       margin: 30px 0;
     }
@@ -346,6 +374,11 @@
         height: 45px;
         margin: 0 5px;
       }
+      
+      .main-nav ul {
+        flex-direction: column;
+        gap: 15px;
+      }
     }
   </style>
 </head>
@@ -353,6 +386,17 @@
   <!-- Background decorative elements -->
   <div class="bg-decoration circle-1"></div>
   <div class="bg-decoration circle-2"></div>
+  
+  <!-- Navigation with Centered Links -->
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="terms.html">Terms</a></li>
+    </ul>
+  </nav>
   
   <div class="main-container">
     <div class="overlay">

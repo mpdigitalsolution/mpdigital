@@ -4,6 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Get In Touch - Marlon Palomares</title>
+  <meta name="description" content="Get in touch with Marlon Palomares, a Social Media Strategist & Brand Builder. Connect today to elevate your brand's digital presence.">
+  <meta name="keywords" content="Social Media, Digital Marketing, Contact, Marlon Palomares, Brand Builder">
+  <meta name="author" content="Marlon Palomares">
+  
+  <!-- Schema Markup for Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Marlon Palomares",
+    "url": "https://example.com/",
+    "sameAs": [
+      "https://www.facebook.com/marlon.palomares.2024/",
+      "https://www.instagram.com/palomares523/",
+      "https://x.com/home",
+      "https://www.linkedin.com/in/mpdigital/"
+    ],
+    "jobTitle": "Social Media Strategist & Brand Builder",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+639913062370",
+      "contactType": "Customer Service",
+      "email": "mpalomaresdigitalsultion@gmail.com"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Sitio Bayan-Bayanan, Brgy San Vicente",
+      "addressLocality": "San Pedro",
+      "addressRegion": "Laguna",
+      "addressCountry": "PH"
+    }
+  }
+  </script>
+  
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
@@ -82,6 +116,12 @@
       border-radius: 25px;
       transition: var(--transition);
       position: relative;
+    }
+    
+    /* Focus state for accessibility */
+    nav ul li a:focus {
+      outline: 2px dashed var(--primary-color);
+      outline-offset: 4px;
     }
     
     nav ul li a:hover {
@@ -178,7 +218,7 @@
       margin: 0 auto;
       flex-wrap: wrap;
       position: relative;
-      /* Add a subtle overlay behind the entire container */
+      /* Subtle overlay background */
       background: linear-gradient(135deg, rgba(74,107,255,0.05), rgba(140,67,255,0.05));
       border: 2px solid rgba(74,107,255,0.1);
       border-radius: 20px;
@@ -281,9 +321,11 @@
       width: 100%;
       height: 300px;
       border: 0;
+      /* Ensure lazy loading for performance */
+      loading: lazy;
     }
     
-    /* Form Container Styles with Enhanced Border & Overlay */
+    /* Form Container Styles with Enhanced Borders & Overlay */
     .form-container {
       flex: 1.5;
       background: white;
@@ -577,7 +619,8 @@
           <div class="map-container">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.9999999999995!2d121.005!3d14.123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c8a24f9a5c1f%3A0xabcdef1234567890!2sSitio+Bayan-Bayanan%2C+Brgy+San+Vicente%2C+San+Pedro%2C+Laguna!5e0!3m2!1sen!2sph!4v1600000000000" 
-              allowfullscreen="" loading="lazy" 
+              allowfullscreen="" 
+              loading="lazy" 
               referrerpolicy="no-referrer-when-downgrade">
             </iframe>
           </div>
@@ -675,7 +718,7 @@
         company: document.getElementById('company').value,
         service: document.getElementById('service').value,
         message: document.getElementById('message').value,
-        // This "to_email" is used in your EmailJS template
+        // "to_email" is used in your EmailJS template
         to_email: "mpalomaresdigitalsultion@gmail.com"
       };
       

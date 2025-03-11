@@ -4,20 +4,70 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home - Marlon Palomares | Social Media Strategist</title>
+  <meta name="description" content="Marlon Palomares is a Social Media Strategist dedicated to transforming your digital presence with data-driven strategies. Connect today to elevate your brand.">
+  <meta name="keywords" content="Social Media, Digital Marketing, Strategy, Marlon Palomares, Brand Builder">
+  <meta name="author" content="Marlon Palomares">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Marlon Palomares",
+    "url": "https://example.com/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://example.com/?s={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Marlon Palomares",
+    "url": "https://example.com/",
+    "logo": "https://example.com/images/logo.png",
+    "sameAs": [
+      "https://www.facebook.com/marlon.palomares.2024/",
+      "https://www.instagram.com/palomares523/",
+      "https://x.com/home",
+      "https://www.linkedin.com/in/mpdigital/"
+    ]
+  }
+  </script>
+
   <link rel="stylesheet" href="css/style.css">
-  <!-- Add EmailJS script -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <!-- EmailJS script -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
   <script type="text/javascript">
     (function(){
       emailjs.init({ publicKey: "efRrbEvsWA8_PG5Z0" });
     })();
   </script>
+  
   <style>
     /* Global Styles */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       text-align: center;
+    }
+    
+    /* Skip Link for Accessibility */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: #3498db;
+      color: white;
+      padding: 8px 15px;
+      z-index: 10000;
+      transition: top 0.3s ease;
+    }
+    .skip-link:focus {
+      top: 0;
     }
     
     /* Header & Navigation */
@@ -54,10 +104,32 @@
       color: white;
       text-decoration: none;
       transition: color 0.3s ease;
+      position: relative;
+    }
+    
+    /* Focus style for keyboard navigability */
+    nav ul li a:focus {
+      outline: 2px dashed #3498db;
+      outline-offset: 4px;
     }
     
     nav ul li a:hover {
       color: #3498db;
+    }
+    
+    nav ul li a:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #3498db;
+      transition: width 0.3s ease;
+    }
+    
+    nav ul li a:hover:after {
+      width: 100%;
     }
     
     /* Mobile Navigation */
@@ -75,23 +147,19 @@
         right: 20px;
         top: 20px;
       }
-      
       .menu-toggle .bar {
         width: 25px;
         height: 3px;
         background-color: white;
         margin: 4px 0;
       }
-      
       nav ul {
         flex-direction: column;
         display: none;
       }
-      
       nav ul.active {
         display: flex;
       }
-      
       nav ul li {
         margin: 10px 0;
       }
@@ -195,6 +263,8 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      /* Lazy load for performance */
+      loading: lazy;
     }
     
     .cta-primary, .cta-secondary {
@@ -338,7 +408,7 @@
       opacity: 0.9;
     }
     
-    /* Floating Message Button & Modal (Unchanged) */
+    /* Floating Message Button & Modal */
     .floating-message-btn {
       position: fixed;
       bottom: 30px;
@@ -459,7 +529,7 @@
       box-shadow: 0 10px 20px rgba(52, 152, 219, 0.3);
     }
     
-    /* Footer with Privacy Policy and Terms & Conditions Links and Social Media Icons */
+    /* Footer with Privacy & Terms Links and Social Media Icons */
     footer {
       background-color: #2c3e50;
       color: white;
@@ -472,7 +542,6 @@
       margin-bottom: 10px;
     }
     
-    /* ONLY CHANGED THIS PART - links to your new files */
     .footer-links a {
       color: white;
       text-decoration: none;
@@ -512,6 +581,9 @@
   </style>
 </head>
 <body>
+  <!-- Skip to Main Content Link -->
+  <a class="skip-link" href="#mainContent">Skip to Main Content</a>
+
   <!-- Header with Navigation -->
   <header>
     <div class="headline-banner">🚀 Elevate Your Brand's Social Media Presence Today!</div>
@@ -662,11 +734,10 @@
     </div>
   </div>
   
-  <!-- Footer with Privacy Policy, Terms & Conditions Links and Social Media Icons -->
+  <!-- Footer with Privacy & Terms Links and Social Media Icons -->
   <footer>
     <div class="footer-content">
       <div class="footer-links">
-        <!-- Changed these links to point to your new local HTML files -->
         <a href="privacy and policy.html"><i class="fas fa-lock"></i> Privacy &amp; Policy</a> |
         <a href="terms and conditions.html"><i class="fas fa-gavel"></i> Terms &amp; Conditions</a>
       </div>
@@ -681,7 +752,7 @@
   </footer>
   
   <!-- External JS Files -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js" defer></script>
   
   <!-- Main JavaScript -->
   <script>
@@ -765,6 +836,6 @@
     });
   </script>
   
-  <script src="js/script.js"></script>
+  <script src="js/script.js" defer></script>
 </body>
 </html>

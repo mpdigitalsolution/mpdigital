@@ -4,6 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Me - Marlon Palomares</title>
+  <meta name="description" content="Social Media Strategist & Brand Builder - Marlon Palomares. Connect with me to elevate your brand's social media presence.">
+  <meta name="keywords" content="Social Media, Digital Marketing, Lead Generation, Marlon Palomares, Brand Builder">
+  <meta name="author" content="Marlon Palomares">
+  
+  <!-- Schema Markup for structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Marlon Palomares",
+    "url": "https://example.com/",
+    "sameAs": [
+      "https://www.facebook.com/marlon.palomares.2024/",
+      "https://www.linkedin.com/in/mpdigital/",
+      "https://www.instagram.com/palomares523/",
+      "https://x.com/home"
+    ],
+    "jobTitle": "Social Media Strategist & Brand Builder"
+  }
+  </script>
   
   <link rel="stylesheet" href="css/style.css">
   
@@ -74,6 +94,7 @@
       max-width: 1200px;
       margin: 0 auto;
       padding: 15px 0;
+      position: relative;
     }
     
     .logo {
@@ -559,8 +580,11 @@
         display: none;
       }
       
+      /* Centering the navigation menu on desktop */
       .nav-menu {
-        position: static;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
         width: auto;
         height: auto;
         background: transparent;
@@ -572,6 +596,7 @@
       .nav-menu ul {
         display: flex;
         align-items: center;
+        justify-content: center;
       }
       
       .nav-menu ul li {
@@ -668,7 +693,7 @@
       <div class="about-content">
         <!-- Profile Picture with Enhanced Overlay and Badges -->
         <div class="profile-container animate-fade-up">
-          <img src="images/home.png" alt="Home Image" class="profile-image">
+          <img src="images/home.png" alt="Profile image of Marlon Palomares" class="profile-image" loading="lazy">
           <div class="profile-overlay">
             <div class="overlay-text">Expert in Leads</div>
             <div class="overlay-subtext">Digital Marketing Expert</div>

@@ -4,6 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Hobbies - Marlon Palomares</title>
+  <meta name="description" content="Discover the hobbies and passions of Marlon Palomares, a Social Media Strategist & Brand Builder. Explore travel, fitness, music, reading and more.">
+  <meta name="keywords" content="Hobbies, Marlon Palomares, Travel, Exercise, Music, Reading, Social Media, Brand Builder">
+  <meta name="author" content="Marlon Palomares">
+
+  <!-- Schema Markup for Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Marlon Palomares",
+    "url": "https://example.com/",
+    "sameAs": [
+      "https://www.facebook.com/marlon.palomares.2024/",
+      "https://www.instagram.com/palomares523/",
+      "https://x.com/home",
+      "https://www.linkedin.com/in/mpdigital/"
+    ],
+    "jobTitle": "Social Media Strategist & Brand Builder",
+    "hobbies": [
+      "Traveling", 
+      "Exercise", 
+      "Playing Music", 
+      "Reading Books"
+    ]
+  }
+  </script>
+
   <style>
     :root {
       --primary-color: #4a6bff;
@@ -13,6 +40,22 @@
       --border-radius: 8px;
       --box-shadow: 0 4px 15px rgba(0,0,0,0.1);
       --transition: all 0.3s ease;
+    }
+    
+    /* Skip Link for Accessibility */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--primary-color);
+      color: white;
+      padding: 8px 15px;
+      z-index: 10000;
+      transition: top 0.3s ease;
+    }
+    
+    .skip-link:focus {
+      top: 0;
     }
     
     * {
@@ -93,6 +136,12 @@
       border-radius: var(--border-radius);
       transition: var(--transition);
       position: relative;
+    }
+    
+    /* Focus state for accessibility */
+    nav ul li a:focus {
+      outline: 2px dashed var(--primary-color);
+      outline-offset: 4px;
     }
     
     nav ul li a:hover {
@@ -407,6 +456,9 @@
   </style>
 </head>
 <body>
+  <!-- Skip to Content Link for Accessibility -->
+  <a class="skip-link" href="#mainContent">Skip to Content</a>
+
   <!-- Header with Navigation -->
   <header>
     <div class="headline-banner">🚀 Elevate Your Brand's Social Media Presence Today!</div>
@@ -423,7 +475,7 @@
   </header>
   
   <!-- Main Content -->
-  <main>
+  <main id="mainContent">
     <section class="hobbies">
       <div class="section-headline">🌟 Beyond Social Media: What Makes Me Tick</div>
       <h2>My Hobbies & Passions</h2>
