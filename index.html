@@ -203,16 +203,7 @@
       flex-wrap: wrap;
     }
     
-    .overlay-text {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 20px;
-      border: 2px solid #ccc;
-      border-radius: 10px;
-      color: white;
-      max-width: 100%;
-      margin-bottom: 20px;
-    }
-    
+    /* Engaging Hero Text Styling */
     .hero-text {
       flex: 1;
       max-width: 600px;
@@ -223,17 +214,35 @@
       font-weight: bold;
       margin-bottom: 20px;
       line-height: 1.2;
+      /* Apply a vibrant gradient text effect */
+      background: linear-gradient(45deg, #ff6b6b, #f06595);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     
     .hero-subtitle {
       font-size: 20px;
       margin-bottom: 30px;
       line-height: 1.6;
+      color: #fff;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
     }
     
     .hero-cta a {
       margin: 0 10px;
       text-align: center;
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-weight: bold;
+      color: white;
+      background: linear-gradient(45deg, #ff6b6b, #f06595);
+      transition: background 0.3s ease;
+      text-decoration: none;
+    }
+    
+    .hero-cta a:hover {
+      background: linear-gradient(45deg, #f06595, #ff6b6b);
     }
     
     .hero-image {
@@ -252,7 +261,7 @@
       border-radius: 20px;
       overflow: hidden;
       border: 8px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
       transform: rotate(-3deg);
       transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
@@ -318,7 +327,7 @@
       background: white;
       border-radius: 15px;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       transition: all 0.3s ease;
       text-align: center;
       position: relative;
@@ -326,7 +335,7 @@
     
     .service-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
     }
     
     .service-icon {
