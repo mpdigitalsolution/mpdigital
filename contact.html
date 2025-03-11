@@ -609,8 +609,7 @@
           <!-- Google Maps Embed -->
           <div class="map-container">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.9999999999995!2d121.005!3d14.123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c8a24f9a5c1f%3A0xabcdef1234567890!2sSitio+Bayan-Bayanan%2C+Brgy+San+Vicente%2C+San+Pedro%2C+Laguna!5e0!3m2!1sen!2sph!4v1600000000000" 
-              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
+              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
         
@@ -691,26 +690,21 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script>
-    // Initialize EmailJS with provided public key
+    // Initialize EmailJS with your public key (ensure this key is correct)
     emailjs.init("efRrbEvsWA8_PG5Z0");
     
-    // Form submission handling using EmailJS
+    // Handle form submission using emailjs.sendForm
     document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault();
+      
+      // Show spinner and disable the submit button
       document.getElementById('spinner').style.display = 'block';
       document.getElementById('submitBtn').disabled = true;
       
-      const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        company: document.getElementById('company').value,
-        service: document.getElementById('service').value,
-        message: document.getElementById('message').value,
-        to_email: "mpalomaresdigitalsolution@gmail.com"
-      };
-      
-      emailjs.send('service_tnsgf4p', 'template_ak7vrx4', formData)
+      // Use sendForm to automatically send all the form data
+      emailjs.sendForm('service_tnsgf4p', 'template_ak7vrx4', this)
         .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
           document.getElementById('spinner').style.display = 'none';
           document.getElementById('submitBtn').disabled = false;
           document.getElementById('formSuccess').style.display = 'block';
@@ -719,6 +713,7 @@
             document.getElementById('formSuccess').style.display = 'none';
           }, 5000);
         }, function(error) {
+          console.log('FAILED...', error);
           document.getElementById('spinner').style.display = 'none';
           document.getElementById('submitBtn').disabled = false;
           document.getElementById('formError').style.display = 'block';
@@ -728,7 +723,7 @@
         });
     });
     
-    // Optional notification function for additional feedback
+    // Optional: function to show notifications
     function showNotification(message) {
       const notification = document.getElementById('notification');
       notification.textContent = message;
