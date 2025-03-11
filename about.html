@@ -8,7 +8,7 @@
   <meta name="keywords" content="Social Media, Digital Marketing, Lead Generation, Marlon Palomares, Brand Builder">
   <meta name="author" content="Marlon Palomares">
   
-  <!-- Schema Markup for structured data -->
+  <!-- Schema Markup for Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -25,27 +25,39 @@
   }
   </script>
   
+  <!-- External CSS and Font Awesome -->
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <style>
-    /* Global Reset and Base Styles */
+    :root {
+      --primary-color: #3498db;
+      --secondary-color: #9b59b6;
+      --dark-color: #2c3e50;
+      --light-color: #f9fafb;
+      --border-radius: 30px;
+      --transition: all 0.3s ease;
+    }
+    
+    /* Global Reset */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+    
     body {
       font-family: 'Poppins', sans-serif;
       line-height: 1.6;
       color: #333;
-      background-color: #f9fafb;
+      background-color: var(--light-color);
       overflow-x: hidden;
       text-align: center;
     }
     
-    /* Headline Banner with Shimmer Effect */
+    /* Headline Banner */
     .headline-banner {
-      background: linear-gradient(135deg, #3498db, #9b59b6);
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
       color: white;
       padding: 12px;
       font-weight: 600;
@@ -61,7 +73,7 @@
       left: -100%;
       width: 50%;
       height: 100%;
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(255,255,255,0.2);
       transform: skewX(-25deg);
       animation: shimmer 3s infinite;
     }
@@ -69,37 +81,34 @@
       100% { left: 150%; }
     }
     
-    /* Header and Navigation */
+    /* Header & Navigation */
     header {
-      background-color: white;
+      background: white;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
       position: sticky;
       top: 0;
       z-index: 1000;
     }
-    nav {
-      position: relative;
-      padding: 0 20px;
-    }
     .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 15px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 15px 0;
       position: relative;
     }
-    /* Logo: Only the icon remains (text removed) */
+    
+    /* Logo (icon only) */
     .logo {
       display: flex;
       align-items: center;
       font-size: 22px;
-      color: #2c3e50;
+      color: var(--dark-color);
       text-decoration: none;
     }
     .logo-icon {
-      color: #3498db;
+      color: var(--primary-color);
     }
     
     /* Mobile Menu Toggle */
@@ -108,13 +117,13 @@
       font-size: 24px;
       background: none;
       border: none;
-      color: #2c3e50;
+      color: var(--dark-color);
       cursor: pointer;
       z-index: 1001;
-      transition: color 0.3s ease;
+      transition: var(--transition);
     }
     .menu-toggle:hover {
-      color: #3498db;
+      color: var(--primary-color);
     }
     
     /* Mobile Navigation */
@@ -125,7 +134,7 @@
       width: 80%;
       max-width: 300px;
       height: 100vh;
-      background: #2c3e50;
+      background: var(--dark-color);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -139,23 +148,24 @@
     }
     .nav-menu ul {
       list-style: none;
+      text-align: center;
+      width: 100%;
       padding: 0;
       margin: 0;
-      width: 100%;
-      text-align: center;
     }
     .nav-menu ul li {
       margin: 20px 0;
       opacity: 0;
       transform: translateY(20px);
-      transition: all 0.4s ease;
+      transition: var(--transition);
       transition-delay: calc(0.1s * var(--i));
     }
     .nav-menu.active ul li {
       opacity: 1;
       transform: translateY(0);
     }
-    /* Navigation Links – Enhanced Design */
+    
+    /* Enhanced Navigation Links */
     .nav-menu ul li a {
       display: inline-flex;
       align-items: center;
@@ -163,38 +173,59 @@
       font-size: 18px;
       font-weight: 500;
       padding: 8px 15px;
-      border-radius: 30px;
-      transition: all 0.3s ease;
-      position: relative;
+      border-radius: var(--border-radius);
       border: 1px solid transparent;
+      position: relative;
+      transition: var(--transition);
       color: white;
       overflow: hidden;
     }
     .nav-menu ul li a::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       background: rgba(52,152,219,0.2);
+      border-radius: var(--border-radius);
       opacity: 0;
-      transition: opacity 0.3s ease;
-      border-radius: 30px;
+      transition: var(--transition);
       z-index: -1;
     }
     .nav-menu ul li a:hover {
-      border-color: #3498db;
+      border-color: var(--primary-color);
+      color: var(--primary-color);
     }
     .nav-menu ul li a:hover::before {
       opacity: 1;
     }
-    /* Icon styling for navigation links */
-    .nav-icon {
-      margin-right: 5px;
+    .nav-menu ul li a::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--primary-color);
+      transform: translateX(-50%);
+      transition: width 0.3s ease;
+    }
+    .nav-menu ul li a:hover::after {
+      width: 70%;
+    }
+    .nav-menu ul li a:focus {
+      outline: 2px dashed var(--primary-color);
+      outline-offset: 4px;
     }
     
-    /* Center Navigation for Desktop */
+    /* Navigation Icons */
+    .nav-icon {
+      margin-right: 5px;
+      font-size: 16px;
+    }
+    
+    /* Desktop Navigation */
     @media (min-width: 768px) {
       .menu-toggle { display: none; }
       .nav-menu {
@@ -221,12 +252,12 @@
         transition: none;
       }
       .nav-menu ul li a {
-        color: #2c3e50;
+        color: var(--dark-color);
         font-size: 15px;
         padding: 8px 12px;
       }
       .nav-menu ul li a:hover {
-        background-color: rgba(52, 152, 219, 0.1);
+        background-color: rgba(52,152,219,0.1);
       }
       .nav-menu ul li a::before {
         background: rgba(52,152,219,0.1);
@@ -239,101 +270,70 @@
       }
     }
     
-    /* Hero Section */
-    .hero {
-      position: relative;
-      height: 80vh;
-      min-height: 600px;
-      background: linear-gradient(135deg, #2c3e50, #3498db);
-      color: white;
-      overflow: hidden;
+    /* Social Media Links - More Visible */
+    .social-links {
+      margin: 20px 0;
       display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    .social-links a {
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-    }
-    .hero:after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 100px;
-      background: linear-gradient(to top, white, transparent);
-    }
-    .hero-content {
-      position: relative;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-      z-index: 2;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    /* Engaging Hero Text Styling */
-    .hero-text {
-      flex: 1;
-      max-width: 600px;
-    }
-    .hero-title {
-      font-size: 48px;
-      font-weight: bold;
-      margin-bottom: 20px;
-      line-height: 1.2;
-      background: linear-gradient(45deg, #ff6b6b, #f06595);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .hero-subtitle {
-      font-size: 20px;
-      margin-bottom: 30px;
-      line-height: 1.6;
-      color: #fff;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
-    }
-    .hero-cta a {
-      margin: 0 10px;
-      text-align: center;
-      display: inline-block;
-      padding: 12px 24px;
-      border-radius: 30px;
-      font-weight: bold;
+      width: 60px;
+      height: 60px;
+      background: var(--primary-color);
+      border: 2px solid var(--primary-color);
+      border-radius: 50%;
       color: white;
-      background: linear-gradient(45deg, #ff6b6b, #f06595);
-      transition: background 0.3s ease;
+      font-size: 2rem;
+      transition: var(--transition);
       text-decoration: none;
     }
-    .hero-cta a:hover {
-      background: linear-gradient(45deg, #f06595, #ff6b6b);
+    .social-links a:hover {
+      background: var(--secondary-color);
+      border-color: var(--secondary-color);
+      transform: translateY(-5px);
     }
-    .hero-image {
-      flex: 1;
-      max-width: 500px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 20px;
+    
+    /* Main Content */
+    main {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+      text-align: center;
     }
-    .profile-display {
+    .about-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .headline {
+      font-size: 28px;
+      font-weight: bold;
+      color: var(--dark-color);
+      margin-bottom: 25px;
       position: relative;
-      width: 320px;
-      height: 320px;
-      border-radius: 20px;
-      overflow: hidden;
-      border: 8px solid rgba(255,255,255,0.2);
-      box-shadow: 0 30px 60px rgba(0,0,0,0.3);
-      transform: rotate(-3deg);
-      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      padding-bottom: 15px;
+      letter-spacing: 0.5px;
+      text-align: center;
     }
-    .profile-display:hover {
-      transform: rotate(0deg) scale(1.05);
+    .headline:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 5px;
+      background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+      border-radius: 3px;
     }
-    .profile-display img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      loading: lazy;
+    .about-content p {
+      margin-bottom: 20px;
+      color: #555;
+      font-size: 16px;
     }
     
     /* Expertise Accordion */
@@ -354,7 +354,7 @@
     .accordion-header {
       font-size: 16px;
       font-weight: 600;
-      color: #2c3e50;
+      color: var(--dark-color);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -378,194 +378,29 @@
       transform: rotate(180deg);
     }
     
-    /* About Content */
-    .about-content {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    .headline {
-      font-size: 28px;
-      font-weight: bold;
-      color: #2c3e50;
-      margin-bottom: 25px;
-      position: relative;
-      padding-bottom: 15px;
-      letter-spacing: 0.5px;
-      text-align: center;
-    }
-    .headline:after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 120px;
-      height: 5px;
-      background: linear-gradient(to right, #3498db, #9b59b6, #e74c3c);
-      border-radius: 3px;
-    }
-    .about-content p {
-      margin-bottom: 20px;
-      color: #555;
-      font-size: 16px;
-    }
-    
-    /* CTA Section */
-    .cta-section {
-      padding: 80px 20px;
-      background: linear-gradient(135deg, #3498db, #9b59b6);
-      color: white;
-      text-align: center;
-    }
-    .cta-container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    .cta-title {
-      font-size: 36px;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-    .cta-text {
-      font-size: 18px;
-      margin-bottom: 40px;
-      opacity: 0.9;
-    }
-    .cta-primary {
-      margin: 0 10px;
-      text-align: center;
+    /* CTA Button */
+    .cta-button {
       display: inline-block;
+      background: var(--primary-color);
+      color: white;
       padding: 12px 24px;
-      border-radius: 30px;
+      border-radius: var(--border-radius);
       font-weight: bold;
-      color: white;
-      background: linear-gradient(45deg, #ff6b6b, #f06595);
-      transition: background 0.3s ease;
       text-decoration: none;
+      transition: var(--transition);
+      margin-top: 20px;
     }
-    .cta-primary:hover {
-      background: linear-gradient(45deg, #f06595, #ff6b6b);
-    }
-    
-    /* Floating Message Button & Modal */
-    .floating-message-btn {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      width: 60px;
-      height: 60px;
-      background: linear-gradient(135deg, #3498db, #2980b9);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 24px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-      cursor: pointer;
-      z-index: 100;
-      transition: all 0.3s ease;
-    }
-    .floating-message-btn:hover {
-      transform: scale(1.1);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    }
-    .message-modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.7);
-      z-index: 1000;
-      justify-content: center;
-      align-items: center;
-    }
-    .message-modal.active {
-      display: flex;
-    }
-    .message-form-container {
-      background-color: white;
-      border-radius: 15px;
-      padding: 30px;
-      width: 90%;
-      max-width: 500px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-      position: relative;
-    }
-    .close-modal {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      font-size: 24px;
-      color: #7f8c8d;
-      cursor: pointer;
-      transition: color 0.3s ease;
-    }
-    .close-modal:hover {
-      color: #e74c3c;
-    }
-    .message-form h3 {
-      margin-bottom: 20px;
-      color: #2c3e50;
-      font-size: 24px;
-    }
-    .form-group {
-      margin-bottom: 20px;
-    }
-    .form-group label {
-      display: block;
-      margin-bottom: 8px;
-      color: #2c3e50;
-      font-weight: bold;
-    }
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      padding: 12px;
-      border-radius: 8px;
-      border: 1px solid #ddd;
-      font-size: 16px;
-      transition: border 0.3s ease;
-    }
-    .form-group input:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: #3498db;
-    }
-    .form-group textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-    .send-message-btn {
-      background: linear-gradient(to right, #3498db, #2980b9);
-      color: white;
-      border: none;
-      padding: 14px 28px;
-      border-radius: 50px;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    .send-message-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(52,152,219,0.3);
+    .cta-button:hover {
+      background: var(--secondary-color);
     }
     
-    /* Footer Styling */
+    /* Footer */
     footer {
-      background-color: #2c3e50;
+      background: var(--dark-color);
       color: white;
       text-align: center;
       padding: 30px 20px;
       margin-top: 60px;
-    }
-    footer p {
-      margin-bottom: 15px;
     }
     .footer-links {
       display: flex;
@@ -577,67 +412,37 @@
     .footer-link {
       color: #a3c1e0;
       text-decoration: none;
-      transition: all 0.3s ease;
+      transition: var(--transition);
     }
     .footer-link:hover {
-      color: #3498db;
-    }
-    .social-icons {
-      margin: 10px 0;
-    }
-    .social-icons a {
-      margin: 0 10px;
-      font-size: 1.5rem;
-      color: white;
-      text-decoration: none;
-      border: 2px solid white;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-    }
-    .social-icons a:hover {
-      background: #3498db;
-      border-color: #3498db;
-      color: white;
+      color: var(--primary-color);
     }
     
-    /* Animations for Page Content */
+    /* Animations */
     .animate-fade-up {
       opacity: 0;
       transform: translateY(30px);
-      transition: all 0.8s ease-out;
+      transition: var(--transition);
     }
     .animate-fade-up.active {
       opacity: 1;
       transform: translateY(0);
     }
     
-    /* Responsive Typography and Layout Adjustments */
-    @media (min-width: 768px) {
-      .headline-banner {
-        font-size: 16px;
-        padding: 14px;
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: center;
       }
-      .profile-container {
-        width: 320px;
-        height: 320px;
+      nav ul li {
+        margin: 5px 0;
       }
       .headline {
-        font-size: 32px;
+        font-size: 24px;
       }
-      .expertise-item {
-        font-size: 16px;
-        padding: 12px 22px;
-      }
-    }
-    @media (min-width: 992px) {
-      .nav-menu ul li a {
-        font-size: 16px;
-        padding: 10px 15px;
+      .expertise-accordion {
+        text-align: center;
       }
     }
   </style>
@@ -648,7 +453,7 @@
     <div class="headline-banner">🚀 Elevate Your Brand's Social Media Presence Today!</div>
     <nav>
       <div class="nav-container">
-        <!-- Logo: Only the icon remains -->
+        <!-- Logo (icon only) -->
         <a href="index.html" class="logo">
           <i class="fas fa-hashtag logo-icon"></i>
         </a>
@@ -657,12 +462,36 @@
         </button>
         <div class="nav-menu" id="navMenu">
           <ul>
-            <li style="--i:1"><a href="index.html"><i class="fas fa-home nav-icon"></i> Home</a></li>
-            <li style="--i:2"><a href="about.html"><i class="fas fa-user nav-icon"></i> About Me</a></li>
-            <li style="--i:3"><a href="hobbies.html"><i class="fas fa-heart nav-icon"></i> My Hobbies</a></li>
-            <li style="--i:4"><a href="services.html"><i class="fas fa-cogs nav-icon"></i> My Services</a></li>
-            <li style="--i:5"><a href="tools.html"><i class="fas fa-wrench nav-icon"></i> Tools I Use</a></li>
-            <li style="--i:6"><a href="contact.html"><i class="fas fa-envelope nav-icon"></i> Get In Touch</a></li>
+            <li style="--i:1">
+              <a href="index.html">
+                <i class="fa-solid fa-house nav-icon"></i> Home
+              </a>
+            </li>
+            <li style="--i:2">
+              <a href="about.html">
+                <i class="fa-solid fa-user nav-icon"></i> About Me
+              </a>
+            </li>
+            <li style="--i:3">
+              <a href="hobbies.html">
+                <i class="fa-solid fa-heart nav-icon"></i> My Hobbies
+              </a>
+            </li>
+            <li style="--i:4">
+              <a href="services.html">
+                <i class="fa-solid fa-cogs nav-icon"></i> My Services
+              </a>
+            </li>
+            <li style="--i:5">
+              <a href="tools.html">
+                <i class="fa-solid fa-wrench nav-icon"></i> Tools I Use
+              </a>
+            </li>
+            <li style="--i:6">
+              <a href="contact.html">
+                <i class="fa-solid fa-envelope nav-icon"></i> Get In Touch
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -689,7 +518,7 @@
           </div>
         </div>
         <div class="headline animate-fade-up">Social Media Strategist &amp; Brand Builder</div>
-        <!-- Social Media Links -->
+        <!-- Social Media Links (Enhanced and More Visible) -->
         <div class="social-links animate-fade-up">
           <a href="https://www.facebook.com/marlon.palomares.2024/" class="social-link facebook" target="_blank" aria-label="Facebook profile">
             <i class="fab fa-facebook-f"></i>
@@ -747,7 +576,9 @@
         <p class="animate-fade-up">
           I specialize in developing and implementing comprehensive social media strategies that align with business objectives—from increasing brand awareness to driving conversions. My expertise spans across multiple platforms including Instagram, Facebook, Twitter, and LinkedIn.
         </p>
-        <a href="https://calendly.com/marlon-palomares02/30min" class="cta-button animate-fade-up">Let's Grow Your Brand <i class="fas fa-rocket"></i></a>
+        <a href="https://calendly.com/marlon-palomares02/30min" class="cta-button animate-fade-up">
+          Let's Grow Your Brand <i class="fas fa-rocket"></i>
+        </a>
       </div>
     </section>
   </main>
@@ -804,6 +635,7 @@
           }
         });
       }, { threshold: 0.1 });
+      
       animatedElements.forEach(element => observer.observe(element));
       
       // Accordion functionality for expertise section
