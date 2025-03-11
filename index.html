@@ -88,10 +88,10 @@
       position: relative;
     }
     
-    /* Centering the navigation links using Flexbox */
+    /* Centering navigation links using Flexbox with enhanced design */
     nav ul {
       display: flex;
-      justify-content: center; /* Center links horizontally */
+      justify-content: center;
       align-items: center;
       list-style: none;
       padding: 20px 0;
@@ -102,36 +102,48 @@
       margin: 0 15px;
     }
     
+    /* Enhanced Navigation Links */
     nav ul li a {
+      display: inline-flex;
+      align-items: center;
       color: white;
       text-decoration: none;
-      transition: color 0.3s ease;
+      padding: 8px 15px;
+      border-radius: 30px;
+      border: 1px solid transparent;
       position: relative;
+      transition: all 0.3s ease;
+    }
+    /* Overlay effect using a pseudo-element */
+    nav ul li a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(52, 152, 219, 0.2);
+      opacity: 0;
+      border-radius: 30px;
+      z-index: -1;
+      transition: opacity 0.3s ease;
+    }
+    nav ul li a:hover {
+      border-color: #3498db;
+    }
+    nav ul li a:hover::before {
+      opacity: 1;
+    }
+    /* Icon styling for navigation links */
+    .nav-icon {
+      margin-right: 5px;
+      font-size: 16px;
     }
     
     /* Focus style for keyboard navigability */
     nav ul li a:focus {
       outline: 2px dashed #3498db;
       outline-offset: 4px;
-    }
-    
-    nav ul li a:hover {
-      color: #3498db;
-    }
-    
-    nav ul li a:after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: 0;
-      left: 0;
-      background-color: #3498db;
-      transition: width 0.3s ease;
-    }
-    
-    nav ul li a:hover:after {
-      width: 100%;
     }
     
     /* Mobile Navigation */
@@ -214,7 +226,6 @@
       font-weight: bold;
       margin-bottom: 20px;
       line-height: 1.2;
-      /* Apply a vibrant gradient text effect */
       background: linear-gradient(45deg, #ff6b6b, #f06595);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -275,10 +286,6 @@
       height: 100%;
       object-fit: cover;
       loading: lazy;
-    }
-    
-    .cta-primary, .cta-secondary {
-      text-align: center;
     }
     
     /* Services Section */
@@ -605,12 +612,36 @@
         </button>
         <div class="nav-menu" id="navMenu">
           <ul>
-            <li style="--i:1"><a href="index.html">Home</a></li>
-            <li style="--i:2"><a href="about.html">About Me</a></li>
-            <li style="--i:3"><a href="hobbies.html">My Hobbies</a></li>
-            <li style="--i:4"><a href="services.html">My Services</a></li>
-            <li style="--i:5"><a href="tools.html">Tools I Use</a></li>
-            <li style="--i:6"><a href="contact.html">Get In Touch</a></li>
+            <li style="--i:1">
+              <a href="index.html">
+                <i class="fas fa-home nav-icon"></i> Home
+              </a>
+            </li>
+            <li style="--i:2">
+              <a href="about.html">
+                <i class="fas fa-user nav-icon"></i> About Me
+              </a>
+            </li>
+            <li style="--i:3">
+              <a href="hobbies.html">
+                <i class="fas fa-heart nav-icon"></i> My Hobbies
+              </a>
+            </li>
+            <li style="--i:4">
+              <a href="services.html">
+                <i class="fas fa-cogs nav-icon"></i> My Services
+              </a>
+            </li>
+            <li style="--i:5">
+              <a href="tools.html">
+                <i class="fas fa-wrench nav-icon"></i> Tools I Use
+              </a>
+            </li>
+            <li style="--i:6">
+              <a href="contact.html">
+                <i class="fas fa-envelope nav-icon"></i> Get In Touch
+              </a>
+            </li>
           </ul>
         </div>
       </div>

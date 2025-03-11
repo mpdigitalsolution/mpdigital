@@ -60,12 +60,12 @@
       padding: 15px;
     }
     
+    /* Enhanced Navigation Links */
     nav ul {
       display: flex;
       justify-content: center;
       list-style: none;
       flex-wrap: wrap;
-      /* Ensure the links are centered */
       text-align: center;
     }
     
@@ -74,17 +74,46 @@
     }
     
     nav ul li a {
+      display: inline-flex;
+      align-items: center;
       text-decoration: none;
       color: var(--dark-color);
       font-weight: 600;
       padding: 8px 15px;
       border-radius: 25px;
-      transition: all 0.3s ease;
+      border: 1px solid transparent;
       position: relative;
+      transition: all 0.3s ease;
+    }
+    
+    /* Navigation Icons */
+    .nav-icon {
+      margin-right: 5px;
+      font-size: 1rem;
+    }
+    
+    /* Overlay effect using pseudo-element */
+    nav ul li a::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(74,107,255,0.2);
+      border-radius: 25px;
+      opacity: 0;
+      transition: all 0.3s ease;
+      z-index: -1;
     }
     
     nav ul li a:hover {
       color: var(--primary-color);
+      border-color: var(--primary-color);
+    }
+    
+    nav ul li a:hover::before {
+      opacity: 1;
     }
     
     nav ul li a::after {
@@ -298,22 +327,6 @@
     .cta-button i {
       margin-right: 8px;
     }
-    
-    /* Responsive Styles */
-    @media (max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-        align-items: center;
-      }
-      
-      nav ul li {
-        margin: 5px 0;
-      }
-      
-      .portfolio-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      }
-    }
   </style>
 </head>
 <body>
@@ -322,12 +335,36 @@
     <div class="headline-banner">🚀 Elevate Your Brand's Social Media Presence Today!</div>
     <nav>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Me</a></li>
-        <li><a href="hobbies.html">My Hobbies</a></li>
-        <li><a href="services.html">My Services</a></li>
-        <li><a href="tools.html">Tools I Use</a></li>
-        <li><a href="contact.html">Get In Touch</a></li>
+        <li>
+          <a href="index.html">
+            <i class="fa-solid fa-house nav-icon"></i> Home
+          </a>
+        </li>
+        <li>
+          <a href="about.html">
+            <i class="fa-solid fa-user nav-icon"></i> About Me
+          </a>
+        </li>
+        <li>
+          <a href="hobbies.html">
+            <i class="fa-solid fa-heart nav-icon"></i> My Hobbies
+          </a>
+        </li>
+        <li>
+          <a href="services.html">
+            <i class="fa-solid fa-cogs nav-icon"></i> My Services
+          </a>
+        </li>
+        <li>
+          <a href="tools.html">
+            <i class="fa-solid fa-toolbox nav-icon"></i> Tools I Use
+          </a>
+        </li>
+        <li>
+          <a href="contact.html">
+            <i class="fa-solid fa-envelope nav-icon"></i> Get In Touch
+          </a>
+        </li>
       </ul>
     </nav>
   </header>
@@ -338,6 +375,7 @@
       <div class="section-headline">⚒️ Professional Tools for Maximum Impact</div>
       <h2>Tools I Use</h2>
       <div class="portfolio-grid">
+        <!-- Portfolio Item: Mailchimp -->
         <div class="portfolio-item">
           <div class="portfolio-cta">Optimize Your Email Marketing</div>
           <img src="images/mailchimp.png" alt="Mailchimp">
@@ -346,6 +384,7 @@
             <p>Email marketing automation platform for creating targeted campaigns and analyzing audience engagement.</p>
           </div>
         </div>
+        <!-- Portfolio Item: Canva -->
         <div class="portfolio-item">
           <div class="portfolio-cta">Create Eye-Catching Content</div>
           <img src="images/canva.png" alt="Canva">
@@ -354,6 +393,7 @@
             <p>Design platform for creating stunning social media graphics, presentations, and visual content.</p>
           </div>
         </div>
+        <!-- Portfolio Item: CapCut -->
         <div class="portfolio-item">
           <div class="portfolio-cta">Produce Viral-Worthy Videos</div>
           <img src="images/capcut.png" alt="CapCut">
@@ -362,6 +402,7 @@
             <p>Video editing software for creating engaging social media videos with professional effects and transitions.</p>
           </div>
         </div>
+        <!-- Portfolio Item: Calendly -->
         <div class="portfolio-item">
           <a href="https://calendly.com/marlon-palomares02/30min" class="portfolio-cta">Book Now</a>
           <img src="images/calendly.png" alt="Calendly">
@@ -370,6 +411,7 @@
             <p>Scheduling tool to efficiently manage client meetings and content planning sessions.</p>
           </div>
         </div>
+        <!-- Portfolio Item: ChatGPT -->
         <div class="portfolio-item">
           <div class="portfolio-cta">Generate Engaging Content</div>
           <img src="images/chatgpt.png" alt="ChatGPT">
@@ -378,6 +420,7 @@
             <p>AI assistant for content ideation, copywriting assistance, and creating engaging social captions.</p>
           </div>
         </div>
+        <!-- Portfolio Item: Google Sheets -->
         <div class="portfolio-item">
           <div class="portfolio-cta">Track Your Performance</div>
           <img src="images/docs.jpeg" alt="Google Sheets">
@@ -386,6 +429,7 @@
             <p>Spreadsheet tool for tracking campaign metrics, content calendars, and ROI analysis.</p>
           </div>
         </div>
+        <!-- Portfolio Item: Google Docs -->
         <div class="portfolio-item">
           <div class="portfolio-cta">Outline Winning Strategies</div>
           <img src="images/Sheet.jpeg" alt="Google Docs">
@@ -394,12 +438,22 @@
             <p>Collaborative document editor for content strategy planning and client proposals.</p>
           </div>
         </div>
+        <!-- Portfolio Item: Google Forms -->
         <div class="portfolio-item">
           <div class="portfolio-cta">Gather Audience Insights</div>
           <img src="images/forms.png" alt="Google Forms">
           <div class="portfolio-overlay">
             <h3><i class="fa-solid fa-poll"></i> Google Forms</h3>
             <p>Survey tool for collecting audience feedback and conducting social media audits.</p>
+          </div>
+        </div>
+        <!-- Portfolio Item: Metricool (Added) -->
+        <div class="portfolio-item">
+          <div class="portfolio-cta">Analyze Your Metrics</div>
+          <img src="images/metricool.jpeg" alt="Metricool">
+          <div class="portfolio-overlay">
+            <h3><i class="fa-solid fa-chart-line"></i> Metricool</h3>
+            <p>Advanced social media analytics and scheduling tool to monitor performance and optimize your strategy.</p>
           </div>
         </div>
       </div>

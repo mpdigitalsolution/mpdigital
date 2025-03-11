@@ -3,11 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy</title>
-  
+  <title>Privacy Policy - Marlon Palomares</title>
   <link rel="stylesheet" href="css/style.css">
-  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    :root {
+      --primary-color: #3498db;
+      --secondary-color: #9b59b6;
+      --dark-color: #2c3e50;
+      --light-color: #f9fafb;
+      --border-radius: 25px;
+      --transition: all 0.3s ease;
+    }
+    
     /* Global Reset and Base Styles */
     * {
       margin: 0;
@@ -19,13 +27,13 @@
       font-family: 'Poppins', sans-serif;
       line-height: 1.6;
       color: #333;
-      background-color: #f9fafb;
+      background-color: var(--light-color);
       overflow-x: hidden;
     }
     
-    /* Header and Navigation Styles - Mobile First Approach */
+    /* Header and Navigation */
     .headline-banner {
-      background: linear-gradient(135deg, #3498db, #9b59b6);
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
       color: white;
       text-align: center;
       padding: 12px;
@@ -43,26 +51,23 @@
       left: -100%;
       width: 50%;
       height: 100%;
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(255,255,255,0.2);
       transform: skewX(-25deg);
       animation: shimmer 3s infinite;
     }
     
     @keyframes shimmer {
-      100% {
-        left: 150%;
-      }
+      100% { left: 150%; }
     }
     
     header {
       background-color: white;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
       position: sticky;
       top: 0;
       z-index: 1000;
     }
     
-    /* Make nav-container relative so absolute children align properly */
     .nav-container {
       position: relative;
       display: flex;
@@ -79,14 +84,14 @@
       font-size: 24px;
       background: none;
       border: none;
-      color: #2c3e50;
+      color: var(--dark-color);
       cursor: pointer;
       z-index: 1001;
-      transition: all 0.3s ease;
+      transition: var(--transition);
     }
     
     .menu-toggle:hover {
-      color: #3498db;
+      color: var(--primary-color);
     }
     
     /* Mobile Navigation */
@@ -97,13 +102,13 @@
       width: 80%;
       max-width: 300px;
       height: 100vh;
-      background: #2c3e50;
+      background: var(--dark-color);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      transition: right 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-      box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+      transition: right 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+      box-shadow: -5px 0 15px rgba(0,0,0,0.1);
       z-index: 1000;
     }
     
@@ -115,13 +120,15 @@
       list-style: none;
       text-align: center;
       width: 100%;
+      margin: 0;
+      padding: 0;
     }
     
     .nav-menu ul li {
       margin: 20px 0;
       opacity: 0;
       transform: translateY(20px);
-      transition: all 0.4s ease;
+      transition: var(--transition);
       transition-delay: calc(0.1s * var(--i));
     }
     
@@ -130,72 +137,132 @@
       transform: translateY(0);
     }
     
-    .nav-menu ul li a {
-      display: inline-block;
-      color: white;
+    /* Enhanced Navigation Links with Icons, Overlay & Borders */
+    nav ul li a {
+      display: inline-flex;
+      align-items: center;
       text-decoration: none;
+      color: white;
       font-size: 18px;
       font-weight: 500;
       padding: 8px 15px;
-      border-radius: 30px;
-      transition: all 0.3s ease;
+      border-radius: var(--border-radius);
+      border: 1px solid transparent;
       position: relative;
+      transition: var(--transition);
       text-align: center;
     }
     
-    .nav-menu ul li a:before {
+    /* Navigation Icons */
+    .nav-icon {
+      margin-right: 5px;
+      font-size: 16px;
+    }
+    
+    /* Overlay effect using a pseudo-element */
+    nav ul li a::before {
       content: '';
       position: absolute;
-      bottom: 0;
-      left: 50%;
-      width: 0;
-      height: 2px;
-      background: #3498db;
-      transform: translateX(-50%);
-      transition: width 0.3s ease;
-    }
-    
-    .nav-menu ul li a:hover:before {
-      width: 70%;
-    }
-    
-    .nav-menu ul li a:hover {
-      background-color: rgba(52, 152, 219, 0.2);
-    }
-    
-    /* Overlay for mobile menu */
-    .overlay {
-      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
+      background: rgba(52,152,219,0.2);
+      border-radius: var(--border-radius);
       opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
-      z-index: 999;
+      transition: var(--transition);
+      z-index: -1;
     }
     
-    .overlay.active {
+    nav ul li a:hover {
+      border-color: var(--primary-color);
+      color: var(--primary-color);
+    }
+    
+    nav ul li a:hover::before {
       opacity: 1;
-      visibility: visible;
     }
     
-    /* Privacy Policy Specific Styles */
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: var(--primary-color);
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: width 0.3s ease;
+    }
+    
+    nav ul li a:hover::after {
+      width: 70%;
+    }
+    
+    nav ul li a:focus {
+      outline: 2px dashed var(--primary-color);
+      outline-offset: 4px;
+    }
+    
+    /* Responsive: Desktop Navigation */
+    @media (min-width: 768px) {
+      .menu-toggle { display: none; }
+      .nav-menu {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: auto;
+        height: auto;
+        background: transparent;
+        box-shadow: none;
+        transition: none;
+      }
+      .nav-menu ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .nav-menu ul li {
+        margin: 0 8px;
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+      nav ul li a {
+        color: var(--dark-color);
+        font-size: 15px;
+        padding: 8px 12px;
+      }
+      nav ul li a:hover {
+        background-color: rgba(52,152,219,0.1);
+      }
+    }
+    
+    @media (min-width: 992px) {
+      nav ul li a {
+        font-size: 16px;
+        padding: 10px 15px;
+      }
+      .nav-menu ul li {
+        margin: 0 8px;
+      }
+    }
+    
+    /* Privacy Policy Content Styles */
     .content-container {
       max-width: 800px;
       margin: 30px auto;
       padding: 30px;
       background-color: white;
       border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
     
     .page-title {
       font-size: 32px;
       font-weight: bold;
-      color: #2c3e50;
+      color: var(--dark-color);
       margin-bottom: 25px;
       position: relative;
       padding-bottom: 15px;
@@ -210,7 +277,7 @@
       transform: translateX(-50%);
       width: 120px;
       height: 5px;
-      background: linear-gradient(to right, #3498db, #9b59b6, #e74c3c);
+      background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
       border-radius: 3px;
     }
     
@@ -223,19 +290,22 @@
     
     .section-title {
       font-size: 22px;
-      color: #3498db;
+      color: var(--primary-color);
       margin: 25px 0 15px;
-      border-left: 4px solid #3498db;
+      border-left: 4px solid var(--primary-color);
       padding-left: 15px;
+      text-align: left;
     }
     
     .content-container p {
       margin-bottom: 20px;
       color: #555;
+      text-align: left;
     }
     
     .content-container ul {
       margin: 0 0 20px 20px;
+      text-align: left;
     }
     
     .content-container ul li {
@@ -244,7 +314,7 @@
     
     .highlight-box {
       background-color: #f8f9fa;
-      border-left: 4px solid #3498db;
+      border-left: 4px solid var(--primary-color);
       padding: 20px;
       margin: 30px 0;
       border-radius: 0 8px 8px 0;
@@ -254,9 +324,9 @@
       margin-bottom: 0;
     }
     
-    /* Footer Styling */
+    /* Footer Styles */
     footer {
-      background-color: #2c3e50;
+      background-color: var(--dark-color);
       color: white;
       text-align: center;
       padding: 30px 20px;
@@ -278,11 +348,11 @@
     .footer-link {
       color: #a3c1e0;
       text-decoration: none;
-      transition: all 0.3s ease;
+      transition: var(--transition);
     }
     
     .footer-link:hover {
-      color: #3498db;
+      color: var(--primary-color);
     }
     
     /* Animations for Page Content */
@@ -297,18 +367,17 @@
       transform: translateY(0);
     }
     
-    /* Media Queries for Responsive Design */
+    /* Responsive Design */
     @media (min-width: 768px) {
       .headline-banner {
         font-size: 16px;
         padding: 14px;
       }
       
-      .menu-toggle {
+      .menu-toggle { 
         display: none;
       }
       
-      /* Center the navigation links in desktop view */
       .nav-menu {
         position: absolute;
         left: 50%;
@@ -331,21 +400,22 @@
         margin: 0 8px;
         opacity: 1;
         transform: none;
+        transition: none;
       }
       
-      .nav-menu ul li a {
-        color: #2c3e50;
+      nav ul li a {
+        color: var(--dark-color);
         font-size: 15px;
         padding: 8px 12px;
       }
       
-      .nav-menu ul li a:hover {
-        background-color: rgba(52, 152, 219, 0.1);
+      nav ul li a:hover {
+        background-color: rgba(52,152,219,0.1);
       }
     }
     
     @media (min-width: 992px) {
-      .nav-menu ul li a {
+      nav ul li a {
         font-size: 16px;
         padding: 10px 15px;
       }
@@ -369,14 +439,46 @@
         
         <div class="nav-menu" id="navMenu">
           <ul>
-            <li style="--i:1"><a href="index.html">Home</a></li>
-            <li style="--i:2"><a href="about.html">About</a></li>
-            <li style="--i:3"><a href="hobbies.html">Hobbies</a></li>
-            <li style="--i:4"><a href="services.html">Services</a></li>
-            <li style="--i:5"><a href="tools.html">Tools</a></li>
-            <li style="--i:6"><a href="contact.html">Contact</a></li>
-            <li style="--i:7"><a href="privacy.html">Privacy Policy</a></li>
-            <li style="--i:8"><a href="terms.html">Terms of Service</a></li>
+            <li style="--i:1">
+              <a href="index.html">
+                <i class="fa-solid fa-house nav-icon"></i> Home
+              </a>
+            </li>
+            <li style="--i:2">
+              <a href="about.html">
+                <i class="fa-solid fa-user nav-icon"></i> About
+              </a>
+            </li>
+            <li style="--i:3">
+              <a href="hobbies.html">
+                <i class="fa-solid fa-heart nav-icon"></i> Hobbies
+              </a>
+            </li>
+            <li style="--i:4">
+              <a href="services.html">
+                <i class="fa-solid fa-cogs nav-icon"></i> Services
+              </a>
+            </li>
+            <li style="--i:5">
+              <a href="tools.html">
+                <i class="fa-solid fa-wrench nav-icon"></i> Tools
+              </a>
+            </li>
+            <li style="--i:6">
+              <a href="contact.html">
+                <i class="fa-solid fa-envelope nav-icon"></i> Contact
+              </a>
+            </li>
+            <li style="--i:7">
+              <a href="privacy.html">
+                <i class="fa-solid fa-shield-halved nav-icon"></i> Privacy Policy
+              </a>
+            </li>
+            <li style="--i:8">
+              <a href="terms.html">
+                <i class="fa-solid fa-file-contract nav-icon"></i> Terms of Service
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -493,7 +595,7 @@
         icon.classList.add('fa-bars');
       });
       
-      // Add animation to elements
+      // Animate elements when they come into view
       const animatedElements = document.querySelectorAll('.animate-fade-up');
       
       const observer = new IntersectionObserver((entries) => {
