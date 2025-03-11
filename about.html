@@ -43,7 +43,7 @@
       overflow-x: hidden;
     }
     
-    /* Header and Navigation Styles - Mobile First Approach */
+    /* Headline Banner with Shimmer Effect */
     .headline-banner {
       background: linear-gradient(135deg, #3498db, #9b59b6);
       color: white;
@@ -74,6 +74,7 @@
       }
     }
     
+    /* Header and Navigation */
     header {
       background-color: white;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -200,7 +201,7 @@
       background-color: rgba(52, 152, 219, 0.2);
     }
     
-    /* Overlay for mobile menu */
+    /* Overlay for Mobile Menu */
     .overlay {
       position: fixed;
       top: 0;
@@ -219,6 +220,57 @@
       visibility: visible;
     }
     
+    /* Center Navigation for Desktop */
+    @media (min-width: 768px) {
+      .menu-toggle {
+        display: none;
+      }
+      
+      /* The nav-menu becomes a horizontal menu */
+      .nav-menu {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: auto;
+        height: auto;
+        background: transparent;
+        flex-direction: row;
+        box-shadow: none;
+        transition: none;
+      }
+      
+      .nav-menu ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .nav-menu ul li {
+        margin: 0 8px;
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+      
+      .nav-menu ul li a {
+        color: #2c3e50;
+        font-size: 15px;
+        padding: 8px 12px;
+      }
+      
+      .nav-menu ul li a:hover {
+        background-color: rgba(52, 152, 219, 0.1);
+      }
+    }
+    
+    @media (min-width: 992px) {
+      .nav-menu ul li a {
+        font-size: 16px;
+        padding: 10px 15px;
+      }
+    }
+    
     /* Profile Section & Enhanced Design */
     .section-headline {
       text-align: center;
@@ -229,7 +281,6 @@
       padding: 0 20px;
     }
     
-    /* Profile image styling with enhanced elements */
     .profile-container {
       position: relative;
       width: 280px;
@@ -569,50 +620,11 @@
       transform: translateY(0);
     }
     
-    /* Media Queries for Responsive Design */
+    /* Responsive Typography and Layout Adjustments */
     @media (min-width: 768px) {
       .headline-banner {
         font-size: 16px;
         padding: 14px;
-      }
-      
-      .menu-toggle {
-        display: none;
-      }
-      
-      /* Centering the navigation menu on desktop */
-      .nav-menu {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        width: auto;
-        height: auto;
-        background: transparent;
-        flex-direction: row;
-        box-shadow: none;
-        transition: none;
-      }
-      
-      .nav-menu ul {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      
-      .nav-menu ul li {
-        margin: 0 5px;
-        opacity: 1;
-        transform: none;
-      }
-      
-      .nav-menu ul li a {
-        color: #2c3e50;
-        font-size: 15px;
-        padding: 8px 12px;
-      }
-      
-      .nav-menu ul li a:hover {
-        background-color: rgba(52, 152, 219, 0.1);
       }
       
       .profile-container {
@@ -635,28 +647,11 @@
         font-size: 16px;
         padding: 10px 15px;
       }
-      
-      .nav-menu ul li {
-        margin: 0 8px;
-      }
-      
-      .section-headline {
-        font-size: 22px;
-        margin: 40px 0;
-      }
-      
-      .headline {
-        font-size: 34px;
-      }
-      
-      .about-content p {
-        font-size: 17px;
-      }
     }
   </style>
 </head>
 <body>
-  <!-- Header with Mobile-Friendly Navigation -->
+  <!-- Header with Mobile-Friendly and Centered Navigation -->
   <header>
     <div class="headline-banner">🚀 Elevate Your Brand's Social Media Presence Today!</div>
     <nav>
@@ -665,11 +660,9 @@
           <i class="fas fa-hashtag logo-icon"></i>
           <span>Marlon Palomares</span>
         </a>
-        
         <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
           <i class="fas fa-bars"></i>
         </button>
-        
         <div class="nav-menu" id="navMenu">
           <ul>
             <li style="--i:1"><a href="index.html">Home</a></li>
@@ -689,9 +682,8 @@
   <main>
     <section class="about">
       <div class="section-headline animate-fade-up">💼 Your Social Media Success Story Starts Here</div>
-      
       <div class="about-content">
-        <!-- Profile Picture with Enhanced Overlay and Badges -->
+        <!-- Profile Picture with Overlay and Badges -->
         <div class="profile-container animate-fade-up">
           <img src="images/home.png" alt="Profile image of Marlon Palomares" class="profile-image" loading="lazy">
           <div class="profile-overlay">
@@ -704,9 +696,7 @@
             <div class="profile-badge"><i class="fas fa-chart-line"></i></div>
           </div>
         </div>
-        
-        <div class="headline animate-fade-up">Social Media Strategist & Brand Builder</div>
-        
+        <div class="headline animate-fade-up">Social Media Strategist &amp; Brand Builder</div>
         <!-- Social Media Links -->
         <div class="social-links animate-fade-up">
           <a href="https://www.facebook.com/marlon.palomares.2024/" class="social-link facebook" target="_blank" aria-label="Facebook profile">
@@ -722,7 +712,6 @@
             <i class="fab fa-x-twitter"></i>
           </a>
         </div>
-        
         <h2 class="animate-fade-up">About Me</h2>
         <p class="animate-fade-up">
           Hi there, I'm Marlon Palomares. I come from a strong background in customer service and digital outreach, and I've always been passionate about connecting with people. I recently invested in a lead generation course at The VA BAR, where I learned to use essential tools like Mailchimp for email campaigns, Apollo.io for lead discovery, Canva for graphic design, and CapCut for basic video editing.
@@ -730,7 +719,6 @@
         <p class="animate-fade-up">
           While I haven't held a dedicated lead generation role yet, I'm already familiar with finding quality leads on platforms like LinkedIn and Instagram using Boolean search methods. I'm also passionate about artificial intelligence, which helps me work smarter and more efficiently.
         </p>
-        
         <div class="expertise-list animate-fade-up">
           <span class="expertise-item"><i class="fas fa-bullhorn"></i> Brand Strategy</span>
           <span class="expertise-item"><i class="fas fa-pencil-alt"></i> Content Creation</span>
@@ -738,15 +726,15 @@
           <span class="expertise-item"><i class="fas fa-chart-pie"></i> Analytics</span>
           <span class="expertise-item"><i class="fas fa-ad"></i> Paid Campaigns</span>
         </div>
-        
-        <p class="animate-fade-up">I specialize in developing and implementing comprehensive social media strategies that align with business objectives—from increasing brand awareness to driving conversions. My expertise spans across multiple platforms including Instagram, Facebook, Twitter, and LinkedIn.</p>
-        
+        <p class="animate-fade-up">
+          I specialize in developing and implementing comprehensive social media strategies that align with business objectives—from increasing brand awareness to driving conversions. My expertise spans across multiple platforms including Instagram, Facebook, Twitter, and LinkedIn.
+        </p>
         <a href="https://calendly.com/marlon-palomares02/30min" class="cta-button animate-fade-up">Let's Grow Your Brand <i class="fas fa-rocket"></i></a>
       </div>
     </section>
   </main>
   
-  <!-- Enhanced Footer -->
+  <!-- Footer -->
   <footer>
     <div class="footer-links">
       <a href="privacy.html" class="footer-link">Privacy Policy</a>
@@ -759,19 +747,17 @@
   <!-- External JS Files -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
   
-  <!-- Navigation JavaScript -->
+  <!-- Navigation and Animation JavaScript -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const menuToggle = document.getElementById('menuToggle');
       const navMenu = document.getElementById('navMenu');
       const overlay = document.getElementById('overlay');
       
-      // Toggle menu on click
+      // Toggle mobile menu on click
       menuToggle.addEventListener('click', function() {
         navMenu.classList.toggle('active');
         overlay.classList.toggle('active');
-        
-        // Change icon based on menu state
         const icon = menuToggle.querySelector('i');
         if (navMenu.classList.contains('active')) {
           icon.classList.remove('fa-bars');
@@ -791,9 +777,8 @@
         icon.classList.add('fa-bars');
       });
       
-      // Add animation to elements
+      // Animate elements when they come into view
       const animatedElements = document.querySelectorAll('.animate-fade-up');
-      
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -803,12 +788,11 @@
       }, {
         threshold: 0.1
       });
-      
       animatedElements.forEach(element => {
         observer.observe(element);
       });
       
-      // Close menu on window resize (if in desktop mode)
+      // Close mobile menu on window resize if in desktop mode
       window.addEventListener('resize', function() {
         if (window.innerWidth >= 768) {
           navMenu.classList.remove('active');

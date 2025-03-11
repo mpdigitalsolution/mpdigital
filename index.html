@@ -38,15 +38,15 @@
   }
   </script>
 
+  <!-- External Stylesheet & EmailJS Script -->
   <link rel="stylesheet" href="css/style.css">
-  <!-- EmailJS script -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
   <script type="text/javascript">
     (function(){
       emailjs.init({ publicKey: "efRrbEvsWA8_PG5Z0" });
     })();
   </script>
-  
+
   <style>
     /* Global Styles */
     body {
@@ -55,7 +55,7 @@
       text-align: center;
     }
     
-    /* Skip Link for Accessibility */
+    /* Accessibility: Skip Link */
     .skip-link {
       position: absolute;
       top: -40px;
@@ -88,10 +88,11 @@
       position: relative;
     }
     
+    /* Centering the navigation links using Flexbox */
     nav ul {
       display: flex;
-      justify-content: center;
-      align-items: center; /* Ensures navigation links are centered vertically */
+      justify-content: center; /* Center links horizontally */
+      align-items: center;
       list-style: none;
       padding: 20px 0;
       margin: 0;
@@ -167,7 +168,7 @@
       }
     }
     
-    /* Hero Section Styles */
+    /* Hero Section */
     .hero {
       position: relative;
       height: 80vh;
@@ -202,7 +203,6 @@
       flex-wrap: wrap;
     }
     
-    /* Overlay for Hero Text */
     .overlay-text {
       background: rgba(0, 0, 0, 0.6);
       padding: 20px;
@@ -265,7 +265,6 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      /* Lazy load for performance */
       loading: lazy;
     }
     
@@ -273,7 +272,7 @@
       text-align: center;
     }
     
-    /* Services Section (Centered with Expandable Cards) */
+    /* Services Section */
     .services {
       padding: 80px 20px;
       text-align: center;
@@ -384,7 +383,7 @@
       text-decoration: underline;
     }
     
-    /* CTA Section (Centered) */
+    /* CTA Section */
     .cta-section {
       padding: 80px 20px;
       background: linear-gradient(135deg, #3498db, #9b59b6);
@@ -531,7 +530,7 @@
       box-shadow: 0 10px 20px rgba(52, 152, 219, 0.3);
     }
     
-    /* Footer with Privacy & Terms Links and Social Media Icons */
+    /* Footer */
     footer {
       background-color: #2c3e50;
       color: white;
@@ -583,10 +582,10 @@
   </style>
 </head>
 <body>
-  <!-- Skip to Main Content Link -->
+  <!-- Skip to Main Content -->
   <a class="skip-link" href="#mainContent">Skip to Main Content</a>
 
-  <!-- Header with Navigation -->
+  <!-- Header with Centered Navigation -->
   <header>
     <div class="headline-banner">🚀 Elevate Your Brand's Social Media Presence Today!</div>
     <nav>
@@ -632,7 +631,7 @@
     </div>
   </section>
   
-  <!-- Services Section (Centered & Expandable) -->
+  <!-- Services Section -->
   <section class="services">
     <h2 class="section-title">My Services</h2>
     <p class="section-subtitle">
@@ -690,14 +689,13 @@
     </div>
   </section>
   
-  <!-- Call to Action Section (Centered) -->
+  <!-- Call to Action Section -->
   <section class="cta-section">
     <div class="cta-container">
       <h2 class="cta-title">Ready to Transform Your Social Media?</h2>
       <p class="cta-text">
         Let's work together to create a strategy that connects with your audience and drives real results for your business.
       </p>
-      <!-- Updated CTA button now links to Calendly -->
       <a href="https://calendly.com/marlon-palomares02/30min" class="cta-primary">
         Get in Touch Today <i class="fas fa-arrow-right"></i>
       </a>
@@ -736,7 +734,7 @@
     </div>
   </div>
   
-  <!-- Footer with Privacy & Terms Links and Social Media Icons -->
+  <!-- Footer -->
   <footer>
     <div class="footer-content">
       <div class="footer-links">
@@ -772,40 +770,30 @@
       const closeModal = document.getElementById('closeModal');
       const messageForm = document.getElementById('messageForm');
       
-      // Open the message modal
       messageBtn.addEventListener('click', function() {
         messageModal.classList.add('active');
       });
       
-      // Close the message modal
       closeModal.addEventListener('click', function() {
         messageModal.classList.remove('active');
       });
       
-      // Close modal when clicking outside of it
       messageModal.addEventListener('click', function(e) {
         if (e.target === messageModal) {
           messageModal.classList.remove('active');
         }
       });
       
-      // Handle form submission with EmailJS
       messageForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        
-        // Get form values
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
         const message = document.getElementById('message').value;
-        
-        // Prepare template parameters
         const templateParams = {
           from_name: name,
           from_email: email,
           message: message
         };
-        
-        // Send email using EmailJS
         emailjs.send('service_tnsgf4p', 'template_qo5y2ad', templateParams)
           .then(function(response) {
             console.log('SUCCESS!', response.status, response.text);
@@ -823,7 +811,6 @@
       learnMoreLinks.forEach(link => {
         link.addEventListener('click', function(e) {
           e.preventDefault();
-          // Find the corresponding .service-more div within the same card
           const serviceContent = this.parentElement;
           const moreContent = serviceContent.querySelector('.service-more');
           if (moreContent.style.display === 'block') {
