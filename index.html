@@ -38,14 +38,18 @@
   }
   </script>
 
-  <!-- External Stylesheet & EmailJS Script -->
-  <link rel="stylesheet" href="css/style.css">
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+  <!-- EmailJS Scripts (Updated per instructions) -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script type="text/javascript">
     (function(){
-      emailjs.init({ publicKey: "efRrbEvsWA8_PG5Z0" });
+      emailjs.init({
+        publicKey: "efRrbEvsWA8_PG5Z0",
+      });
     })();
   </script>
+
+  <!-- External Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
 
   <style>
     /* Global Styles */
@@ -81,14 +85,19 @@
     
     header {
       position: relative;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
     
     nav {
       background-color: #2c3e50;
       position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 20px;
     }
     
-    /* Centering navigation links using Flexbox with enhanced design */
+    /* Centering navigation links using Flexbox */
     nav ul {
       display: flex;
       justify-content: center;
@@ -96,6 +105,7 @@
       list-style: none;
       padding: 20px 0;
       margin: 0;
+      width: 100%;
     }
     
     nav ul li {
@@ -149,28 +159,26 @@
     /* Mobile Navigation */
     .menu-toggle {
       display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      z-index: 110;
     }
     
     @media screen and (max-width: 768px) {
       .menu-toggle {
-        display: flex;
-        flex-direction: column;
-        cursor: pointer;
-        padding: 10px;
-        position: absolute;
-        right: 20px;
-        top: 20px;
-      }
-      .menu-toggle .bar {
-        width: 25px;
-        height: 3px;
-        background-color: white;
-        margin: 4px 0;
+        display: block;
       }
       nav ul {
         flex-direction: column;
         display: none;
         align-items: center;
+        width: 100%;
       }
       nav ul.active {
         display: flex;
@@ -191,6 +199,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 20px;
     }
     
     .hero:after {
@@ -215,10 +224,10 @@
       flex-wrap: wrap;
     }
     
-    /* Engaging Hero Text Styling */
     .hero-text {
       flex: 1;
       max-width: 600px;
+      text-align: left;
     }
     
     .hero-title {
@@ -248,12 +257,13 @@
       font-weight: bold;
       color: white;
       background: linear-gradient(45deg, #ff6b6b, #f06595);
-      transition: background 0.3s ease;
+      transition: background 0.3s ease, transform 0.3s ease;
       text-decoration: none;
     }
     
     .hero-cta a:hover {
       background: linear-gradient(45deg, #f06595, #ff6b6b);
+      transform: translateY(-3px);
     }
     
     .hero-image {
@@ -292,6 +302,7 @@
     .services {
       padding: 80px 20px;
       text-align: center;
+      background: #f9f9f9;
     }
     
     .section-title {
@@ -338,11 +349,13 @@
       transition: all 0.3s ease;
       text-align: center;
       position: relative;
+      border: 1px solid transparent;
     }
     
     .service-card:hover {
       transform: translateY(-10px);
       box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+      border-color: #3498db;
     }
     
     .service-icon {
@@ -384,6 +397,8 @@
       margin-top: 10px;
       border-top: 1px dashed #ccc;
       padding-top: 10px;
+      transition: max-height 0.3s ease;
+      overflow: hidden;
     }
     
     .learn-more-toggle {
@@ -423,6 +438,22 @@
       font-size: 18px;
       margin-bottom: 40px;
       opacity: 0.9;
+    }
+    
+    .cta-primary {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-weight: bold;
+      color: white;
+      background: linear-gradient(45deg, #ff6b6b, #f06595);
+      transition: background 0.3s ease, transform 0.3s ease;
+      text-decoration: none;
+    }
+    
+    .cta-primary:hover {
+      background: linear-gradient(45deg, #f06595, #ff6b6b);
+      transform: translateY(-3px);
     }
     
     /* Floating Message Button & Modal */
@@ -499,6 +530,7 @@
     
     .form-group {
       margin-bottom: 20px;
+      text-align: left;
     }
     
     .form-group label {
@@ -605,210 +637,204 @@
   <header>
     <div class="headline-banner">🚀 Elevate Your Brand's Social Media Presence Today!</div>
     <nav>
-      <div class="nav-container">
-        <!-- Menu Toggle for Mobile -->
-        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
-          <i class="fas fa-bars"></i>
-        </button>
-        <div class="nav-menu" id="navMenu">
-          <ul>
-            <li style="--i:1">
-              <a href="index.html">
-                <i class="fas fa-home nav-icon"></i> Home
-              </a>
-            </li>
-            <li style="--i:2">
-              <a href="about.html">
-                <i class="fas fa-user nav-icon"></i> About Me
-              </a>
-            </li>
-            <li style="--i:3">
-              <a href="hobbies.html">
-                <i class="fas fa-heart nav-icon"></i> My Hobbies
-              </a>
-            </li>
-            <li style="--i:4">
-              <a href="services.html">
-                <i class="fas fa-cogs nav-icon"></i> My Services
-              </a>
-            </li>
-            <li style="--i:5">
-              <a href="tools.html">
-                <i class="fas fa-wrench nav-icon"></i> Tools I Use
-              </a>
-            </li>
-            <li style="--i:6">
-              <a href="contact.html">
-                <i class="fas fa-envelope nav-icon"></i> Get In Touch
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <!-- Menu Toggle for Mobile -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul id="navMenu">
+        <li>
+          <a href="index.html">
+            <i class="fas fa-home nav-icon"></i> Home
+          </a>
+        </li>
+        <li>
+          <a href="about.html">
+            <i class="fas fa-user nav-icon"></i> About Me
+          </a>
+        </li>
+        <li>
+          <a href="hobbies.html">
+            <i class="fas fa-heart nav-icon"></i> My Hobbies
+          </a>
+        </li>
+        <li>
+          <a href="services.html">
+            <i class="fas fa-cogs nav-icon"></i> My Services
+          </a>
+        </li>
+        <li>
+          <a href="tools.html">
+            <i class="fas fa-wrench nav-icon"></i> Tools I Use
+          </a>
+        </li>
+        <li>
+          <a href="contact.html">
+            <i class="fas fa-envelope nav-icon"></i> Get In Touch
+          </a>
+        </li>
+      </ul>
     </nav>
-    <div class="overlay" id="overlay"></div>
   </header>
   
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="animated-shapes">
-      <div class="shape"></div>
-      <div class="shape"></div>
-      <div class="shape"></div>
-    </div>
-    <div class="hero-content">
-      <div class="hero-text overlay-text">
-        <h1 class="hero-title">Transform Your Social Media Strategy</h1>
-        <p class="hero-subtitle">
-          I help brands build meaningful connections with their audience through data-driven social media strategies that deliver real, measurable results.
-        </p>
-        <div class="hero-cta">
-          <a href="contact.html" class="cta-primary">Get Started <i class="fas fa-arrow-right"></i></a>
-          <a href="services.html" class="cta-secondary">Learn More</a>
-        </div>
-      </div>
-      <div class="hero-image">
-        <div class="profile-display">
-          <img src="images/home.png" alt="My Profile Picture">
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Services Section -->
-  <section class="services">
-    <h2 class="section-title">My Services</h2>
-    <p class="section-subtitle">
-      Comprehensive social media solutions designed to meet your specific business objectives and drive meaningful engagement.
-    </p>
-    <div class="services-grid">
-      <!-- Service Card 1 -->
-      <div class="service-card">
-        <div class="service-icon">
-          <i class="fas fa-bullhorn"></i>
-        </div>
-        <div class="service-content">
-          <h3 class="service-title">Strategy Development</h3>
-          <p class="service-description">
-            Custom social media strategies aligned with your business goals to increase brand awareness, engagement, and conversions.
+  <!-- Main Content -->
+  <main id="mainContent">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="hero-title">Transform Your Social Media Strategy</h1>
+          <p class="hero-subtitle">
+            I help brands build meaningful connections with their audience through data-driven social media strategies that deliver real, measurable results.
           </p>
-          <div class="service-more">
-            <p>Our Strategy Development service includes a comprehensive market analysis, competitor review, and a tailored plan to maximize your digital presence.</p>
+          <div class="hero-cta">
+            <!-- Updated CTA link to Calendly secret link -->
+            <a href="https://cal.com/marlon-palomares-c4cyjo/secret" class="cta-primary">Get Started <i class="fas fa-arrow-right"></i></a>
+            <a href="services.html" class="cta-secondary">Learn More</a>
           </div>
-          <a href="#" class="service-link learn-more-toggle">Learn More <i class="fas fa-chevron-down"></i></a>
+        </div>
+        <div class="hero-image">
+          <div class="profile-display">
+            <img src="images/home.png" alt="Marlon Palomares Profile Picture" loading="lazy">
+          </div>
         </div>
       </div>
-      <!-- Service Card 2 -->
-      <div class="service-card">
-        <div class="service-icon">
-          <i class="fas fa-pencil-alt"></i>
-        </div>
-        <div class="service-content">
-          <h3 class="service-title">Content Creation</h3>
-          <p class="service-description">
-            Engaging, platform-optimized content that resonates with your audience and reflects your brand's unique voice and values.
-          </p>
-          <div class="service-more">
-            <p>Our Content Creation service produces high-quality visuals, copy, and multimedia assets that capture your brand's essence and engage your followers.</p>
-          </div>
-          <a href="#" class="service-link learn-more-toggle">Learn More <i class="fas fa-chevron-down"></i></a>
-        </div>
-      </div>
-      <!-- Service Card 3 -->
-      <div class="service-card">
-        <div class="service-icon">
-          <i class="fas fa-chart-line"></i>
-        </div>
-        <div class="service-content">
-          <h3 class="service-title">Analytics &amp; Reporting</h3>
-          <p class="service-description">
-            In-depth analysis and regular reporting to track performance, optimize strategies, and demonstrate clear ROI on your investment.
-          </p>
-          <div class="service-more">
-            <p>Our Analytics &amp; Reporting service provides detailed insights and actionable data to continuously refine your social media strategy.</p>
-          </div>
-          <a href="#" class="service-link learn-more-toggle">Learn More <i class="fas fa-chevron-down"></i></a>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Call to Action Section -->
-  <section class="cta-section">
-    <div class="cta-container">
-      <h2 class="cta-title">Ready to Transform Your Social Media?</h2>
-      <p class="cta-text">
-        Let's work together to create a strategy that connects with your audience and drives real results for your business.
+    </section>
+    
+    <!-- Services Section -->
+    <section class="services">
+      <h2 class="section-title">My Services</h2>
+      <p class="section-subtitle">
+        Comprehensive social media solutions designed to meet your specific business objectives and drive meaningful engagement.
       </p>
-      <a href="https://calendly.com/marlon-palomares02/30min" class="cta-primary">
-        Get in Touch Today <i class="fas fa-arrow-right"></i>
-      </a>
-    </div>
-  </section>
-  
-  <!-- Floating Message Button -->
-  <div class="floating-message-btn" id="messageBtn">
-    <i class="fas fa-comment"></i>
-  </div>
-  
-  <!-- Message Form Modal -->
-  <div class="message-modal" id="messageModal">
-    <div class="message-form-container">
-      <div class="close-modal" id="closeModal">
-        <i class="fas fa-times"></i>
+      <div class="services-grid">
+        <!-- Service Card 1 -->
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-bullhorn"></i>
+          </div>
+          <div class="service-content">
+            <h3 class="service-title">Strategy Development</h3>
+            <p class="service-description">
+              Custom social media strategies aligned with your business goals to increase brand awareness, engagement, and conversions.
+            </p>
+            <div class="service-more">
+              <p>Our Strategy Development service includes a comprehensive market analysis, competitor review, and a tailored plan to maximize your digital presence.</p>
+            </div>
+            <a class="service-link learn-more-toggle">Learn More <i class="fas fa-chevron-down"></i></a>
+          </div>
+        </div>
+        <!-- Service Card 2 -->
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-pencil-alt"></i>
+          </div>
+          <div class="service-content">
+            <h3 class="service-title">Content Creation</h3>
+            <p class="service-description">
+              Engaging, platform-optimized content that resonates with your audience and reflects your brand's unique voice and values.
+            </p>
+            <div class="service-more">
+              <p>Our Content Creation service produces high-quality visuals, copy, and multimedia assets that capture your brand's essence and engage your followers.</p>
+            </div>
+            <a class="service-link learn-more-toggle">Learn More <i class="fas fa-chevron-down"></i></a>
+          </div>
+        </div>
+        <!-- Service Card 3 -->
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <div class="service-content">
+            <h3 class="service-title">Analytics &amp; Reporting</h3>
+            <p class="service-description">
+              In-depth analysis and regular reporting to track performance, optimize strategies, and demonstrate clear ROI on your investment.
+            </p>
+            <div class="service-more">
+              <p>Our Analytics &amp; Reporting service provides detailed insights and actionable data to continuously refine your social media strategy.</p>
+            </div>
+            <a class="service-link learn-more-toggle">Learn More <i class="fas fa-chevron-down"></i></a>
+          </div>
+        </div>
       </div>
-      <form class="message-form" id="messageForm">
-        <h3>Send Me a Message</h3>
-        <div class="form-group">
-          <label for="name">Your Name</label>
-          <input type="text" id="name" name="name" required>
-        </div>
-        <div class="form-group">
-          <label for="email">Your Email</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-          <label for="message">Your Message</label>
-          <textarea id="message" name="message" required></textarea>
-        </div>
-        <button type="submit" class="send-message-btn">
-          Send Message <i class="fas fa-paper-plane"></i>
-        </button>
-      </form>
+    </section>
+    
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+      <div class="cta-container">
+        <h2 class="cta-title">Ready to Transform Your Social Media?</h2>
+        <p class="cta-text">
+          Let's work together to create a strategy that connects with your audience and drives real results for your business.
+        </p>
+        <!-- Updated CTA link to Calendly secret link -->
+        <a href="https://cal.com/marlon-palomares-c4cyjo/secret" class="cta-primary">
+          Get in Touch Today <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </section>
+    
+    <!-- Floating Message Button -->
+    <div class="floating-message-btn" id="messageBtn">
+      <i class="fas fa-comment"></i>
     </div>
-  </div>
+    
+    <!-- Message Form Modal -->
+    <div class="message-modal" id="messageModal">
+      <div class="message-form-container">
+        <div class="close-modal" id="closeModal">
+          <i class="fas fa-times"></i>
+        </div>
+        <form class="message-form" id="messageForm">
+          <h3>Send Me a Message</h3>
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <button type="submit" class="send-message-btn">
+            Send Message <i class="fas fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
   
   <!-- Footer -->
   <footer>
     <div class="footer-content">
       <div class="footer-links">
-        <a href="privacy and policy.html"><i class="fas fa-lock"></i> Privacy &amp; Policy</a> |
-        <a href="terms and conditions.html"><i class="fas fa-gavel"></i> Terms &amp; Conditions</a>
+        <a href="privacy-policy.html"><i class="fas fa-lock"></i> Privacy &amp; Policy</a> |
+        <a href="terms-conditions.html"><i class="fas fa-gavel"></i> Terms &amp; Conditions</a>
       </div>
       <div class="social-icons">
-        <a href="https://x.com/home" target="_blank" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://www.facebook.com/marlon.palomares.2024/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
         <a href="https://www.linkedin.com/in/mpdigital/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         <a href="https://www.instagram.com/palomares523/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.facebook.com/marlon.palomares.2024/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://x.com/home" target="_blank" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://github.com/mpalomaresdigitalsolutions" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
       </div>
       <p>&copy; 2025 Marlon Palomares. All rights reserved.</p>
     </div>
   </footer>
   
   <!-- External JS Files -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
   
   <!-- Navigation and Animation JavaScript -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const menuToggle = document.getElementById('menuToggle');
       const navMenu = document.getElementById('navMenu');
-      const overlay = document.getElementById('overlay');
       
       // Toggle mobile menu on click
       menuToggle.addEventListener('click', function() {
         navMenu.classList.toggle('active');
-        overlay.classList.toggle('active');
         const icon = menuToggle.querySelector('i');
         if (navMenu.classList.contains('active')) {
           icon.classList.remove('fa-bars');
@@ -819,39 +845,49 @@
         }
       });
       
-      // Close menu when clicking on overlay
-      overlay.addEventListener('click', function() {
-        navMenu.classList.remove('active');
-        overlay.classList.remove('active');
-        const icon = menuToggle.querySelector('i');
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
-      });
-      
-      // Animate elements when they come into view
-      const animatedElements = document.querySelectorAll('.animate-fade-up');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-          }
-        });
-      }, { threshold: 0.1 });
-      animatedElements.forEach(element => observer.observe(element));
-      
-      // Close mobile menu on window resize if in desktop mode
+      // Close mobile menu on window resize (desktop view)
       window.addEventListener('resize', function() {
         if (window.innerWidth >= 768) {
           navMenu.classList.remove('active');
-          overlay.classList.remove('active');
           const icon = menuToggle.querySelector('i');
           icon.classList.remove('fa-times');
           icon.classList.add('fa-bars');
         }
       });
+      
+      // Floating Message Modal functionality
+      const messageBtn = document.getElementById('messageBtn');
+      const messageModal = document.getElementById('messageModal');
+      const closeModal = document.getElementById('closeModal');
+      
+      messageBtn.addEventListener('click', function() {
+        messageModal.classList.add('active');
+      });
+      
+      closeModal.addEventListener('click', function() {
+        messageModal.classList.remove('active');
+      });
+      
+      // Learn More toggle for service cards
+      const learnMoreToggles = document.querySelectorAll('.learn-more-toggle');
+      learnMoreToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          const serviceContent = toggle.closest('.service-content');
+          const moreText = serviceContent.querySelector('.service-more');
+          if (moreText.style.display === 'block') {
+            moreText.style.display = 'none';
+            toggle.innerHTML = 'Learn More <i class="fas fa-chevron-down"></i>';
+          } else {
+            moreText.style.display = 'block';
+            toggle.innerHTML = 'Show Less <i class="fas fa-chevron-up"></i>';
+          }
+        });
+      });
     });
   </script>
   
-  <script src="js/script.js" defer></script>
+  <!-- Additional external script file if needed -->
+  <script src="js/script.js"></script>
 </body>
 </html>

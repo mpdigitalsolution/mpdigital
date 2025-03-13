@@ -38,7 +38,7 @@
   }
   </script>
   
-  <!-- Font Awesome for icons -->
+  <!-- Font Awesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   
   <style>
@@ -49,24 +49,39 @@
       --dark-color: #2c3e50;
       --light-color: #f8f9fa;
       --gradient: linear-gradient(135deg, var(--primary-color), #8c43ff);
-      --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      --shadow: 0 10px 30px rgba(0,0,0,0.1);
       --transition: all 0.3s ease;
     }
     
+    /* Global Reset and Base Styles */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-    
     body {
       background-color: #f5f7fa;
       color: #333;
       line-height: 1.6;
     }
     
-    /* Header Styles */
+    /* Skip Link for Accessibility */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--primary-color);
+      color: #fff;
+      padding: 8px 15px;
+      z-index: 10000;
+      transition: top 0.3s ease;
+    }
+    .skip-link:focus {
+      top: 0;
+    }
+    
+    /* Header and Navigation */
     .headline-banner {
       background: var(--gradient);
       color: white;
@@ -74,14 +89,19 @@
       padding: 10px;
       font-weight: bold;
       letter-spacing: 1px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
       animation: pulse 2s infinite;
     }
-    
     @keyframes pulse {
       0% { transform: scale(1); }
       50% { transform: scale(1.01); }
       100% { transform: scale(1); }
+    }
+    /* Make headline banner clickable as a CTA */
+    .headline-banner a {
+      color: inherit;
+      text-decoration: none;
+      display: block;
     }
     
     header {
@@ -89,23 +109,121 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+      padding: 0 20px;
     }
     
-    nav {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 15px;
-    }
-    
-    nav ul {
+    .nav-container {
+      position: relative;
       display: flex;
       justify-content: center;
-      list-style: none;
-      flex-wrap: wrap;
-      gap: 15px;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 15px 0;
     }
     
+    .menu-toggle {
+      position: absolute;
+      left: 20px;
+      font-size: 24px;
+      background: none;
+      border: none;
+      color: var(--dark-color);
+      cursor: pointer;
+      transition: var(--transition);
+      z-index: 1100;
+    }
+    .menu-toggle:hover {
+      color: var(--primary-color);
+    }
+    
+    /* Mobile Navigation (Off-canvas) */
+    .nav-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 80%;
+      max-width: 300px;
+      height: 100vh;
+      background: var(--dark-color);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: right 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+      box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+      z-index: 1050;
+    }
+    .nav-menu.active {
+      right: 0;
+    }
+    .nav-menu ul {
+      list-style: none;
+      text-align: center;
+      width: 100%;
+    }
+    .nav-menu ul li {
+      margin: 20px 0;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: var(--transition);
+      transition-delay: calc(0.1s * var(--i));
+    }
+    .nav-menu.active ul li {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Desktop Navigation */
+    @media (min-width: 768px) {
+      .menu-toggle { display: none; }
+      .nav-menu {
+        position: static;
+        width: auto;
+        height: auto;
+        background: transparent;
+        box-shadow: none;
+        transition: none;
+      }
+      .nav-menu ul {
+        display: flex;
+      }
+      .nav-menu ul li {
+        margin: 0 8px;
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+      nav ul li a {
+        color: var(--dark-color);
+        font-size: 15px;
+        padding: 8px 12px;
+      }
+      nav ul li a:hover {
+        background-color: rgba(52,152,219,0.1);
+      }
+    }
+    @media (min-width: 992px) {
+      nav ul li a {
+        font-size: 16px;
+        padding: 10px 15px;
+      }
+      .nav-menu ul li {
+        margin: 0 8px;
+      }
+    }
+    
+    /* Enhanced Navigation Links */
+    nav ul {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    nav ul li {
+      margin: 0 10px;
+    }
     nav ul li a {
       display: flex;
       align-items: center;
@@ -118,34 +236,30 @@
       transition: var(--transition);
       position: relative;
     }
-    
     nav ul li a:hover,
     nav ul li a:focus {
-      background: rgba(74, 107, 255, 0.1);
-      box-shadow: 0 4px 8px rgba(74, 107, 255, 0.2);
+      background: rgba(74,107,255,0.1);
+      box-shadow: 0 4px 8px rgba(74,107,255,0.2);
       color: var(--primary-color);
     }
-    
-    /* Underline effect with overlay */
     nav ul li a::after {
       content: '';
       position: absolute;
-      width: 0;
-      height: 2px;
-      background: var(--primary-color);
       bottom: 0;
       left: 50%;
       transform: translateX(-50%);
+      width: 0;
+      height: 2px;
+      background: var(--primary-color);
       transition: width 0.3s ease;
       border-radius: 2px;
     }
-    
     nav ul li a:hover::after,
     nav ul li a:focus::after {
       width: 70%;
     }
     
-    /* Main Content Styles */
+    /* Main Content */
     main {
       max-width: 1200px;
       margin: 40px auto;
@@ -159,11 +273,9 @@
       margin-bottom: 10px;
       font-weight: 600;
       letter-spacing: 1px;
-      text-align: center;
       display: inline-block;
       padding: 0 20px;
     }
-    
     .section-headline::before,
     .section-headline::after {
       content: '';
@@ -182,26 +294,25 @@
       color: var(--dark-color);
       position: relative;
     }
-    
     h2::after {
       content: '';
       position: absolute;
-      height: 4px;
-      width: 60px;
-      background: var(--gradient);
       bottom: -10px;
       left: 50%;
       transform: translateX(-50%);
+      height: 4px;
+      width: 60px;
+      background: var(--gradient);
       border-radius: 2px;
     }
     
+    /* Contact Section */
     .contact {
       display: flex;
       flex-direction: column;
       align-items: center;
       padding: 40px 0;
     }
-    
     .contact > p {
       text-align: center;
       max-width: 700px;
@@ -210,23 +321,21 @@
       font-size: 1.1rem;
     }
     
-    /* Contact Form & Info Container */
     .contact-container {
       display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
       width: 100%;
       max-width: 1100px;
-      gap: 30px;
       margin: 0 auto;
-      flex-wrap: wrap;
-      position: relative;
-      background: linear-gradient(135deg, rgba(74, 107, 255, 0.05), rgba(140, 67, 255, 0.05));
-      border: 2px solid rgba(74, 107, 255, 0.1);
+      background: linear-gradient(135deg, rgba(74,107,255,0.05), rgba(140,67,255,0.05));
+      border: 2px solid rgba(74,107,255,0.1);
       border-radius: 20px;
       padding: 30px;
       box-shadow: var(--shadow);
     }
     
-    /* Contact Info Styles */
+    /* Contact Info */
     .contact-info {
       flex: 1;
       background: white;
@@ -237,7 +346,6 @@
       border-left: 5px solid var(--primary-color);
       position: relative;
     }
-    
     .contact-info::before {
       content: '';
       position: absolute;
@@ -250,7 +358,6 @@
       border-radius: 50%;
       z-index: 0;
     }
-    
     .contact-info h3 {
       color: var(--dark-color);
       margin-bottom: 20px;
@@ -259,8 +366,8 @@
       font-size: 1.4rem;
       position: relative;
       z-index: 2;
+      text-align: center;
     }
-    
     .contact-item {
       display: flex;
       align-items: center;
@@ -269,7 +376,6 @@
       position: relative;
       z-index: 2;
     }
-    
     .contact-icon {
       width: 40px;
       height: 40px;
@@ -281,18 +387,16 @@
       margin-right: 15px;
       color: white;
       font-size: 1.2rem;
-      box-shadow: 0 5px 15px rgba(74, 107, 255, 0.3);
+      box-shadow: 0 5px 15px rgba(74,107,255,0.3);
       transition: transform 0.3s;
     }
-    
     .contact-icon:hover {
       transform: scale(1.1);
     }
-    
     .contact-text {
       flex: 1;
+      text-align: left;
     }
-    
     .contact-text strong {
       display: block;
       margin-bottom: 5px;
@@ -300,7 +404,7 @@
       font-size: 1.05rem;
     }
     
-    /* Enhanced Google Maps Embed Container */
+    /* Google Maps Embed */
     .map-container {
       margin-top: 20px;
       border-radius: 15px;
@@ -311,12 +415,10 @@
       position: relative;
       z-index: 2;
     }
-    
     .map-container:hover {
       transform: scale(1.02);
-      box-shadow: 0 12px 30px rgba(74, 107, 255, 0.4);
+      box-shadow: 0 12px 30px rgba(74,107,255,0.4);
     }
-    
     .map-container iframe {
       width: 100%;
       height: 300px;
@@ -324,7 +426,7 @@
       loading: lazy;
     }
     
-    /* Form Container Styles */
+    /* Form Container */
     .form-container {
       flex: 1.5;
       background: white;
@@ -336,7 +438,6 @@
       border: 2px solid var(--primary-color);
       z-index: 2;
     }
-    
     .form-container::before {
       content: '';
       position: absolute;
@@ -349,17 +450,14 @@
       border-radius: 50%;
       z-index: 1;
     }
-    
     #contactForm {
       position: relative;
       z-index: 2;
     }
-    
     .form-group {
       margin-bottom: 20px;
       position: relative;
     }
-    
     .form-group label {
       display: block;
       margin-bottom: 8px;
@@ -367,13 +465,11 @@
       color: var(--dark-color);
       font-size: 0.95rem;
     }
-    
     .form-group label i {
       color: var(--primary-color);
       margin-right: 8px;
       font-size: 1rem;
     }
-    
     .form-group input,
     .form-group textarea,
     .form-group select {
@@ -384,15 +480,13 @@
       font-size: 1rem;
       transition: var(--transition);
     }
-    
     .form-group input:focus,
     .form-group textarea:focus,
     .form-group select:focus {
       border-color: var(--primary-color);
-      box-shadow: 0 0 0 3px rgba(74, 107, 255, 0.2);
+      box-shadow: 0 0 0 3px rgba(74,107,255,0.2);
       outline: none;
     }
-    
     button[type="submit"] {
       display: inline-flex;
       align-items: center;
@@ -406,33 +500,28 @@
       font-weight: 600;
       cursor: pointer;
       transition: var(--transition);
-      box-shadow: 0 5px 15px rgba(74, 107, 255, 0.3);
+      box-shadow: 0 5px 15px rgba(74,107,255,0.3);
     }
-    
     button[type="submit"]:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(74, 107, 255, 0.4);
+      box-shadow: 0 8px 20px rgba(74,107,255,0.4);
     }
-    
     button[type="submit"] i {
       margin-right: 8px;
     }
-    
     .spinner {
       display: none;
       width: 20px;
       height: 20px;
-      border: 3px solid rgba(255, 255, 255, 0.3);
+      border: 3px solid rgba(255,255,255,0.3);
       border-radius: 50%;
       border-top-color: white;
       animation: spin 1s ease-in-out infinite;
       margin-right: 8px;
     }
-    
     @keyframes spin {
       to { transform: rotate(360deg); }
     }
-    
     .form-status {
       margin-top: 20px;
       padding: 15px;
@@ -441,15 +530,13 @@
       text-align: center;
       font-weight: 500;
     }
-    
     .form-success {
-      background-color: rgba(39, 174, 96, 0.1);
+      background-color: rgba(39,174,96,0.1);
       color: #27ae60;
       border: 1px solid #27ae60;
     }
-    
     .form-error {
-      background-color: rgba(231, 76, 60, 0.1);
+      background-color: rgba(231,76,60,0.1);
       color: #e74c3c;
       border: 1px solid #e74c3c;
     }
@@ -463,13 +550,12 @@
       color: var(--dark-color);
       padding: 15px 25px;
       border-radius: 8px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
       transform: translateY(150%);
       transition: transform 0.3s ease;
       z-index: 1000;
       font-weight: 500;
     }
-    
     .notification.show {
       transform: translateY(0);
     }
@@ -482,7 +568,6 @@
       padding: 40px 20px;
       margin-top: 60px;
     }
-    
     .footer-content {
       max-width: 1200px;
       margin: 0 auto;
@@ -490,33 +575,29 @@
       flex-direction: column;
       align-items: center;
     }
-    
     .social-icons {
       margin: 20px 0;
       display: flex;
       justify-content: center;
       gap: 20px;
     }
-    
     .social-icons a {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       width: 40px;
       height: 40px;
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255,255,255,0.1);
       color: white;
       border-radius: 50%;
       transition: var(--transition);
       text-decoration: none;
       font-size: 1.2rem;
     }
-    
     .social-icons a:hover {
       background: var(--primary-color);
       transform: translateY(-5px);
     }
-    
     footer p {
       margin-top: 20px;
       opacity: 0.7;
@@ -528,28 +609,23 @@
         flex-direction: column;
         padding: 20px;
       }
-      
       .contact-info,
       .form-container {
         width: 100%;
         margin-bottom: 20px;
       }
     }
-    
     @media (max-width: 768px) {
       nav ul {
         flex-direction: column;
         align-items: center;
       }
-      
       nav ul li {
         margin: 5px 0;
       }
-      
       h2 {
         font-size: 2rem;
       }
-      
       .contact > p {
         font-size: 1rem;
         padding: 0 20px;
@@ -558,23 +634,62 @@
   </style>
 </head>
 <body>
-  <!-- Header with Navigation -->
+  <!-- Skip Link for Accessibility -->
+  <a class="skip-link" href="#mainContent">Skip to Content</a>
+  
+  <!-- Header with Mobile-Friendly Navigation -->
   <header>
-    <div class="headline-banner">🚀 Elevate Your Brand's Social Media Presence Today!</div>
+    <div class="headline-banner">
+      <a href="https://cal.com/marlon-palomares-c4cyjo/secret" aria-label="Book a Consultation">
+        🚀 Elevate Your Brand's Social Media Presence Today!
+      </a>
+    </div>
     <nav>
-      <ul>
-        <li><a href="index.html"><i class="fas fa-home" aria-hidden="true"></i><span>Home</span></a></li>
-        <li><a href="about.html"><i class="fas fa-user" aria-hidden="true"></i><span>About Me</span></a></li>
-        <li><a href="hobbies.html"><i class="fas fa-heart" aria-hidden="true"></i><span>My Hobbies</span></a></li>
-        <li><a href="services.html"><i class="fas fa-briefcase" aria-hidden="true"></i><span>My Services</span></a></li>
-        <li><a href="tools.html"><i class="fas fa-tools" aria-hidden="true"></i><span>Tools I Use</span></a></li>
-        <li><a href="contact.html"><i class="fas fa-envelope" aria-hidden="true"></i><span>Get In Touch</span></a></li>
-      </ul>
+      <div class="nav-container">
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="nav-menu" id="navMenu">
+          <ul>
+            <li style="--i:1">
+              <a href="index.html">
+                <i class="fa-solid fa-house nav-icon"></i> Home
+              </a>
+            </li>
+            <li style="--i:2">
+              <a href="about.html">
+                <i class="fa-solid fa-user nav-icon"></i> About Me
+              </a>
+            </li>
+            <li style="--i:3">
+              <a href="hobbies.html">
+                <i class="fa-solid fa-heart nav-icon"></i> My Hobbies
+              </a>
+            </li>
+            <li style="--i:4">
+              <a href="services.html">
+                <i class="fa-solid fa-briefcase nav-icon"></i> My Services
+              </a>
+            </li>
+            <li style="--i:5">
+              <a href="tools.html">
+                <i class="fa-solid fa-tools nav-icon"></i> Tools I Use
+              </a>
+            </li>
+            <li style="--i:6">
+              <a href="contact.html">
+                <i class="fa-solid fa-envelope nav-icon"></i> Get In Touch
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
+    <div class="overlay" id="overlay"></div>
   </header>
   
   <!-- Main Content -->
-  <main>
+  <main id="mainContent" class="container">
     <section class="contact" id="contact">
       <div class="section-headline">📱 Let's Connect and Grow Together</div>
       <h2>Get In Touch</h2>
@@ -586,7 +701,6 @@
         <!-- Contact Information -->
         <div class="contact-info">
           <h3><i class="fas fa-id-card" aria-hidden="true"></i> Contact Information</h3>
-          
           <div class="contact-item">
             <div class="contact-icon">
               <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
@@ -596,7 +710,6 @@
               Sitio Bayan-Bayanan, Brgy San Vicente, San Pedro, Laguna
             </div>
           </div>
-          
           <div class="contact-item">
             <div class="contact-icon">
               <i class="fas fa-envelope" aria-hidden="true"></i>
@@ -606,7 +719,6 @@
               mpalomaresdigitalsolution@gmail.com
             </div>
           </div>
-          
           <div class="contact-item">
             <div class="contact-icon">
               <i class="fas fa-phone-alt" aria-hidden="true"></i>
@@ -616,7 +728,6 @@
               09913062370
             </div>
           </div>
-          
           <!-- Google Maps Embed -->
           <div class="map-container">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.9999999999995!2d121.005!3d14.123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c8a24f9a5c1f%3A0xabcdef1234567890!2sSitio+Bayan-Bayanan%2C+Brgy+San+Vicente%2C+San+Pedro%2C+Laguna!5e0!3m2!1sen!2sph!4v1600000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of Sitio Bayan-Bayanan, Brgy San Vicente, San Pedro, Laguna"></iframe>
@@ -630,17 +741,14 @@
               <label for="name"><i class="fas fa-user" aria-hidden="true"></i> Full Name</label>
               <input type="text" id="name" name="name" placeholder="Your name" required />
             </div>
-            
             <div class="form-group">
               <label for="email"><i class="fas fa-envelope" aria-hidden="true"></i> Email Address</label>
               <input type="email" id="email" name="email" placeholder="your.email@example.com" required />
             </div>
-            
             <div class="form-group">
               <label for="company"><i class="fas fa-building" aria-hidden="true"></i> Company / Brand</label>
               <input type="text" id="company" name="company" placeholder="Your company or brand name" />
             </div>
-            
             <div class="form-group">
               <label for="service"><i class="fas fa-briefcase" aria-hidden="true"></i> Service You're Interested In</label>
               <select id="service" name="service" required>
@@ -653,21 +761,17 @@
                 <option value="other">Other (Please specify)</option>
               </select>
             </div>
-            
             <div class="form-group">
               <label for="message"><i class="fas fa-comment" aria-hidden="true"></i> How can I help you?</label>
               <textarea id="message" name="message" rows="5" placeholder="Tell me about your project, goals, or challenges..." required></textarea>
             </div>
-            
             <button type="submit" id="submitBtn">
               <div id="spinner" class="spinner"></div>
               <i class="fas fa-paper-plane" aria-hidden="true"></i> Send Message
             </button>
-            
             <div id="formSuccess" class="form-status form-success">
               <i class="fas fa-check-circle" aria-hidden="true"></i> Thank you for your message! I'll get back to you soon.
             </div>
-            
             <div id="formError" class="form-status form-error">
               <i class="fas fa-exclamation-circle" aria-hidden="true"></i> Oops! Something went wrong. Please try again later.
             </div>
@@ -683,11 +787,22 @@
   <!-- Footer -->
   <footer>
     <div class="footer-content">
+      <div class="footer-links">
+        <a href="index.html" class="footer-link">Home</a>
+        <a href="about.html" class="footer-link">About</a>
+        <a href="hobbies.html" class="footer-link">Hobbies</a>
+        <a href="services.html" class="footer-link">Services</a>
+        <a href="tools.html" class="footer-link">Tools</a>
+        <a href="contact.html" class="footer-link">Contact</a>
+        <a href="privacy.html" class="footer-link">Privacy Policy</a>
+        <a href="terms.html" class="footer-link">Terms of Service</a>
+      </div>
       <div class="social-icons">
         <a href="https://www.facebook.com/marlon.palomares.2024/" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
         <a href="https://www.instagram.com/palomares523/" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
         <a href="https://x.com/home" aria-label="X (Twitter)"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
         <a href="https://www.linkedin.com/in/mpdigital/" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+        <a href="https://github.com/mpalomaresdigitalsolutions" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
       </div>
       <p>&copy; 2025 Marlon Palomares. All rights reserved.</p>
     </div>
@@ -697,48 +812,32 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script>
-    // Initialize EmailJS with provided public key
+    // Initialize EmailJS with your public key
     emailjs.init("efRrbEvsWA8_PG5Z0");
     
-    // Form submission handling using EmailJS
+    // Handle form submission using EmailJS
     document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault();
       
-      // Show spinner and disable button
+      // Show spinner and disable the submit button
       document.getElementById('spinner').style.display = 'block';
       document.getElementById('submitBtn').disabled = true;
       
-      // Collect form data
-      const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        company: document.getElementById('company').value,
-        service: document.getElementById('service').value,
-        message: document.getElementById('message').value,
-        to_email: "mpalomaresdigitalsolution@gmail.com"
-      };
-      
-      // Send the email using EmailJS with provided service and template IDs
-      emailjs.send('service_tnsgf4p', 'template_ak7vrx4', formData)
+      // Send form data using EmailJS
+      emailjs.sendForm('service_tnsgf4p', 'template_ak7vrx4', this)
         .then(function(response) {
-          // Hide spinner and enable button
+          console.log('SUCCESS!', response.status, response.text);
           document.getElementById('spinner').style.display = 'none';
           document.getElementById('submitBtn').disabled = false;
-          
-          // Show success message and reset form
           document.getElementById('formSuccess').style.display = 'block';
           document.getElementById('contactForm').reset();
-          
-          // Hide success message after 5 seconds
           setTimeout(() => {
             document.getElementById('formSuccess').style.display = 'none';
           }, 5000);
         }, function(error) {
-          // Hide spinner and enable button
+          console.log('FAILED...', error);
           document.getElementById('spinner').style.display = 'none';
           document.getElementById('submitBtn').disabled = false;
-          
-          // Show error message
           document.getElementById('formError').style.display = 'block';
           setTimeout(() => {
             document.getElementById('formError').style.display = 'none';
@@ -746,12 +845,52 @@
         });
     });
     
-    // Optional notification function for additional feedback
+    // Mobile Navigation Toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+    const overlay = document.getElementById('overlay');
+    
+    menuToggle.addEventListener('click', function() {
+      navMenu.classList.toggle('active');
+      if (overlay) overlay.classList.toggle('active');
+      
+      // Change icon based on state
+      const icon = menuToggle.querySelector('i');
+      if (navMenu.classList.contains('active')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+      } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+    });
+    
+    if (overlay) {
+      overlay.addEventListener('click', function() {
+        navMenu.classList.remove('active');
+        overlay.classList.remove('active');
+        const icon = menuToggle.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      });
+    }
+    
+    // Animate content when in view
+    const animatedElements = document.querySelectorAll('.animate-fade-up');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1 });
+    animatedElements.forEach(el => observer.observe(el));
+    
+    // Optional: Notification function
     function showNotification(message) {
       const notification = document.getElementById('notification');
       notification.textContent = message;
       notification.classList.add('show');
-      
       setTimeout(() => {
         notification.classList.remove('show');
       }, 3000);

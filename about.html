@@ -3,53 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Get In Touch - Marlon Palomares</title>
-  <meta name="description" content="Get in touch with Marlon Palomares, a Social Media Strategist &amp; Brand Builder. Connect today to elevate your brand's digital presence." />
-  <meta name="keywords" content="Social Media, Digital Marketing, Contact, Marlon Palomares, Brand Builder" />
+  <title>About - Marlon Palomares | Social Media Strategist</title>
+  <meta name="description" content="Learn more about Marlon Palomares, a Social Media Strategist and Brand Builder ready to elevate your digital presence." />
+  <meta name="keywords" content="About, Social Media, Digital Marketing, Marlon Palomares, Brand Builder" />
   <meta name="author" content="Marlon Palomares" />
   
-  <!-- Schema Markup for Structured Data -->
+  <!-- Schema Markup for SEO -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Marlon Palomares",
-    "url": "https://example.com/",
+    "url": "https://example.com/about.html",
     "sameAs": [
       "https://www.facebook.com/marlon.palomares.2024/",
       "https://www.instagram.com/palomares523/",
       "https://x.com/home",
       "https://www.linkedin.com/in/mpdigital/"
     ],
-    "jobTitle": "Social Media Strategist &amp; Brand Builder",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+639913062370",
-      "contactType": "Customer Service",
-      "email": "mpalomaresdigitalsolution@gmail.com"
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Sitio Bayan-Bayanan, Brgy San Vicente",
-      "addressLocality": "San Pedro",
-      "addressRegion": "Laguna",
-      "addressCountry": "PH"
-    }
+    "jobTitle": "Social Media Strategist & Brand Builder",
+    "image": "Profile.png",
+    "description": "Marlon Palomares is a Social Media Strategist and Brand Builder passionate about helping brands grow their digital presence through clear communication and creative strategies."
   }
   </script>
   
   <!-- Font Awesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   
+  <!-- EmailJS Script (if needed in future) -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function(){
+      emailjs.init({ publicKey: "efRrbEvsWA8_PG5Z0" });
+    })();
+  </script>
+  
   <style>
     :root {
       --primary-color: #4a6bff;
       --secondary-color: #ff6b6b;
-      --accent-color: #ffd166;
       --dark-color: #2c3e50;
       --light-color: #f8f9fa;
       --gradient: linear-gradient(135deg, var(--primary-color), #8c43ff);
-      --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       --transition: all 0.3s ease;
     }
     
@@ -68,21 +63,6 @@
     }
     
     /* Header & Navigation */
-    .headline-banner {
-      background: var(--gradient);
-      color: white;
-      text-align: center;
-      padding: 10px;
-      font-weight: bold;
-      letter-spacing: 1px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.01); }
-      100% { transform: scale(1); }
-    }
     header {
       background-color: white;
       position: sticky;
@@ -90,17 +70,37 @@
       z-index: 1000;
       box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
     }
+    .headline-banner {
+      background: var(--gradient);
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
     nav {
       max-width: 1200px;
+      width: 100%;
       margin: 0 auto;
-      padding: 15px;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--dark-color);
     }
     nav ul {
       display: flex;
-      justify-content: center;
       list-style: none;
-      flex-wrap: wrap;
       gap: 15px;
+      flex-wrap: wrap;
+      align-items: center;
     }
     nav ul li a {
       display: flex;
@@ -117,10 +117,10 @@
     }
     nav ul li a:hover,
     nav ul li a:focus {
-      background: rgba(74, 107, 255, 0.1);
-      box-shadow: 0 4px 8px rgba(74, 107, 255, 0.2);
+      background: rgba(74,107,255,0.1);
       color: var(--primary-color);
       border-color: var(--primary-color);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
     nav ul li a::after {
       content: '';
@@ -138,300 +138,79 @@
     nav ul li a:focus::after {
       width: 70%;
     }
-    
-    /* Main Content & Headlines */
-    main {
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 0 20px;
-      text-align: center;
-    }
-    .section-headline {
-      font-size: 1.2rem;
-      color: var(--primary-color);
-      margin-bottom: 10px;
-      font-weight: 600;
-      letter-spacing: 1px;
-      display: inline-block;
-      padding: 0 20px;
-    }
-    .section-headline::before,
-    .section-headline::after {
-      content: '';
-      display: inline-block;
-      width: 30px;
-      height: 1px;
-      background: var(--primary-color);
-      vertical-align: middle;
-      margin: 0 10px;
-    }
-    h2 {
-      font-size: 2.5rem;
-      margin-bottom: 30px;
-      color: var(--dark-color);
-      position: relative;
-    }
-    h2::after {
-      content: '';
-      position: absolute;
-      height: 4px;
-      width: 60px;
-      background: var(--gradient);
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      border-radius: 2px;
-    }
-    
-    /* Contact Section */
-    .contact {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 40px 0;
-    }
-    .contact > p {
-      max-width: 700px;
-      margin-bottom: 30px;
-      color: #666;
-      font-size: 1.1rem;
-    }
-    .contact-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      width: 100%;
-      max-width: 1100px;
-      margin: 0 auto;
-      background: linear-gradient(135deg, rgba(74,107,255,0.05), rgba(140,67,255,0.05));
-      border: 2px solid rgba(74,107,255,0.1);
-      border-radius: 20px;
-      padding: 30px;
-      box-shadow: var(--shadow);
-    }
-    
-    /* Contact Info Styles */
-    .contact-info {
-      flex: 1;
-      background: white;
-      border-radius: 15px;
-      padding: 30px;
-      box-shadow: var(--shadow);
-      border-left: 5px solid var(--primary-color);
-      position: relative;
-      overflow: hidden;
-    }
-    .contact-info::before {
-      content: '';
-      position: absolute;
-      top: -30px;
-      right: -30px;
-      width: 100px;
-      height: 100px;
-      background: var(--gradient);
-      opacity: 0.1;
-      border-radius: 50%;
-      z-index: 0;
-    }
-    .contact-info h3 {
-      font-size: 1.4rem;
-      color: var(--dark-color);
-      margin-bottom: 20px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid #eee;
-      position: relative;
-      z-index: 2;
-    }
-    .contact-item {
-      display: flex;
-      align-items: center;
-      margin-bottom: 20px;
-      color: #555;
-      position: relative;
-      z-index: 2;
-    }
-    .contact-icon {
-      width: 40px;
-      height: 40px;
-      background: var(--gradient);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-right: 15px;
-      color: white;
-      font-size: 1.2rem;
-      box-shadow: 0 5px 15px rgba(74,107,255,0.3);
-      transition: transform 0.3s;
-    }
-    .contact-icon:hover {
-      transform: scale(1.1);
-    }
-    .contact-text {
-      text-align: left;
-    }
-    .contact-text strong {
-      display: block;
-      margin-bottom: 5px;
-      color: var(--dark-color);
-      font-size: 1.05rem;
-    }
-    
-    /* Map Embed */
-    .map-container {
-      margin-top: 20px;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      border: 3px solid var(--primary-color);
-      transition: var(--transition);
-      position: relative;
-      z-index: 2;
-    }
-    .map-container:hover {
-      transform: scale(1.02);
-      box-shadow: 0 12px 30px rgba(74,107,255,0.4);
-    }
-    .map-container iframe {
-      width: 100%;
-      height: 300px;
-      border: 0;
-      loading: lazy;
-    }
-    
-    /* Form Container */
-    .form-container {
-      flex: 1.5;
-      background: white;
-      border-radius: 15px;
-      padding: 30px;
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
-      border: 2px solid var(--primary-color);
-      z-index: 2;
-    }
-    .form-container::before {
-      content: '';
-      position: absolute;
-      top: -40px;
-      left: -40px;
-      width: 150px;
-      height: 150px;
-      background: var(--gradient);
-      opacity: 0.1;
-      border-radius: 50%;
-      z-index: 1;
-    }
-    #contactForm {
-      position: relative;
-      z-index: 2;
-    }
-    .form-group {
-      margin-bottom: 20px;
-      position: relative;
-      text-align: left;
-    }
-    .form-group label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: 600;
-      color: var(--dark-color);
-      font-size: 0.95rem;
-    }
-    .form-group label i {
-      color: var(--primary-color);
-      margin-right: 8px;
-      font-size: 1rem;
-    }
-    .form-group input,
-    .form-group textarea,
-    .form-group select {
-      width: 100%;
-      padding: 12px 15px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      font-size: 1rem;
-      transition: var(--transition);
-    }
-    .form-group input:focus,
-    .form-group textarea:focus,
-    .form-group select:focus {
-      border-color: var(--primary-color);
-      box-shadow: 0 0 0 3px rgba(74,107,255,0.2);
-      outline: none;
-    }
-    button[type="submit"] {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+    .cta-button {
       background: var(--gradient);
       color: white;
       border: none;
-      padding: 12px 30px;
+      padding: 10px 20px;
       border-radius: 30px;
       font-size: 1rem;
       font-weight: 600;
       cursor: pointer;
       transition: var(--transition);
-      box-shadow: 0 5px 15px rgba(74,107,255,0.3);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
-    button[type="submit"]:hover {
+    .cta-button:hover,
+    .cta-button:focus {
       transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(74,107,255,0.4);
-    }
-    button[type="submit"] i {
-      margin-right: 8px;
-    }
-    .spinner {
-      display: none;
-      width: 20px;
-      height: 20px;
-      border: 3px solid rgba(255,255,255,0.3);
-      border-radius: 50%;
-      border-top-color: white;
-      animation: spin 1s ease-in-out infinite;
-      margin-right: 8px;
-    }
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-    .form-status {
-      margin-top: 20px;
-      padding: 15px;
-      border-radius: 8px;
-      display: none;
-      text-align: center;
-      font-weight: 500;
-    }
-    .form-success {
-      background-color: rgba(39,174,96,0.1);
-      color: #27ae60;
-      border: 1px solid #27ae60;
-    }
-    .form-error {
-      background-color: rgba(231,76,60,0.1);
-      color: #e74c3c;
-      border: 1px solid #e74c3c;
     }
     
-    /* Notification Toast */
-    .notification {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: white;
-      color: var(--dark-color);
-      padding: 15px 25px;
-      border-radius: 8px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-      transform: translateY(150%);
-      transition: transform 0.3s ease;
-      z-index: 1000;
-      font-weight: 500;
+    /* Main Content */
+    main {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
-    .notification.show {
-      transform: translateY(0);
+    .about-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 0;
+    }
+    .profile-image {
+      flex: 1;
+      min-width: 300px;
+      max-width: 400px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .profile-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      loading: lazy;
+    }
+    .profile-image:hover {
+      transform: scale(1.05);
+    }
+    .about-content {
+      flex: 2;
+      min-width: 300px;
+    }
+    .about-content h1 {
+      font-size: 2.5rem;
+      color: var(--dark-color);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .about-content p {
+      font-size: 1.1rem;
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+    .about-content a.cta-button {
+      margin-top: 20px;
+      display: inline-block;
     }
     
     /* Footer Styles */
@@ -465,7 +244,8 @@
       border: 2px solid transparent;
       border-radius: 8px;
     }
-    .footer-links a:hover {
+    .footer-links a:hover,
+    .footer-links a:focus {
       color: var(--primary-color);
       border-color: var(--primary-color);
     }
@@ -488,7 +268,8 @@
       text-decoration: none;
       font-size: 1.2rem;
     }
-    .social-icons a:hover {
+    .social-icons a:hover,
+    .social-icons a:focus {
       background: var(--primary-color);
       transform: translateY(-5px);
     }
@@ -498,204 +279,107 @@
     }
     
     /* Responsive Styles */
-    @media (max-width: 992px) {
-      .contact-container {
-        flex-direction: column;
-        padding: 20px;
-      }
-      .contact-info,
-      .form-container {
-        width: 100%;
-        margin-bottom: 20px;
-      }
-    }
     @media (max-width: 768px) {
       nav ul {
         flex-direction: column;
-        align-items: center;
+        display: none;
+        width: 100%;
       }
-      nav ul li {
-        margin: 5px 0;
+      nav ul.active {
+        display: flex;
       }
-      h2 {
-        font-size: 2rem;
+      .menu-toggle {
+        display: block;
       }
-      .contact > p {
-        font-size: 1rem;
-        padding: 0 20px;
+      .about-section {
+        flex-direction: column;
+        text-align: center;
+      }
+      .about-content {
+        margin-top: 20px;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Header with Centered Navigation -->
+  <!-- Header with Navigation -->
   <header>
-    <div class="headline-banner">🚀 Elevate Your Brand's Social Media Presence Today!</div>
+    <div class="headline-banner">🚀 Elevate Your Brand's Digital Experience Today!</div>
     <nav>
+      <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
       <ul>
-        <li><a href="index.html"><i class="fas fa-home" aria-hidden="true"></i><span>Home</span></a></li>
-        <li><a href="about.html"><i class="fas fa-user" aria-hidden="true"></i><span>About Me</span></a></li>
-        <li><a href="hobbies.html"><i class="fas fa-heart" aria-hidden="true"></i><span>My Hobbies</span></a></li>
-        <li><a href="services.html"><i class="fas fa-briefcase" aria-hidden="true"></i><span>My Services</span></a></li>
-        <li><a href="tools.html"><i class="fas fa-tools" aria-hidden="true"></i><span>Tools I Use</span></a></li>
-        <li><a href="contact.html"><i class="fas fa-envelope" aria-hidden="true"></i><span>Get In Touch</span></a></li>
+        <li><a href="index.html" aria-label="Home"><i class="fas fa-home" aria-hidden="true"></i><span>Home</span></a></li>
+        <li><a href="about.html" aria-label="About"><i class="fas fa-user" aria-hidden="true"></i><span>About</span></a></li>
+        <li><a href="hobbies.html" aria-label="Hobbies"><i class="fas fa-heart" aria-hidden="true"></i><span>Hobbies</span></a></li>
+        <li><a href="services.html" aria-label="Services"><i class="fas fa-briefcase" aria-hidden="true"></i><span>Services</span></a></li>
+        <li><a href="tools.html" aria-label="Tools"><i class="fas fa-tools" aria-hidden="true"></i><span>Tools</span></a></li>
+        <li><a href="contact.html" aria-label="Contact"><i class="fas fa-envelope" aria-hidden="true"></i><span>Contact</span></a></li>
+        <li>
+          <a href="https://cal.com/marlon-palomares-c4cyjo/secret" class="cta-button" aria-label="Book a Consultation">
+            <i class="fas fa-calendar-alt" aria-hidden="true"></i><span>Book Now</span>
+          </a>
+        </li>
       </ul>
     </nav>
   </header>
   
-  <!-- Main Content -->
+  <!-- Main Content: About Section -->
   <main>
-    <section class="contact" id="contact">
-      <div class="section-headline">📱 Let's Connect and Grow Together</div>
-      <h2>Get In Touch</h2>
-      <p>
-        Ready to elevate your social media presence? I'm here to help you achieve your digital marketing goals. Fill out the form below, and I'll get back to you with personalized strategies for your brand.
-      </p>
-      
-      <div class="contact-container">
-        <!-- Contact Information -->
-        <div class="contact-info">
-          <h3><i class="fas fa-id-card" aria-hidden="true"></i> Contact Information</h3>
-          <div class="contact-item">
-            <div class="contact-icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
-            <div class="contact-text"><strong>Location</strong> Sitio Bayan-Bayanan, Brgy San Vicente, San Pedro, Laguna</div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon"><i class="fas fa-envelope" aria-hidden="true"></i></div>
-            <div class="contact-text"><strong>Email</strong> mpalomaresdigitalsolution@gmail.com</div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon"><i class="fas fa-phone-alt" aria-hidden="true"></i></div>
-            <div class="contact-text"><strong>Phone</strong> 09913062370</div>
-          </div>
-          <!-- Google Maps Embed -->
-          <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.9999999999995!2d121.005!3d14.123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c8a24f9a5c1f%3A0xabcdef1234567890!2sSitio+Bayan-Bayanan%2C+Brgy+San+Vicente%2C+San+Pedro%2C+Laguna!5e0!3m2!1sen!2sph!4v1600000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of Sitio Bayan-Bayanan, Brgy San Vicente, San Pedro, Laguna"></iframe>
-          </div>
-        </div>
-        
-        <!-- Contact Form -->
-        <div class="form-container">
-          <form id="contactForm">
-            <div class="form-group">
-              <label for="name"><i class="fas fa-user" aria-hidden="true"></i> Full Name</label>
-              <input type="text" id="name" name="name" placeholder="Your name" required />
-            </div>
-            <div class="form-group">
-              <label for="email"><i class="fas fa-envelope" aria-hidden="true"></i> Email Address</label>
-              <input type="email" id="email" name="email" placeholder="your.email@example.com" required />
-            </div>
-            <div class="form-group">
-              <label for="company"><i class="fas fa-building" aria-hidden="true"></i> Company / Brand</label>
-              <input type="text" id="company" name="company" placeholder="Your company or brand name" />
-            </div>
-            <div class="form-group">
-              <label for="service"><i class="fas fa-briefcase" aria-hidden="true"></i> Service You're Interested In</label>
-              <select id="service" name="service" required>
-                <option value="" disabled selected>Select a service</option>
-                <option value="social-media-management">Social Media Management</option>
-                <option value="content-creation">Content Creation</option>
-                <option value="influencer-marketing">Influencer Marketing</option>
-                <option value="paid-advertising">Paid Advertising</option>
-                <option value="social-strategy">Social Media Strategy</option>
-                <option value="other">Other (Please specify)</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="message"><i class="fas fa-comment" aria-hidden="true"></i> How can I help you?</label>
-              <textarea id="message" name="message" rows="5" placeholder="Tell me about your project, goals, or challenges..." required></textarea>
-            </div>
-            <button type="submit" id="submitBtn">
-              <div id="spinner" class="spinner"></div>
-              <i class="fas fa-paper-plane" aria-hidden="true"></i> Send Message
-            </button>
-            <div id="formSuccess" class="form-status form-success">
-              <i class="fas fa-check-circle" aria-hidden="true"></i> Thank you for your message! I'll get back to you soon.
-            </div>
-            <div id="formError" class="form-status form-error">
-              <i class="fas fa-exclamation-circle" aria-hidden="true"></i> Oops! Something went wrong. Please try again later.
-            </div>
-          </form>
-        </div>
+    <section class="about-section">
+      <div class="profile-image">
+        <img src="images/Profile.png" alt="Profile">
+      </div>
+      <div class="about-content">
+        <h1>
+          <a href="https://cal.com/marlon-palomares-c4cyjo/secret" style="text-decoration:none; color:inherit;">
+            About Me
+          </a>
+        </h1>
+        <p>Hello! I’m Marlon Palomares—a Social Media Strategist and Brand Builder ready to help you boost your online presence. Before diving into digital marketing, I spent 5 years in call centers working in CSR and TSR roles, where I learned the value of clear communication and great customer service.</p>
+        <p>I also took online courses at THE VA BAR, where I mastered tools like Apollo, Calendly, Canva, Capcut, ChatGPT, Google Docs, Sheets, Form, and Metricool. I’m offering my service for 7 days so we can team up and see what awesome results we can achieve together!</p>
+        <a href="https://cal.com/marlon-palomares-c4cyjo/secret" class="cta-button" aria-label="Book a Consultation">
+          <i class="fas fa-calendar-alt" aria-hidden="true"></i><span>Book a Consultation</span>
+        </a>
       </div>
     </section>
   </main>
   
-  <!-- Notification Toast -->
-  <div id="notification" class="notification"></div>
-  
-  <!-- Footer with Additional Links -->
+  <!-- Footer with Social Media Icons -->
   <footer>
     <div class="footer-content">
       <div class="footer-links">
-        <a href="privacy-policy.html"><i class="fas fa-user-shield" aria-hidden="true"></i> Privacy Policy</a>
-        <a href="terms-conditions.html"><i class="fas fa-file-contract" aria-hidden="true"></i> Terms &amp; Conditions</a>
-        <a href="sitemap.html"><i class="fas fa-sitemap" aria-hidden="true"></i> Sitemap</a>
+        <a href="privacy-policy.html" aria-label="Privacy Policy"><i class="fas fa-user-shield" aria-hidden="true"></i> Privacy Policy</a>
+        <a href="terms-conditions.html" aria-label="Terms &amp; Conditions"><i class="fas fa-file-contract" aria-hidden="true"></i> Terms &amp; Conditions</a>
+        <a href="sitemap.html" aria-label="Sitemap"><i class="fas fa-sitemap" aria-hidden="true"></i> Sitemap</a>
       </div>
       <div class="social-icons">
-        <a href="https://www.facebook.com/marlon.palomares.2024/" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-        <a href="https://www.instagram.com/palomares523/" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-        <a href="https://x.com/home" aria-label="X (Twitter)"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
-        <a href="https://www.linkedin.com/in/mpdigital/" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+        <a href="https://www.facebook.com/marlon.palomares.2024/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+        <a href="https://www.instagram.com/palomares523/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+        <a href="https://x.com/home" target="_blank" aria-label="X (Twitter)"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/mpdigital/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+        <a href="https://github.com/mpalomaresdigitalsolutions" target="_blank" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
       </div>
       <p>&copy; 2025 Marlon Palomares. All rights reserved.</p>
     </div>
   </footer>
   
-  <!-- External JS Files -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <!-- JavaScript for Mobile Navigation Toggle -->
   <script>
-    // Initialize EmailJS with provided public key
-    emailjs.init("efRrbEvsWA8_PG5Z0");
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navList = document.querySelector('nav ul');
     
-    // Handle form submission using EmailJS
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      // Show spinner and disable button
-      document.getElementById('spinner').style.display = 'block';
-      document.getElementById('submitBtn').disabled = true;
-      
-      // Collect form data
-      const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        company: document.getElementById('company').value,
-        service: document.getElementById('service').value,
-        message: document.getElementById('message').value,
-        to_email: "mpalomaresdigitalsolution@gmail.com"
-      };
-      
-      // Send the email using EmailJS
-      emailjs.send('service_tnsgf4p', 'template_ak7vrx4', formData)
-        .then(function(response) {
-          document.getElementById('spinner').style.display = 'none';
-          document.getElementById('submitBtn').disabled = false;
-          document.getElementById('formSuccess').style.display = 'block';
-          document.getElementById('contactForm').reset();
-          setTimeout(() => {
-            document.getElementById('formSuccess').style.display = 'none';
-          }, 5000);
-        }, function(error) {
-          document.getElementById('spinner').style.display = 'none';
-          document.getElementById('submitBtn').disabled = false;
-          document.getElementById('formError').style.display = 'block';
-          setTimeout(() => {
-            document.getElementById('formError').style.display = 'none';
-          }, 5000);
-        });
+    menuToggle.addEventListener('click', function() {
+      const expanded = this.getAttribute('aria-expanded') === 'true' || false;
+      this.setAttribute('aria-expanded', !expanded);
+      navList.classList.toggle('active');
+      const icon = this.querySelector('i');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-times');
     });
     
-    // Optional: Notification function for additional feedback
-    function showNotification(message) {
-      const notification = document.getElementById('notification');
-      notification.textContent = message;
-      notification.classList.add('show');
-      setTimeout(() => {
-        notification.classList.remove('show');
-      }, 3000);
-    }
+    // Additional scripts for future enhancements can be added here.
   </script>
-  <script src="js/script.js"></script>
-</body>
+  </body>
 </html>
