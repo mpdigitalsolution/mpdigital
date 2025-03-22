@@ -56,10 +56,18 @@
       box-sizing: border-box;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
+    /* Animated Gradient Background */
     body {
-      background-color: #f5f7fa;
+      background: linear-gradient(270deg, var(--primary-color), var(--secondary-color));
+      background-size: 400% 400%;
+      animation: gradientAnimation 15s ease infinite;
       color: #333;
       line-height: 1.6;
+    }
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
     .container {
       max-width: 1200px;
@@ -229,6 +237,10 @@
     /* Main Content Styles */
     main {
       padding: 40px 0;
+      background: rgba(255, 255, 255, 0.8); /* Semi-transparent overlay for readability */
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      margin: 0 20px;
     }
     .section-headline {
       background: var(--dark-color);
@@ -667,10 +679,10 @@
           <p>Comprehensive social media strategies tailored to your business goals, target audience, and industry trends.</p>
           <div class="service-detail">
             <ul>
-              <li>Brand analysis &amp; competitor research</li>
-              <li>Channel selection &amp; optimization</li>
+              <li>Brand analysis & competitor research</li>
+              <li>Channel selection & optimization</li>
               <li>Content calendar planning</li>
-              <li>KPI setting &amp; performance targets</li>
+              <li>KPI setting & performance targets</li>
             </ul>
           </div>
           <div class="service-cta">
@@ -684,8 +696,8 @@
           <div class="service-detail">
             <ul>
               <li>Professional visual content</li>
-              <li>Copywriting &amp; caption development</li>
-              <li>Video creation &amp; editing</li>
+              <li>Copywriting & caption development</li>
+              <li>Video creation & editing</li>
               <li>Brand voice consistency</li>
             </ul>
           </div>
@@ -699,7 +711,7 @@
           <p>Proactive engagement with your audience to build community, increase loyalty, and manage reputation.</p>
           <div class="service-detail">
             <ul>
-              <li>Daily comment &amp; message monitoring</li>
+              <li>Daily comment & message monitoring</li>
               <li>Audience engagement strategies</li>
               <li>Crisis management preparation</li>
               <li>Community building activities</li>
@@ -715,8 +727,8 @@
           <p>Strategic paid advertising to amplify your reach, target specific demographics, and achieve business objectives.</p>
           <div class="service-detail">
             <ul>
-              <li>Ad strategy &amp; budget planning</li>
-              <li>Creative development &amp; testing</li>
+              <li>Ad strategy & budget planning</li>
+              <li>Creative development & testing</li>
               <li>Advanced audience targeting</li>
               <li>ROI optimization</li>
             </ul>
@@ -727,7 +739,7 @@
         </div>
         <!-- Service Card 5: Analytics & Reporting -->
         <div class="service-card">
-          <h3><i class="fas fa-chart-pie"></i> Analytics &amp; Reporting</h3>
+          <h3><i class="fas fa-chart-pie"></i> Analytics & Reporting</h3>
           <p>Detailed analysis and reporting of performance metrics to continuously optimize your social media presence.</p>
           <div class="service-detail">
             <ul>
@@ -747,9 +759,9 @@
           <p>Strategic partnerships with relevant influencers to expand reach and enhance brand credibility.</p>
           <div class="service-detail">
             <ul>
-              <li>Influencer identification &amp; vetting</li>
+              <li>Influencer identification & vetting</li>
               <li>Partnership negotiation</li>
-              <li>Campaign planning &amp; execution</li>
+              <li>Campaign planning & execution</li>
               <li>Performance tracking</li>
             </ul>
           </div>
@@ -779,10 +791,10 @@
           <p>Maximize your ROI with expertly managed Google Ads campaigns designed to drive quality traffic and conversions.</p>
           <div class="service-detail">
             <ul>
-              <li>Keyword research &amp; campaign setup</li>
-              <li>Ad copy creation &amp; testing</li>
-              <li>Bid management &amp; optimization</li>
-              <li>Performance tracking &amp; reporting</li>
+              <li>Keyword research & campaign setup</li>
+              <li>Ad copy creation & testing</li>
+              <li>Bid management & optimization</li>
+              <li>Performance tracking & reporting</li>
             </ul>
           </div>
           <div class="service-cta">
@@ -795,9 +807,9 @@
           <p>Engage your audience and boost conversions with tailored Facebook Ads campaigns optimized for your brand.</p>
           <div class="service-detail">
             <ul>
-              <li>Audience segmentation &amp; targeting</li>
-              <li>Creative ad design &amp; copy</li>
-              <li>Budget allocation &amp; optimization</li>
+              <li>Audience segmentation & targeting</li>
+              <li>Creative ad design & copy</li>
+              <li>Budget allocation & optimization</li>
               <li>Detailed performance analysis</li>
             </ul>
           </div>
@@ -855,7 +867,7 @@
             <li><a href="services.html">My Services</a></li>
             <li><a href="tools.html">Tools I Use</a></li>
             <li><a href="privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="terms-and-conditions.html">Terms &amp; Conditions</a></li>
+            <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
           </ul>
         </div>
         <div class="footer-section">
@@ -865,7 +877,7 @@
             <li><a href="services.html#content">Content Creation</a></li>
             <li><a href="services.html#community">Community Management</a></li>
             <li><a href="services.html#paid">Paid Campaigns</a></li>
-            <li><a href="services.html#analytics">Analytics &amp; Reporting</a></li>
+            <li><a href="services.html#analytics">Analytics & Reporting</a></li>
           </ul>
         </div>
         <div class="footer-section">
@@ -876,7 +888,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2025 Marlon Palomares. All rights reserved.</p>
+        <p>© 2025 Marlon Palomares. All rights reserved.</p>
       </div>
     </div>
   </footer>

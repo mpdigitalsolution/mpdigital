@@ -69,11 +69,28 @@
       box-sizing: border-box;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
+    
+    /* Animated Gradient Background */
     body {
-      background-color: #f5f7fa;
+      background: linear-gradient(270deg, var(--primary-color), var(--secondary-color));
+      background-size: 400% 400%;
+      animation: gradientAnimation 15s ease infinite;
       color: #333;
       line-height: 1.6;
     }
+    
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+    
     .container {
       max-width: 1200px;
       margin: 0 auto;
@@ -254,6 +271,10 @@
     main {
       padding: 40px 0;
       text-align: center;
+      background: rgba(255, 255, 255, 0.8); /* Semi-transparent overlay for readability */
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      margin: 0 20px;
     }
     .section-headline {
       background: var(--dark-color);
@@ -560,7 +581,7 @@
   <main id="mainContent">
     <section class="hobbies">
       <div class="section-headline">🌟 Beyond Social Media: What Makes Me Tick</div>
-      <h2>My Hobbies &amp; Passions</h2>
+      <h2>My Hobbies & Passions</h2>
       <p>When I'm not crafting engaging content or analyzing social media metrics, here’s what fuels my creativity and keeps me balanced:</p>
       
       <div class="hobbies-grid">
@@ -639,9 +660,9 @@
         <a href="services.html">Services</a>
         <a href="contact.html">Contact</a>
         <a href="privacy-policy.html">Privacy Policy</a>
-        <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+        <a href="terms-and-conditions.html">Terms & Conditions</a>
       </div>
-      <p>&copy; 2025 Marlon Palomares. All rights reserved.</p>
+      <p>© 2025 Marlon Palomares. All rights reserved.</p>
     </div>
   </footer>
   

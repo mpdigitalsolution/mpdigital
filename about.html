@@ -44,7 +44,7 @@
       --secondary-color: #ff6b6b;
       --dark-color: #2c3e50;
       --light-color: #f8f9fa;
-      --gradient: linear-gradient(135deg, var(--primary-color), #8c43ff);
+      --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
       --transition: all 0.3s ease;
     }
     
@@ -55,11 +55,27 @@
       box-sizing: border-box;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
+    
+    /* Animated Gradient Background */
     body {
-      background-color: #f5f7fa;
+      background: linear-gradient(270deg, var(--primary-color), var(--secondary-color));
+      background-size: 400% 400%;
+      animation: gradientAnimation 15s ease infinite;
       color: #333;
       line-height: 1.6;
       overflow-x: hidden;
+    }
+    
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
     }
     
     /* Header & Navigation */
@@ -163,6 +179,9 @@
       max-width: 1200px;
       margin: 40px auto;
       padding: 0 20px;
+      background: rgba(255, 255, 255, 0.8); /* Semi-transparent overlay for readability */
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
     .about-section {
       display: flex;
@@ -193,7 +212,7 @@
     }
     .about-content {
       flex: 2;
-      min-widthA: 300px;
+      min-width: 300px; /* Corrected from min-widthA to min-width */
     }
     .about-content h1 {
       font-size: 2.5rem;
@@ -304,7 +323,7 @@
 <body>
   <!-- Header with Navigation -->
   <header>
-    <div class="headline-banner">🚀 Elevate Your Brand's Digital Experience Today!</div>
+    <div class="headline-banner"> Elevate Your Brand's Digital Experience Today!</div>
     <nav>
       <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
         <i class="fas fa-bars" aria-hidden="true"></i>
@@ -329,7 +348,7 @@
   <main>
     <section class="about-section">
       <div class="profile-image">
-        <img src="images/Profile.png" alt="Profile">
+        <img src="images/Profile.png" alt="Profile" loading="lazy">
       </div>
       <div class="about-content">
         <h1>
@@ -351,7 +370,7 @@
     <div class="footer-content">
       <div class="footer-links">
         <a href="privacy-policy.html" aria-label="Privacy Policy"><i class="fas fa-user-shield" aria-hidden="true"></i> Privacy Policy</a>
-        <a href="terms-conditions.html" aria-label="Terms &amp; Conditions"><i class="fas fa-file-contract" aria-hidden="true"></i> Terms &amp; Conditions</a>
+        <a href="terms-conditions.html" aria-label="Terms & Conditions"><i class="fas fa-file-contract" aria-hidden="true"></i> Terms & Conditions</a>
         <a href="sitemap.html" aria-label="Sitemap"><i class="fas fa-sitemap" aria-hidden="true"></i> Sitemap</a>
       </div>
       <div class="social-icons">
@@ -361,7 +380,7 @@
         <a href="https://www.linkedin.com/in/mpdigital/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
         <a href="https://github.com/mpalomaresdigitalsolutions" target="_blank" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
       </div>
-      <p>&copy; 2025 Marlon Palomares. All rights reserved.</p>
+      <p>© 2025 Marlon Palomares. All rights reserved.</p>
     </div>
   </footer>
   
@@ -381,5 +400,5 @@
     
     // Additional scripts for future enhancements can be added here.
   </script>
-  </body>
+</body>
 </html>

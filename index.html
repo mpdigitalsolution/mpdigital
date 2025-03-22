@@ -49,14 +49,14 @@
     })();
   </script>
 
-  <!-- External Stylesheet -->
-  <link rel="stylesheet" href="css/style.css">
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap">
 
   <style>
     /* Global Styles */
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Poppins', Arial, sans-serif;
       text-align: center;
       background: #fff;
       color: #333;
@@ -84,25 +84,29 @@
     
     /* Header & Navigation */
     .headline-banner {
-      background-color: #e74c3c;
+      background: linear-gradient(90deg, #e74c3c, #c0392b);
       color: white;
       text-align: center;
       padding: 10px;
       font-weight: bold;
+      font-family: 'Playfair Display', serif;
     }
     
     header {
-      position: relative;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(44, 62, 80, 0.85);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
     
     nav {
-      background-color: #2c3e50;
+      background: transparent;
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
-      padding: 10px 20px;
+      padding: 15px 20px;
     }
     
     nav ul {
@@ -115,48 +119,62 @@
     }
     
     nav ul li {
-      margin: 0 15px;
+      margin: 0 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.5s ease forwards;
+      animation-delay: calc(0.1s * var(--i));
+    }
+    
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
     
     nav ul li a {
       display: inline-flex;
       align-items: center;
       color: white;
-      padding: 8px 15px;
-      border-radius: 30px;
-      border: 1px solid transparent;
-      background: rgba(255, 255, 255, 0.05);
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-      position: relative;
+      padding: 10px 20px;
+      border-radius: 50px;
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
       transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
     }
-    /* Additional icon layer and border effect */
+    
     nav ul li a::before {
       content: '';
       position: absolute;
       top: 0;
-      left: 0;
+      left: -100%;
       width: 100%;
       height: 100%;
-      border: 1px solid transparent;
-      border-radius: 30px;
-      z-index: -1;
-      transition: border-color 0.3s ease;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: 0.5s;
     }
-    nav ul li a:hover {
-      border-color: #3498db;
-      background: rgba(52, 152, 219, 0.2);
-    }
+    
     nav ul li a:hover::before {
-      border-color: #3498db;
+      left: 100%;
     }
+    
+    nav ul li a:hover {
+      background: rgba(52, 152, 219, 0.3);
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(52, 152, 219, 0.5);
+    }
+    
     nav ul li a:focus {
       outline: 2px dashed #3498db;
       outline-offset: 4px;
     }
+    
     .nav-icon {
-      margin-right: 5px;
-      font-size: 16px;
+      margin-right: 8px;
+      font-size: 18px;
     }
     
     .menu-toggle {
@@ -164,12 +182,17 @@
       background: none;
       border: none;
       color: white;
-      font-size: 24px;
+      font-size: 28px;
       cursor: pointer;
       position: absolute;
       right: 20px;
       top: 15px;
       z-index: 110;
+      transition: transform 0.3s ease;
+    }
+    
+    .menu-toggle:hover {
+      transform: rotate(90deg);
     }
     
     @media screen and (max-width: 768px) {
@@ -180,17 +203,18 @@
         flex-direction: column;
         display: none;
         width: 100%;
-        background-color: #2c3e50;
+        background: rgba(44, 62, 80, 0.95);
+        padding: 20px 0;
       }
       nav ul.active {
         display: flex;
       }
       nav ul li {
-        margin: 10px 0;
+        margin: 15px 0;
       }
     }
     
-    /* Hero Section */
+    /* Hero Section with Overlay Gradient */
     .hero {
       position: relative;
       height: 80vh;
@@ -202,6 +226,17 @@
       justify-content: center;
       padding: 20px;
       overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, rgba(255,107,107,0.3), rgba(240,101,149,0.3));
+      z-index: 1;
     }
     
     .hero:after {
@@ -230,16 +265,27 @@
       flex: 1;
       max-width: 600px;
       text-align: left;
+      opacity: 0;
+      transform: translateX(-50px);
+      animation: slideIn 1s ease forwards;
+    }
+    
+    @keyframes slideIn {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
     
     .hero-title {
       font-size: 48px;
-      font-weight: bold;
+      font-weight: 700;
       margin-bottom: 20px;
       line-height: 1.2;
       background: linear-gradient(45deg, #ff6b6b, #f06595);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      font-family: 'Playfair Display', serif;
     }
     
     .hero-subtitle {
@@ -257,13 +303,13 @@
       font-weight: bold;
       color: white;
       background: linear-gradient(45deg, #ff6b6b, #f06595);
-      transition: background 0.3s ease, transform 0.3s ease;
-      text-decoration: none;
+      transition: all 0.3s ease;
     }
     
     .hero-cta a:hover {
       background: linear-gradient(45deg, #f06595, #ff6b6b);
-      transform: translateY(-3px);
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 8px 20px rgba(255,107,107,0.4);
     }
     
     .hero-image {
@@ -273,6 +319,9 @@
       align-items: center;
       justify-content: center;
       margin-top: 20px;
+      opacity: 0;
+      transform: translateX(50px);
+      animation: slideIn 1s ease forwards 0.3s;
     }
     
     .profile-display {
@@ -295,7 +344,6 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      loading: lazy;
     }
     
     /* Services Section */
@@ -312,6 +360,7 @@
       position: relative;
       padding-bottom: 15px;
       display: inline-block;
+      font-family: 'Playfair Display', serif;
     }
     
     .section-title:after {
@@ -410,10 +459,12 @@
       font-weight: bold;
       display: inline-block;
       margin-top: 10px;
+      transition: all 0.3s ease;
     }
     
     .learn-more-toggle:hover {
       text-decoration: underline;
+      color: #2980b9;
     }
     
     /* CTA Section */
@@ -434,6 +485,7 @@
       font-size: 36px;
       font-weight: bold;
       margin-bottom: 20px;
+      font-family: 'Playfair Display', serif;
     }
     
     .cta-text {
@@ -449,23 +501,23 @@
       font-weight: bold;
       color: white;
       background: linear-gradient(45deg, #ff6b6b, #f06595);
-      transition: background 0.3s ease, transform 0.3s ease;
-      text-decoration: none;
+      transition: all 0.3s ease;
     }
     
     .cta-primary:hover {
       background: linear-gradient(45deg, #f06595, #ff6b6b);
-      transform: translateY(-3px);
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 8px 20px rgba(255,107,107,0.4);
     }
     
-    /* Floating Message Button & Modal */
-    .floating-message-btn {
+    /* WhatsApp Chat Button & Modal */
+    .whatsapp-chat-btn {
       position: fixed;
       bottom: 30px;
       right: 30px;
       width: 60px;
       height: 60px;
-      background: linear-gradient(135deg, #3498db, #2980b9);
+      background: #25D366;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -478,107 +530,108 @@
       transition: all 0.3s ease;
     }
     
-    .floating-message-btn:hover {
+    .whatsapp-chat-btn:hover {
       transform: scale(1.1);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      background: #20b354;
     }
     
-    .message-modal {
+    .chat-modal {
       display: none;
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.7);
-      z-index: 1000;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
-    
-    .message-modal.active {
-      display: flex;
-    }
-    
-    .message-form-container {
-      background-color: white;
+      bottom: 100px;
+      right: 30px;
+      width: 300px;
+      background: white;
       border-radius: 15px;
-      padding: 30px;
-      width: 100%;
-      max-width: 500px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-      position: relative;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+      z-index: 1000;
+      overflow: hidden;
     }
     
-    .close-modal {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      font-size: 24px;
-      color: #7f8c8d;
+    .chat-modal.active {
+      display: block;
+    }
+    
+    .chat-header {
+      background: #25D366;
+      color: white;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .chat-header h3 {
+      margin: 0;
+      font-size: 16px;
+    }
+    
+    .close-chat {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 20px;
       cursor: pointer;
       transition: color 0.3s ease;
     }
     
-    .close-modal:hover {
-      color: #e74c3c;
+    .close-chat:hover {
+      color: #ddd;
     }
     
-    .message-form h3 {
-      margin-bottom: 20px;
-      color: #2c3e50;
-      font-size: 24px;
+    .chat-body {
+      padding: 15px;
+      max-height: 200px;
+      overflow-y: auto;
     }
     
-    .form-group {
-      margin-bottom: 20px;
-      text-align: left;
+    .chat-message {
+      background: #f1f1f1;
+      padding: 10px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      font-size: 14px;
     }
     
-    .form-group label {
-      display: block;
-      margin-bottom: 8px;
-      color: #2c3e50;
-      font-weight: bold;
+    .chat-footer {
+      padding: 15px;
+      border-top: 1px solid #ddd;
     }
     
-    .form-group input,
-    .form-group textarea {
+    .chat-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .chat-form textarea {
       width: 100%;
-      padding: 12px;
+      padding: 10px;
       border-radius: 8px;
       border: 1px solid #ddd;
-      font-size: 16px;
-      transition: border 0.3s ease;
+      resize: none;
+      font-size: 14px;
     }
     
-    .form-group input:focus,
-    .form-group textarea:focus {
+    .chat-form textarea:focus {
       outline: none;
-      border-color: #3498db;
+      border-color: #25D366;
     }
     
-    .form-group textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-    
-    .send-message-btn {
-      background: linear-gradient(to right, #3498db, #2980b9);
+    .chat-form button {
+      background: #25D366;
       color: white;
       border: none;
-      padding: 14px 28px;
-      border-radius: 50px;
-      font-size: 16px;
-      font-weight: bold;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 14px;
       cursor: pointer;
       transition: all 0.3s ease;
     }
     
-    .send-message-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(52,152,219,0.3);
+    .chat-form button:hover {
+      background: #20b354;
+      transform: translateY(-2px);
     }
     
     /* Footer */
@@ -653,32 +706,32 @@
         <i class="fas fa-bars"></i>
       </button>
       <ul id="navMenu">
-        <li>
+        <li style="--i: 1;">
           <a href="index.html">
             <i class="fas fa-home nav-icon"></i> Home
           </a>
         </li>
-        <li>
+        <li style="--i: 2;">
           <a href="about.html">
             <i class="fas fa-user nav-icon"></i> About Me
           </a>
         </li>
-        <li>
+        <li style="--i: 3;">
           <a href="hobbies.html">
             <i class="fas fa-heart nav-icon"></i> My Hobbies
           </a>
         </li>
-        <li>
+        <li style="--i: 4;">
           <a href="services.html">
             <i class="fas fa-cogs nav-icon"></i> My Services
           </a>
         </li>
-        <li>
+        <li style="--i: 5;">
           <a href="tools.html">
             <i class="fas fa-wrench nav-icon"></i> Tools I Use
           </a>
         </li>
-        <li>
+        <li style="--i: 6;">
           <a href="contact.html">
             <i class="fas fa-envelope nav-icon"></i> Get In Touch
           </a>
@@ -755,12 +808,12 @@
             <i class="fas fa-chart-line"></i>
           </div>
           <div class="service-content">
-            <h3 class="service-title">Analytics &amp; Reporting</h3>
+            <h3 class="service-title">Analytics & Reporting</h3>
             <p class="service-description">
               In-depth analysis and regular reporting to track performance, optimize strategies, and demonstrate clear ROI on your investment.
             </p>
             <div class="service-more">
-              <p>Our Analytics &amp; Reporting service provides detailed insights and actionable data to continuously refine your social media strategy.</p>
+              <p>Our Analytics & Reporting service provides detailed insights and actionable data to continuously refine your social media strategy.</p>
             </div>
             <a class="service-link learn-more-toggle">Learn More <i class="fas fa-chevron-down"></i></a>
           </div>
@@ -781,34 +834,26 @@
       </div>
     </section>
     
-    <!-- Floating Message Button -->
-    <div class="floating-message-btn" id="messageBtn">
-      <i class="fas fa-comment"></i>
+    <!-- Floating WhatsApp Chat Button -->
+    <div class="whatsapp-chat-btn" id="whatsappChatBtn">
+      <i class="fab fa-whatsapp"></i>
     </div>
     
-    <!-- Message Form Modal -->
-    <div class="message-modal" id="messageModal">
-      <div class="message-form-container">
-        <div class="close-modal" id="closeModal">
-          <i class="fas fa-times"></i>
+    <!-- WhatsApp Chat Modal -->
+    <div class="chat-modal" id="whatsappChatModal">
+      <div class="chat-header">
+        <h3>Chat with Us on WhatsApp</h3>
+        <button class="close-chat" id="closeWhatsappChat">×</button>
+      </div>
+      <div class="chat-body">
+        <div class="chat-message">
+          Hello! How can we assist you today?
         </div>
-        <form class="message-form" id="messageForm">
-          <h3>Send Me a Message</h3>
-          <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" required>
-          </div>
-          <div class="form-group">
-            <label for="email">Your Email</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          <div class="form-group">
-            <label for="message">Your Message</label>
-            <textarea id="message" name="message" required></textarea>
-          </div>
-          <button type="submit" class="send-message-btn">
-            Send Message <i class="fas fa-paper-plane"></i>
-          </button>
+      </div>
+      <div class="chat-footer">
+        <form class="chat-form" id="whatsappChatForm">
+          <textarea placeholder="Type your message..." required></textarea>
+          <button type="submit">Send to WhatsApp</button>
         </form>
       </div>
     </div>
@@ -817,10 +862,9 @@
   <!-- Footer -->
   <footer>
     <div class="footer-content">
-      <!-- Unified list of site links -->
       <ul class="footer-links">
         <li><a href="privacy-policy.html"><i class="fas fa-lock"></i> Privacy Policy</a></li>
-        <li><a href="terms-conditions.html"><i class="fas fa-gavel"></i> Terms &amp; Conditions</a></li>
+        <li><a href="terms-conditions.html"><i class="fas fa-gavel"></i> Terms & Conditions</a></li>
         <li><a href="sitemap.html"><i class="fas fa-sitemap"></i> Sitemap</a></li>
       </ul>
       <div class="social-icons">
@@ -830,13 +874,12 @@
         <a href="https://www.linkedin.com/in/mpdigital/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         <a href="https://github.com/mpalomaresdigitalsolutions" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
       </div>
-      <p>&copy; 2025 Marlon Palomares. All rights reserved.</p>
+      <p>© 2025 Marlon Palomares. All rights reserved.</p>
     </div>
   </footer>
   
   <!-- External JS Files -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
-  <script src="js/script.js"></script>
   
   <!-- Inline Navigation and Modal Script -->
   <script>
@@ -867,19 +910,6 @@
         }
       });
       
-      // Floating Message Modal functionality
-      const messageBtn = document.getElementById('messageBtn');
-      const messageModal = document.getElementById('messageModal');
-      const closeModal = document.getElementById('closeModal');
-      
-      messageBtn.addEventListener('click', function() {
-        messageModal.classList.add('active');
-      });
-      
-      closeModal.addEventListener('click', function() {
-        messageModal.classList.remove('active');
-      });
-      
       // Learn More toggle for service cards
       const learnMoreToggles = document.querySelectorAll('.learn-more-toggle');
       learnMoreToggles.forEach(toggle => {
@@ -897,8 +927,34 @@
         });
       });
       
-      // Additional script area for further changes and improvements
-      // Further studies and modifications can be done here.
+      // WhatsApp Chat functionality
+      const whatsappChatBtn = document.getElementById('whatsappChatBtn');
+      const whatsappChatModal = document.getElementById('whatsappChatModal');
+      const closeWhatsappChat = document.getElementById('closeWhatsappChat');
+      const whatsappChatForm = document.getElementById('whatsappChatForm');
+      
+      // Toggle WhatsApp chat modal
+      whatsappChatBtn.addEventListener('click', function() {
+        whatsappChatModal.classList.toggle('active');
+      });
+      
+      closeWhatsappChat.addEventListener('click', function() {
+        whatsappChatModal.classList.remove('active');
+      });
+      
+      // Handle WhatsApp chat form submission
+      whatsappChatForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const message = whatsappChatForm.querySelector('textarea').value.trim();
+        if (message) {
+          const whatsappNumber = '+09913062370'; // Replace with your actual phone number
+          const whatsappMessage = encodeURIComponent(`Hi there! ${message}`);
+          const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+          window.open(whatsappURL, '_blank');
+          whatsappChatForm.reset();
+          whatsappChatModal.classList.remove('active');
+        }
+      });
     });
   </script>
 </body>

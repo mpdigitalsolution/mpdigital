@@ -56,11 +56,22 @@
       box-sizing: border-box;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
+
+    /* Animated Gradient Background */
     body {
-      background-color: var(--light-color);
+      background: linear-gradient(270deg, var(--primary-color), var(--secondary-color));
+      background-size: 400% 400%;
+      animation: gradientAnimation 15s ease infinite;
       color: #333;
       line-height: 1.6;
     }
+
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
     .container {
       max-width: 1200px;
       margin: 0 auto;
@@ -96,6 +107,7 @@
       z-index: 1000;
       box-shadow: 0 2px 15px rgba(0,0,0,0.1);
     }
+
     /* Navigation Container with Mobile Toggle */
     .nav-container {
       display: flex;
@@ -204,12 +216,15 @@
       }
     }
 
-    /* Main Content */
+    /* Main Content with Semi-Transparent Overlay */
     main {
       max-width: 1200px;
       margin: 40px auto;
       padding: 0 20px;
       text-align: center;
+      background: rgba(255, 255, 255, 0.8); /* Semi-transparent overlay for readability */
+      border-radius: var(--border-radius);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
     .section-headline {
       font-size: 1.2rem;
@@ -485,7 +500,7 @@
             <p>Video editing software for creating engaging social media videos with professional effects and transitions.</p>
           </div>
         </div>
-        <!-- Portfolio Item: Calendly (Updated CTA link) -->
+        <!-- Portfolio Item: Calendly -->
         <div class="portfolio-item">
           <a href="https://cal.com/marlon-palomares-c4cyjo/secret" class="portfolio-cta" aria-label="Book a Consultation">Book Now</a>
           <img src="images/calendly.png" alt="Calendly logo" loading="lazy">
@@ -566,7 +581,7 @@
       <a href="https://www.linkedin.com/in/mpdigital/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
       <a href="https://github.com/mpalomaresdigitalsolutions" aria-label="GitHub"><i class="fab fa-github"></i></a>
     </div>
-    <p>&copy; 2025 Marlon Palomares. All rights reserved.</p>
+    <p>© 2025 Marlon Palomares. All rights reserved.</p>
   </footer>
 
   <!-- External JS Files -->

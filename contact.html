@@ -70,10 +70,20 @@
       box-sizing: border-box;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
+    
+    /* Animated Gradient Background */
     body {
-      background-color: #f5f7fa;
+      background: linear-gradient(270deg, var(--primary-color), var(--secondary-color));
+      background-size: 400% 400%;
+      animation: gradientAnimation 15s ease infinite;
       color: #333;
       line-height: 1.6;
+    }
+    
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
     
     /* Skip Link for Accessibility */
@@ -268,12 +278,15 @@
       width: 70%;
     }
     
-    /* Main Content */
+    /* Main Content with Semi-Transparent Overlay */
     main {
       max-width: 1200px;
       margin: 40px auto;
-      padding: 0 20px;
+      padding: 20px;
       text-align: center;
+      background: rgba(255, 255, 255, 0.8); /* Semi-transparent overlay for readability */
+      border-radius: 20px;
+      box-shadow: var(--shadow);
     }
     .section-headline {
       font-size: 1.2rem;
@@ -814,8 +827,8 @@
         <a href="services.html" class="footer-link">Services</a>
         <a href="tools.html" class="footer-link">Tools</a>
         <a href="contact.html" class="footer-link">Contact</a>
-        <a href="privacy-policy.html" class="footer-link"><i class="fas fa-lock" aria-hidden="true"></i> Privacy &amp; Policy</a>
-        <a href="terms-conditions.html" class="footer-link"><i class="fas fa-gavel" aria-hidden="true"></i> Terms &amp; Conditions</a>
+        <a href="privacy-policy.html" class="footer-link"><i class="fas fa-lock" aria-hidden="true"></i> Privacy & Policy</a>
+        <a href="terms-conditions.html" class="footer-link"><i class="fas fa-gavel" aria-hidden="true"></i> Terms & Conditions</a>
       </div>
       <div class="social-icons">
         <a href="https://www.facebook.com/marlon.palomares.2024/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
@@ -824,7 +837,7 @@
         <a href="https://www.linkedin.com/in/mpdigital/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
         <a href="https://github.com/mpalomaresdigitalsolutions" target="_blank" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
       </div>
-      <p>&copy; 2025 Marlon Palomares. All rights reserved.</p>
+      <p>© 2025 Marlon Palomares. All rights reserved.</p>
     </div>
   </footer>
   
