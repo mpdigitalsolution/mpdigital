@@ -111,12 +111,34 @@
       top: 0;
       z-index: 1000;
     }
+    /* Logo Styles */
+    .logo-container {
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+    }
+    .logo {
+      width: 50px;
+      height: 50px;
+      margin-right: 15px;
+      transition: var(--transition);
+    }
+    .logo:hover {
+      transform: rotate(15deg) scale(1.1);
+    }
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--dark-color);
+      display: none; /* Hidden on mobile by default */
+    }
     /* Navigation Container with Mobile Toggle */
     .nav-container {
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 10px 20px;
+      position: relative;
     }
     .nav-toggle {
       display: none;
@@ -125,6 +147,7 @@
       border: none;
       cursor: pointer;
       color: var(--dark-color);
+      z-index: 1001;
     }
     nav ul {
       display: flex;
@@ -212,19 +235,30 @@
     }
     /* Mobile Navigation */
     @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .logo-text {
+        display: block; /* Show text next to logo on mobile */
+        font-size: 1.2rem;
+      }
       .nav-toggle {
         display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
       }
       nav ul {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         display: none;
         width: 100%;
         background: #fff;
         box-shadow: var(--box-shadow);
-        padding: 10px 0;
-        position: absolute;
-        top: 60px;
+        padding: 20px 0;
+        position: relative;
+        top: 0;
         left: 0;
       }
       nav ul.show {
@@ -232,6 +266,16 @@
       }
       nav ul li {
         margin: 10px 0;
+        width: 100%;
+      }
+      nav ul li a {
+        width: 100%;
+        padding: 12px 20px;
+      }
+      .cta-button {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
       }
     }
     /* Main Content Styles */
@@ -240,7 +284,7 @@
       background: rgba(255, 255, 255, 0.8); /* Semi-transparent overlay for readability */
       border-radius: var(--border-radius);
       box-shadow: var(--box-shadow);
-      margin: 0 20px;
+      margin: 20px;
     }
     .section-headline {
       background: var(--dark-color);
@@ -292,6 +336,11 @@
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
       gap: 30px;
+    }
+    @media (max-width: 768px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
     }
     .service-card {
       background: #fff;
@@ -506,6 +555,7 @@
       justify-content: center;
       gap: 30px;
       margin-top: 20px;
+      flex-wrap: wrap;
     }
     .social-icon {
       width: 70px;
@@ -608,6 +658,18 @@
       font-size: 0.9rem;
       color: #bbb;
     }
+    @media (max-width: 768px) {
+      .footer-content {
+        grid-template-columns: 1fr;
+      }
+      .footer-section {
+        text-align: center;
+      }
+      .footer-section h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
   </style>
   <!-- Font Awesome JS (deferred) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js" defer></script>
@@ -623,6 +685,10 @@
       </a>
     </div>
     <div class="nav-container">
+      <div class="logo-container">
+        <img src="Mp.svg" alt="Marlon Palomares Digital Solutions Logo" class="logo">
+        <span class="logo-text">Marlon Palomares</span>
+      </div>
       <button class="nav-toggle" aria-label="Toggle Navigation">
         <i class="fas fa-bars"></i>
       </button>
@@ -912,6 +978,16 @@
     const navMenu = document.getElementById('nav-menu');
     navToggle.addEventListener('click', function() {
       navMenu.classList.toggle('show');
+      this.setAttribute('aria-expanded', navMenu.classList.contains('show'));
+    });
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('#nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+          navMenu.classList.remove('show');
+          navToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
     });
   </script>
 </body>

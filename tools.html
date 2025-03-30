@@ -108,12 +108,32 @@
       box-shadow: 0 2px 15px rgba(0,0,0,0.1);
     }
 
+    /* Brand Logo in Header */
+    .brand-logo {
+      height: 50px;
+      width: auto;
+      margin-right: 15px;
+      transition: transform 0.3s ease;
+    }
+    .brand-logo:hover {
+      transform: scale(1.05);
+    }
+
     /* Navigation Container with Mobile Toggle */
     .nav-container {
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 15px 20px;
+    }
+    .brand-container {
+      display: flex;
+      align-items: center;
+    }
+    .brand-name {
+      font-weight: 700;
+      color: var(--dark-color);
+      font-size: 1.2rem;
     }
     .nav-toggle {
       display: none;
@@ -204,7 +224,7 @@
         background: #fff;
         box-shadow: 0 2px 15px rgba(0,0,0,0.1);
         position: absolute;
-        top: 60px;
+        top: 80px;
         left: 0;
         padding: 10px 0;
       }
@@ -214,56 +234,61 @@
       nav ul li {
         margin: 10px 0;
       }
+      .brand-name {
+        display: none;
+      }
     }
 
     /* Main Content with Semi-Transparent Overlay */
     main {
       max-width: 1200px;
       margin: 40px auto;
-      padding: 0 20px;
+      padding: 20px;
       text-align: center;
-      background: rgba(255, 255, 255, 0.8); /* Semi-transparent overlay for readability */
+      background: rgba(255, 255, 255, 0.9);
       border-radius: var(--border-radius);
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
     .section-headline {
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       color: var(--primary-color);
-      margin-bottom: 10px;
-      font-weight: 600;
+      margin-bottom: 15px;
+      font-weight: 700;
       letter-spacing: 1px;
       text-align: center;
       position: relative;
       display: inline-block;
       padding: 0 20px;
+      text-transform: uppercase;
     }
     .section-headline::before,
     .section-headline::after {
       content: '';
-      height: 1px;
-      width: 30px;
+      height: 2px;
+      width: 40px;
       background: var(--primary-color);
       display: inline-block;
       vertical-align: middle;
-      margin: 0 10px;
+      margin: 0 15px;
     }
     h2 {
       text-align: center;
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       margin-bottom: 40px;
       color: var(--dark-color);
       position: relative;
+      font-weight: 800;
     }
     h2::after {
       content: '';
       position: absolute;
-      bottom: -10px;
+      bottom: -15px;
       left: 50%;
       transform: translateX(-50%);
-      height: 4px;
-      width: 60px;
+      height: 5px;
+      width: 80px;
       background: var(--gradient);
-      border-radius: 2px;
+      border-radius: 3px;
     }
 
     /* Portfolio Grid Styles */
@@ -284,7 +309,7 @@
     }
     .portfolio-item:hover {
       transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
     }
     .portfolio-cta {
       position: absolute;
@@ -292,14 +317,16 @@
       right: 10px;
       background: var(--primary-color);
       color: #fff;
-      padding: 5px 15px;
+      padding: 8px 18px;
       border-radius: 20px;
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       font-weight: bold;
       z-index: 2;
       box-shadow: 0 3px 10px rgba(0,0,0,0.2);
       cursor: pointer;
       transition: var(--transition);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
     .portfolio-cta:hover {
       background: var(--dark-color);
@@ -307,33 +334,36 @@
     }
     .portfolio-item img {
       width: 100%;
-      height: 180px;
-      object-fit: cover;
+      height: 200px;
+      object-fit: contain;
+      padding: 20px;
+      background: #f9f9f9;
       transition: transform 0.5s ease;
     }
     .portfolio-item:hover img {
-      transform: scale(1.05);
+      transform: scale(1.1);
     }
     .portfolio-overlay {
-      padding: 20px;
+      padding: 25px;
       background: #fff;
       border-top: 4px solid var(--primary-color);
     }
     .portfolio-overlay h3 {
       color: var(--dark-color);
-      margin-bottom: 10px;
+      margin-bottom: 15px;
       display: flex;
       align-items: center;
       gap: 10px;
       justify-content: center;
+      font-size: 1.4rem;
     }
     .portfolio-overlay h3 i {
       color: var(--primary-color);
-      font-size: 1.2rem;
+      font-size: 1.4rem;
     }
     .portfolio-overlay p {
       color: #666;
-      font-size: 0.95rem;
+      font-size: 1rem;
       line-height: 1.6;
     }
 
@@ -341,10 +371,10 @@
     .cta-button {
       display: block;
       width: max-content;
-      margin: 40px auto 0;
+      margin: 50px auto 0;
       background: var(--gradient);
       color: #fff;
-      padding: 15px 30px;
+      padding: 18px 35px;
       border-radius: 30px;
       text-decoration: none;
       font-weight: bold;
@@ -353,13 +383,17 @@
       border: none;
       cursor: pointer;
       text-align: center;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
     .cta-button:hover {
       transform: translateY(-5px);
-      box-shadow: 0 8px 25px rgba(74,107,255,0.5);
+      box-shadow: 0 10px 30px rgba(74,107,255,0.6);
+      background: linear-gradient(135deg, #3a5bef, #7b32ff);
     }
     .cta-button i {
-      margin-right: 8px;
+      margin-right: 10px;
     }
 
     /* Footer Styles */
@@ -367,51 +401,67 @@
       background: var(--dark-color);
       color: #fff;
       text-align: center;
-      padding: 40px 20px;
-      margin-top: 60px;
+      padding: 50px 20px;
+      margin-top: 80px;
     }
     .footer-links {
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 25px;
       flex-wrap: wrap;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
     .footer-links a {
       color: #a3c1e0;
       text-decoration: none;
       transition: var(--transition);
       border-bottom: 1px solid transparent;
+      font-size: 1.05rem;
     }
     .footer-links a:hover {
       color: var(--primary-color);
       border-bottom: 1px solid var(--primary-color);
     }
     .social-icons {
-      margin: 20px 0;
+      margin: 30px 0;
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 25px;
     }
     .social-icons a {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 40px;
-      height: 40px;
+      width: 45px;
+      height: 45px;
       background: rgba(255,255,255,0.1);
       color: #fff;
       border-radius: 50%;
       transition: var(--transition);
       text-decoration: none;
+      font-size: 1.2rem;
     }
     .social-icons a:hover {
       background: var(--primary-color);
-      transform: translateY(-5px);
+      transform: translateY(-5px) scale(1.1);
     }
     footer p {
-      margin-top: 20px;
-      opacity: 0.7;
+      margin-top: 30px;
+      opacity: 0.8;
+      font-size: 0.95rem;
+    }
+
+    /* Tool Badges */
+    .tool-badge {
+      display: inline-block;
+      background: var(--light-color);
+      color: var(--dark-color);
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
   </style>
 </head>
@@ -423,10 +473,14 @@
   <header>
     <div class="headline-banner">
       <a href="https://cal.com/marlon-palomares-c4cyjo/secret" aria-label="Book a Consultation">
-        🚀 Elevate Your Brand's Social Media Presence Today!
+        🚀 TRANSFORM Your Social Media Strategy - Book Your FREE Consultation Now!
       </a>
     </div>
     <div class="nav-container">
+      <div class="brand-container">
+        <img src="images/Mp.svg" alt="Marlon Palomares Digital Solutions Logo" class="brand-logo" width="50" height="50">
+        <span class="brand-name">Marlon Palomares</span>
+      </div>
       <button class="nav-toggle" aria-label="Toggle Navigation">
         <i class="fas fa-bars"></i>
       </button>
@@ -470,94 +524,197 @@
   <!-- Main Content -->
   <main id="mainContent" class="container">
     <section class="portfolio" id="tools">
-      <div class="section-headline">⚒️ Professional Tools for Maximum Impact</div>
-      <h2>Tools I Use</h2>
+      <div class="section-headline">🚀 My Digital Marketing Arsenal</div>
+      <h2>Premium Tools for Exceptional Results</h2>
+      <p style="max-width: 800px; margin: 0 auto 30px; font-size: 1.1rem; color: #555;">
+        I leverage these powerful tools to create, analyze, and optimize high-performing digital marketing campaigns that drive real business results.
+      </p>
+      
       <div class="portfolio-grid">
         <!-- Portfolio Item: Mailchimp -->
         <div class="portfolio-item">
-          <div class="portfolio-cta">Optimize Your Email Marketing</div>
-          <img src="images/mailchimp.png" alt="Mailchimp logo" loading="lazy">
+          <div class="portfolio-cta">Email Mastery</div>
+          <img src="images/mailchimp.png" alt="Mailchimp email marketing platform" loading="lazy">
           <div class="portfolio-overlay">
             <h3><i class="fa-solid fa-envelope"></i> Mailchimp</h3>
-            <p>Email marketing automation platform for creating targeted campaigns and analyzing audience engagement.</p>
+            <p>Advanced email marketing automation for targeted campaigns that convert. I create sequences that nurture leads and boost customer retention.</p>
+            <div style="margin-top: 15px;">
+              <span class="tool-badge">Automation</span>
+              <span class="tool-badge">Analytics</span>
+              <span class="tool-badge">Segmentation</span>
+            </div>
           </div>
         </div>
+        
         <!-- Portfolio Item: Canva -->
         <div class="portfolio-item">
-          <div class="portfolio-cta">Create Eye-Catching Content</div>
-          <img src="images/canva.png" alt="Canva logo" loading="lazy">
+          <div class="portfolio-cta">Design Power</div>
+          <img src="images/canva.png" alt="Canva design platform" loading="lazy">
           <div class="portfolio-overlay">
-            <h3><i class="fa-solid fa-palette"></i> Canva</h3>
-            <p>Design platform for creating stunning social media graphics, presentations, and visual content.</p>
+            <h3><i class="fa-solid fa-palette"></i> Canva Pro</h3>
+            <p>Professional-grade design tool for creating stunning social media graphics, presentations, and marketing materials that capture attention.</p>
+            <div style="margin-top: 15px;">
+              <span class="tool-badge">Templates</span>
+              <span class="tool-badge">Brand Kits</span>
+              <span class="tool-badge">Animation</span>
+            </div>
           </div>
         </div>
+        
         <!-- Portfolio Item: CapCut -->
         <div class="portfolio-item">
-          <div class="portfolio-cta">Produce Viral-Worthy Videos</div>
-          <img src="images/capcut.png" alt="CapCut logo" loading="lazy">
+          <div class="portfolio-cta">Video Magic</div>
+          <img src="images/capcut.png" alt="CapCut video editing software" loading="lazy">
           <div class="portfolio-overlay">
             <h3><i class="fa-solid fa-video"></i> CapCut</h3>
-            <p>Video editing software for creating engaging social media videos with professional effects and transitions.</p>
+            <p>Powerful video editing for creating engaging social media content with professional transitions, effects, and audio synchronization.</p>
+            <div style="margin-top: 15px;">
+              <span class="tool-badge">Effects</span>
+              <span class="tool-badge">Templates</span>
+              <span class="tool-badge">AI Tools</span>
+            </div>
           </div>
         </div>
+        
         <!-- Portfolio Item: Calendly -->
         <div class="portfolio-item">
           <a href="https://cal.com/marlon-palomares-c4cyjo/secret" class="portfolio-cta" aria-label="Book a Consultation">Book Now</a>
-          <img src="images/calendly.png" alt="Calendly logo" loading="lazy">
+          <img src="images/calendly.png" alt="Calendly scheduling tool" loading="lazy">
           <div class="portfolio-overlay">
             <h3><i class="fa-solid fa-calendar-alt"></i> Calendly</h3>
-            <p>Scheduling tool to efficiently manage client meetings and content planning sessions.</p>
+            <p>Streamlined scheduling solution that eliminates back-and-forth emails and integrates seamlessly with my workflow.</p>
+            <div style="margin-top: 15px;">
+              <span class="tool-badge">Automation</span>
+              <span class="tool-badge">Integrations</span>
+              <span class="tool-badge">Reminders</span>
+            </div>
           </div>
         </div>
+        
         <!-- Portfolio Item: ChatGPT -->
         <div class="portfolio-item">
-          <div class="portfolio-cta">Generate Engaging Content</div>
-          <img src="images/chatgpt.png" alt="ChatGPT logo" loading="lazy">
+          <div class="portfolio-cta">AI Assistant</div>
+          <img src="images/chatgpt.png" alt="ChatGPT AI assistant" loading="lazy">
           <div class="portfolio-overlay">
             <h3><i class="fa-solid fa-robot"></i> ChatGPT</h3>
-            <p>AI assistant for content ideation, copywriting, and creating engaging social captions.</p>
+            <p>AI-powered content ideation and copywriting assistant that helps craft compelling messages tailored to your audience.</p>
+            <div style="margin-top: 15px;">
+              <span class="tool-badge">Content Ideas</span>
+              <span class="tool-badge">Copywriting</span>
+              <span class="tool-badge">Research</span>
+            </div>
           </div>
         </div>
+        
         <!-- Portfolio Item: Google Sheets -->
         <div class="portfolio-item">
-          <div class="portfolio-cta">Track Your Performance</div>
-          <img src="images/docs.jpeg" alt="Google Sheets logo" loading="lazy">
+          <div class="portfolio-cta">Data Tracking</div>
+          <img src="images/docs.jpeg" alt="Google Sheets spreadsheet tool" loading="lazy">
           <div class="portfolio-overlay">
             <h3><i class="fa-solid fa-table"></i> Google Sheets</h3>
-            <p>Spreadsheet tool for tracking campaign metrics, content calendars, and ROI analysis.</p>
+            <p>Custom dashboards and tracking systems to monitor campaign performance, ROI, and key marketing metrics.</p>
+            <div style="margin-top: 15px;">
+              <span class="tool-badge">Analytics</span>
+              <span class="tool-badge">Automation</span>
+              <span class="tool-badge">Reporting</span>
+            </div>
           </div>
         </div>
+        
         <!-- Portfolio Item: Google Docs -->
         <div class="portfolio-item">
-          <div class="portfolio-cta">Outline Winning Strategies</div>
-          <img src="images/Sheet.jpeg" alt="Google Docs logo" loading="lazy">
+          <div class="portfolio-cta">Content Planning</div>
+          <img src="images/Sheet.jpeg" alt="Google Docs document editor" loading="lazy">
           <div class="portfolio-overlay">
             <h3><i class="fa-solid fa-file-alt"></i> Google Docs</h3>
-            <p>Collaborative document editor for content strategy planning and client proposals.</p>
+            <p>Collaborative content strategy development and client documentation with real-time editing and feedback.</p>
+            <div style="margin-top: 15px;">
+              <span class="tool-badge">Collaboration</span>
+              <span class="tool-badge">Templates</span>
+              <span class="tool-badge">Version Control</span>
+            </div>
           </div>
         </div>
+        
         <!-- Portfolio Item: Google Forms -->
         <div class="portfolio-item">
-          <div class="portfolio-cta">Gather Audience Insights</div>
-          <img src="images/forms.png" alt="Google Forms logo" loading="lazy">
+          <div class="portfolio-cta">Audience Insights</div>
+          <img src="images/forms.png" alt="Google Forms survey tool" loading="lazy">
           <div class="portfolio-overlay">
             <h3><i class="fa-solid fa-poll"></i> Google Forms</h3>
-            <p>Survey tool for collecting audience feedback and conducting social media audits.</p>
+            <p>Custom surveys and feedback forms to gather valuable audience insights and improve marketing strategies.</p>
+            <div style="margin-top: 15px;">
+              <span class="tool-badge">Surveys</span>
+              <span class="tool-badge">Feedback</span>
+              <span class="tool-badge">Data Collection</span>
+            </div>
           </div>
         </div>
+        
         <!-- Portfolio Item: Metricool -->
         <div class="portfolio-item">
-          <div class="portfolio-cta">Analyze Your Metrics</div>
-          <img src="images/metricool.jpeg" alt="Metricool logo" loading="lazy">
+          <div class="portfolio-cta">Performance</div>
+          <img src="images/metricool.jpeg" alt="Metricool analytics platform" loading="lazy">
           <div class="portfolio-overlay">
             <h3><i class="fa-solid fa-chart-line"></i> Metricool</h3>
-            <p>Advanced social media analytics and scheduling tool to monitor performance and optimize strategy.</p>
+            <p>Comprehensive social media analytics and scheduling platform to track performance and optimize posting strategy.</p>
+            <div style="margin-top: 15px;">
+              <span class="tool-badge">Analytics</span>
+              <span class="tool-badge">Scheduling</span>
+              <span class="tool-badge">Benchmarking</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Portfolio Item: Facebook Ads -->
+        <div class="portfolio-item">
+          <div class="portfolio-cta">Paid Ads</div>
+          <img src="images/Ads.png" alt="Facebook Ads Manager" loading="lazy">
+          <div class="portfolio-overlay">
+            <h3><i class="fa-solid fa-bullseye"></i> Facebook Ads</h3>
+            <p>Precision-targeted advertising campaigns that reach your ideal customers and maximize return on ad spend.</p>
+            <div style="margin-top: 15px;">
+              <span class="tool-badge">Targeting</span>
+              <span class="tool-badge">Retargeting</span>
+              <span class="tool-badge">ROI Tracking</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Portfolio Item: Instagram -->
+        <div class="portfolio-item">
+          <div class="portfolio-cta">Engagement</div>
+          <img src="images/Tag.png" alt="Instagram marketing tools" loading="lazy">
+          <div class="portfolio-overlay">
+            <h3><i class="fa-brands fa-instagram"></i> Instagram</h3>
+            <p>Strategic content creation and engagement tools to build authentic connections with your audience.</p>
+            <div style="margin-top: 15px;">
+              <span class="tool-badge">Stories</span>
+              <span class="tool-badge">Reels</span>
+              <span class="tool-badge">Engagement</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Portfolio Item: Google Analytics -->
+        <div class="portfolio-item">
+          <div class="portfolio-cta">Web Analytics</div>
+          <img src="images/Analytics.png" alt="Google Analytics platform" loading="lazy">
+          <div class="portfolio-overlay">
+            <h3><i class="fa-solid fa-chart-pie"></i> Google Analytics</h3>
+            <p>In-depth website performance tracking to understand visitor behavior and optimize conversion paths.</p>
+            <div style="margin-top: 15px;">
+              <span class="tool-badge">Tracking</span>
+              <span class="tool-badge">Conversions</span>
+              <span class="tool-badge">User Behavior</span>
+            </div>
           </div>
         </div>
       </div>
+      
       <!-- CTA Button -->
       <a href="https://cal.com/marlon-palomares-c4cyjo/secret" class="cta-button" aria-label="Schedule a Free Strategy Session">
-        <i class="fa-solid fa-calendar-check"></i> Schedule Your Free Strategy Session
+        <i class="fa-solid fa-rocket"></i> Let's Boost Your Digital Presence - Free Consultation
       </a>
     </section>
   </main>
@@ -581,7 +738,7 @@
       <a href="https://www.linkedin.com/in/mpdigital/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
       <a href="https://github.com/mpalomaresdigitalsolutions" aria-label="GitHub"><i class="fab fa-github"></i></a>
     </div>
-    <p>© 2025 Marlon Palomares. All rights reserved.</p>
+    <p>© 2025 Marlon Palomares Digital Solutions. All rights reserved.</p>
   </footer>
 
   <!-- External JS Files -->
@@ -592,6 +749,26 @@
     const navMenu = document.getElementById('nav-menu');
     navToggle.addEventListener('click', () => {
       navMenu.classList.toggle('show');
+      navToggle.innerHTML = navMenu.classList.contains('show') ? 
+        '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+    });
+
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('#nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+          navMenu.classList.remove('show');
+          navToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        }
+      });
+    });
+
+    // Smooth scrolling for skip link
+    document.querySelector('.skip-link').addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
     });
   </script>
 </body>
