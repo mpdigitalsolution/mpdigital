@@ -3,16 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Services</title>
-  <meta name="description" content="Explore premium social media services by Marlon Palomares. From strategy development to paid campaigns and analytics, find the perfect solution to elevate your brand." />
+  <title>My Services - Marlon Palomares | Social Media Marketing Expert</title>
+  <meta name="description" content="Discover top-tier social media marketing services by Marlon Palomares, a leading Digital Marketing Expert. Offering social media strategy development, paid advertising campaigns, content creation, community management, analytics-driven insights, influencer marketing, lead generation, Google Ads management, and Facebook Ads expertise to boost your brand growth and online presence." />
+  <meta name="keywords" content="Social Media Marketing Services, Digital Marketing Expert, Marlon Palomares, Social Media Strategy Development, Content Creation Specialist, Paid Advertising Expert, Community Management Services, Analytics-Driven Marketing Solutions, Influencer Marketing Strategies, Lead Generation Expert, Google Ads Management Services, Facebook Ads Specialist, Brand Growth Strategies, Social Media Consultant, Digital Marketing Solutions, Social Media Optimization, Online Brand Building, Targeted Advertising, Digital Strategy Consultant" />
   <!-- Schema Markup for Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Marlon Palomares - Social Media Services",
+    "name": "Marlon Palomares - Social Media Marketing Services",
     "url": "https://example.com/services.html",
-    "serviceType": "Social Media Strategy, Content Creation, Paid Advertising, Community Management, Analytics, Lead Generation, and more.",
+    "description": "Marlon Palomares provides expert social media marketing services, including social media strategy development, content creation, paid advertising campaigns, community management, analytics and reporting, influencer marketing, lead generation, Google Ads management, and Facebook Ads campaigns to drive brand growth and business success globally.",
+    "serviceType": "Social Media Strategy Development, Content Creation, Paid Advertising Campaigns, Community Management, Analytics and Reporting, Influencer Marketing, Lead Generation, Google Ads Management, Facebook Ads Campaigns, Brand Growth Strategies",
     "areaServed": "Global",
     "provider": {
       "@type": "Person",
@@ -118,8 +120,8 @@
       padding: 10px 20px;
     }
     .logo {
-      width: 50px;
-      height: 50px;
+      width: 60px; /* Increased size for better visibility */
+      height: 60px;
       margin-right: 15px;
       transition: var(--transition);
     }
@@ -173,8 +175,13 @@
     }
     /* Navigation Icons */
     .nav-icon {
-      margin-right: 5px;
-      font-size: 16px;
+      margin-right: 8px; /* Adjusted spacing for better alignment */
+      font-size: 20px; /* Increased size for better visibility */
+      transition: var(--transition);
+    }
+    nav ul li a:hover .nav-icon {
+      color: var(--primary-color);
+      transform: scale(1.2); /* Slight scale effect on hover */
     }
     /* Overlay effect */
     nav ul li a::before {
@@ -215,24 +222,6 @@
       outline: 2px dashed var(--primary-color);
       outline-offset: 4px;
     }
-    /* CTA Button in Navigation */
-    .cta-button {
-      background: var(--primary-color);
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: var(--border-radius);
-      text-decoration: none;
-      font-weight: bold;
-      transition: var(--transition);
-      box-shadow: 0 5px 15px rgba(74,107,255,0.3);
-      border: 2px solid var(--primary-color);
-    }
-    .cta-button:hover {
-      background: transparent;
-      color: #fff;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(74,107,255,0.4);
-    }
     /* Mobile Navigation */
     @media (max-width: 768px) {
       .nav-container {
@@ -271,11 +260,6 @@
       nav ul li a {
         width: 100%;
         padding: 12px 20px;
-      }
-      .cta-button {
-        width: 100%;
-        text-align: center;
-        margin-top: 10px;
       }
     }
     /* Main Content Styles */
@@ -676,57 +660,52 @@
 </head>
 <body>
   <!-- Skip Link for Accessibility -->
-  <a class="skip-link" href="#mainContent">Skip to Content</a>
+  <a class="skip-link" href="#mainContent" title="Skip to Main Content">Skip to Content</a>
   <!-- Header with Headline Banner & Navigation -->
   <header>
     <div class="headline-banner">
-      <a href="https://cal.com/marlon-palomares-c4cyjo/secret" aria-label="Book a Consultation">
+      <a href="https://cal.com/marlon-palomares-c4cyjo/secret" aria-label="Book a Free Social Media Marketing Consultation" title="Schedule a Consultation">
         🚀 Elevate Your Brand's Social Media Presence Today!
       </a>
     </div>
     <div class="nav-container">
       <div class="logo-container">
-        <img src="Mp.svg" alt="Marlon Palomares Digital Solutions Logo" class="logo">
+        <img src="images/Gem.svg" alt="Marlon Palomares Digital Solutions Logo" title="Marlon Palomares Logo" class="logo">
         <span class="logo-text">Marlon Palomares</span>
       </div>
-      <button class="nav-toggle" aria-label="Toggle Navigation">
+      <button class="nav-toggle" aria-label="Toggle Navigation Menu" title="Toggle Navigation">
         <i class="fas fa-bars"></i>
       </button>
       <nav>
         <ul id="nav-menu">
           <li>
-            <a href="index.html">
+            <a href="index.html" title="Home Page">
               <i class="fa-solid fa-house nav-icon"></i> Home
             </a>
           </li>
           <li>
-            <a href="about.html">
+            <a href="about.html" title="About Marlon Palomares">
               <i class="fa-solid fa-user nav-icon"></i> About Me
             </a>
           </li>
           <li>
-            <a href="hobbies.html">
-              <i class="fa-solid fa-heart nav-icon"></i> My Hobbies
+            <a href="hobbies.html" title="Hobbies of Marlon Palomares">
+              <i class="fa-solid fa-heart nav-icon"></i>  Hobbies
             </a>
           </li>
           <li>
-            <a href="services.html">
-              <i class="fa-solid fa-cogs nav-icon"></i> My Services
+            <a href="services.html" title="Social Media Marketing Services">
+              <i class="fa-solid fa-cogs nav-icon"></i> Services
             </a>
           </li>
           <li>
-            <a href="tools.html">
-              <i class="fa-solid fa-wrench nav-icon"></i> Tools I Use
+            <a href="tools.html" title="Digital Marketing Tools">
+              <i class="fa-solid fa-wrench nav-icon"></i> Tool Box
             </a>
           </li>
           <li>
-            <a href="contact.html">
-              <i class="fa-solid fa-envelope nav-icon"></i> Get In Touch
-            </a>
-          </li>
-          <li>
-            <a href="https://cal.com/marlon-palomares-c4cyjo/secret" class="cta-button" aria-label="Book a Consultation">
-              <i class="fa-solid fa-calendar-check"></i> Book Now
+            <a href="contact.html" title="Contact Marlon Palomares">
+              <i class="fa-solid fa-envelope nav-icon"></i> Contacts
             </a>
           </li>
         </ul>
@@ -736,13 +715,13 @@
   <!-- Main Content -->
   <main id="mainContent" class="container">
     <section class="services">
-      <div class="section-headline">🔍 Specialized Services for Your Brand's Growth</div>
-      <h2>Premium Social Media Services</h2>
+      <div class="section-headline">🔍 Specialized Social Media Marketing Services for Your Brand's Growth</div>
+      <h2>Premium Social Media Marketing Services</h2>
       <div class="services-grid">
         <!-- Service Card 1: Strategy Development -->
         <div class="service-card">
-          <h3><i class="fas fa-chart-line"></i> Strategy Development</h3>
-          <p>Comprehensive social media strategies tailored to your business goals, target audience, and industry trends.</p>
+          <h3><i class="fas fa-chart-line"></i> Social Media Strategy Development</h3>
+          <p>Comprehensive social media strategies tailored to your business goals, target audience, and industry trends to maximize engagement, growth, and online visibility.</p>
           <div class="service-detail">
             <ul>
               <li>Brand analysis & competitor research</li>
@@ -752,13 +731,13 @@
             </ul>
           </div>
           <div class="service-cta">
-            <button class="toggle-details btn">Learn More</button>
+            <button class="toggle-details btn" title="Learn More About Social Media Strategy Development">Learn More</button>
           </div>
         </div>
         <!-- Service Card 2: Content Creation -->
         <div class="service-card">
-          <h3><i class="fas fa-paint-brush"></i> Content Creation</h3>
-          <p>Engaging, platform-specific content that resonates with your audience and strengthens your brand identity.</p>
+          <h3><i class="fas fa-paint-brush"></i> Content Creation Specialist</h3>
+          <p>Engaging, platform-specific content that resonates with your audience and strengthens your brand identity across social media channels for enhanced online presence.</p>
           <div class="service-detail">
             <ul>
               <li>Professional visual content</li>
@@ -768,13 +747,13 @@
             </ul>
           </div>
           <div class="service-cta">
-            <button class="toggle-details btn">Learn More</button>
+            <button class="toggle-details btn" title="Learn More About Content Creation Specialist Services">Learn More</button>
           </div>
         </div>
         <!-- Service Card 3: Community Management -->
         <div class="service-card">
-          <h3><i class="fas fa-users"></i> Community Management</h3>
-          <p>Proactive engagement with your audience to build community, increase loyalty, and manage reputation.</p>
+          <h3><i class="fas fa-users"></i> Community Management Services</h3>
+          <p>Proactive engagement with your audience to build community, increase loyalty, and manage your brand's reputation effectively across digital platforms.</p>
           <div class="service-detail">
             <ul>
               <li>Daily comment & message monitoring</li>
@@ -784,13 +763,13 @@
             </ul>
           </div>
           <div class="service-cta">
-            <button class="toggle-details btn">Learn More</button>
+            <button class="toggle-details btn" title="Learn More About Community Management Services">Learn More</button>
           </div>
         </div>
         <!-- Service Card 4: Paid Social Campaigns -->
         <div class="service-card">
-          <h3><i class="fas fa-ad"></i> Paid Social Campaigns</h3>
-          <p>Strategic paid advertising to amplify your reach, target specific demographics, and achieve business objectives.</p>
+          <h3><i class="fas fa-ad"></i> Paid Social Media Campaigns</h3>
+          <p>Strategic paid advertising campaigns to amplify your reach, target specific demographics, and achieve measurable business objectives with high ROI.</p>
           <div class="service-detail">
             <ul>
               <li>Ad strategy & budget planning</li>
@@ -800,13 +779,13 @@
             </ul>
           </div>
           <div class="service-cta">
-            <button class="toggle-details btn">Learn More</button>
+            <button class="toggle-details btn" title="Learn More About Paid Social Media Campaigns">Learn More</button>
           </div>
         </div>
         <!-- Service Card 5: Analytics & Reporting -->
         <div class="service-card">
-          <h3><i class="fas fa-chart-pie"></i> Analytics & Reporting</h3>
-          <p>Detailed analysis and reporting of performance metrics to continuously optimize your social media presence.</p>
+          <h3><i class="fas fa-chart-pie"></i> Analytics-Driven Marketing Solutions</h3>
+          <p>Detailed analysis and reporting of performance metrics to continuously optimize your social media presence and achieve better results for your brand.</p>
           <div class="service-detail">
             <ul>
               <li>Custom performance dashboards</li>
@@ -816,13 +795,13 @@
             </ul>
           </div>
           <div class="service-cta">
-            <button class="toggle-details btn">Learn More</button>
+            <button class="toggle-details btn" title="Learn More About Analytics-Driven Marketing Solutions">Learn More</button>
           </div>
         </div>
         <!-- Service Card 6: Influencer Collaborations -->
         <div class="service-card">
-          <h3><i class="fas fa-handshake"></i> Influencer Collaborations</h3>
-          <p>Strategic partnerships with relevant influencers to expand reach and enhance brand credibility.</p>
+          <h3><i class="fas fa-handshake"></i> Influencer Marketing Strategies</h3>
+          <p>Strategic partnerships with relevant influencers to expand your brand's reach and enhance credibility through authentic collaborations for maximum impact.</p>
           <div class="service-detail">
             <ul>
               <li>Influencer identification & vetting</li>
@@ -832,13 +811,13 @@
             </ul>
           </div>
           <div class="service-cta">
-            <button class="toggle-details btn">Learn More</button>
+            <button class="toggle-details btn" title="Learn More About Influencer Marketing Strategies">Learn More</button>
           </div>
         </div>
         <!-- Service Card 7: Lead Generation -->
         <div class="service-card">
-          <h3><i class="fas fa-funnel-dollar"></i> Lead Generation</h3>
-          <p>Campaigns designed to capture qualified leads and drive conversions through targeted social media tactics.</p>
+          <h3><i class="fas fa-funnel-dollar"></i> Lead Generation Expert</h3>
+          <p>Targeted campaigns designed to capture qualified leads and drive conversions through proven social media marketing tactics for business growth.</p>
           <div class="service-detail">
             <ul>
               <li>Lead magnet development</li>
@@ -848,13 +827,13 @@
             </ul>
           </div>
           <div class="service-cta">
-            <button class="toggle-details btn">Learn More</button>
+            <button class="toggle-details btn" title="Learn More About Lead Generation Expert Services">Learn More</button>
           </div>
         </div>
         <!-- Service Card 8: Google Ads Management -->
         <div class="service-card">
-          <h3><i class="fas fa-ad"></i> Google Ads Management</h3>
-          <p>Maximize your ROI with expertly managed Google Ads campaigns designed to drive quality traffic and conversions.</p>
+          <h3><i class="fas fa-ad"></i> Google Ads Management Services</h3>
+          <p>Maximize your ROI with expertly managed Google Ads campaigns designed to drive quality traffic and conversions for your business online.</p>
           <div class="service-detail">
             <ul>
               <li>Keyword research & campaign setup</li>
@@ -864,13 +843,13 @@
             </ul>
           </div>
           <div class="service-cta">
-            <button class="toggle-details btn">Learn More</button>
+            <button class="toggle-details btn" title="Learn More About Google Ads Management Services">Learn More</button>
           </div>
         </div>
         <!-- Service Card 9: Facebook Ads -->
         <div class="service-card">
-          <h3><i class="fas fa-thumbs-up"></i> Facebook Ads</h3>
-          <p>Engage your audience and boost conversions with tailored Facebook Ads campaigns optimized for your brand.</p>
+          <h3><i class="fas fa-thumbs-up"></i> Facebook Ads Specialist</h3>
+          <p>Engage your audience and boost conversions with tailored Facebook Ads campaigns optimized for your brand's growth and digital success.</p>
           <div class="service-detail">
             <ul>
               <li>Audience segmentation & targeting</li>
@@ -880,7 +859,7 @@
             </ul>
           </div>
           <div class="service-cta">
-            <button class="toggle-details btn">Learn More</button>
+            <button class="toggle-details btn" title="Learn More About Facebook Ads Specialist Services">Learn More</button>
           </div>
         </div>
       </div>
@@ -889,31 +868,31 @@
         <div class="cta-overlay"></div>
         <div class="cta-content">
           <h3>Ready to Transform Your Social Media Strategy?</h3>
-          <p>Book a free 30-minute consultation to discuss your social media goals and discover how these services can drive exceptional results for your brand.</p>
+          <p>Book a free 30-minute consultation to discuss your social media goals and discover how these expert services can drive exceptional results for your brand's online growth.</p>
           <div class="cta-buttons">
-            <a href="https://cal.com/marlon-palomares-c4cyjo/secret" class="cta-primary">Schedule Your Free Consultation</a>
-            <a href="contact.html" class="cta-secondary">Contact Me Directly</a>
+            <a href="https://cal.com/marlon-palomares-c4cyjo/secret" class="cta-primary" title="Schedule a Free Consultation">Schedule Your Free Consultation</a>
+            <a href="contact.html" class="cta-secondary" title="Contact Marlon Palomares Directly">Contact Me Directly</a>
           </div>
         </div>
       </div>
       <!-- Social Media Section -->
       <div class="social-media">
         <h3>Stay Connected</h3>
-        <p>Follow me on social media for the latest digital marketing insights, trends, and success stories. Let's connect and grow together.</p>
+        <p>Follow me on social media for the latest digital marketing insights, trends, and success stories. Let's connect and grow your brand together.</p>
         <div class="social-icons">
-          <a href="https://www.facebook.com/marlon.palomares.2024/" class="social-icon facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <a href="https://www.facebook.com/marlon.palomares.2024/" class="social-icon facebook" target="_blank" rel="noopener noreferrer" aria-label="Follow Marlon Palomares on Facebook" title="Facebook Profile">
             <i class="fab fa-facebook-f"></i>
           </a>
-          <a href="https://www.instagram.com/palomares523/" class="social-icon instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <a href="https://www.instagram.com/palomares523/" class="social-icon instagram" target="_blank" rel="noopener noreferrer" aria-label="Follow Marlon Palomares on Instagram" title="Instagram Profile">
             <i class="fab fa-instagram"></i>
           </a>
-          <a href="https://x.com/home" class="social-icon twitter" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+          <a href="https://x.com/home" class="social-icon twitter" target="_blank" rel="noopener noreferrer" aria-label="Follow Marlon Palomares on X (Twitter)" title="X Profile">
             <i class="fab fa-x-twitter"></i>
           </a>
-          <a href="https://www.linkedin.com/in/mpdigital/" class="social-icon linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/in/mpdigital/" class="social-icon linkedin" target="_blank" rel="noopener noreferrer" aria-label="Connect with Marlon Palomares on LinkedIn" title="LinkedIn Profile">
             <i class="fab fa-linkedin-in"></i>
           </a>
-          <a href="https://github.com/mpalomaresdigitalsolutions" class="social-icon github" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <a href="https://github.com/mpalomaresdigitalsolutions" class="social-icon github" target="_blank" rel="noopener noreferrer" aria-label="View Marlon Palomares on GitHub" title="GitHub Profile">
             <i class="fab fa-github"></i>
           </a>
         </div>
@@ -927,23 +906,23 @@
         <div class="footer-section">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Me</a></li>
-            <li><a href="hobbies.html">My Hobbies</a></li>
-            <li><a href="services.html">My Services</a></li>
-            <li><a href="tools.html">Tools I Use</a></li>
-            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
+            <li><a href="index.html" title="Home Page">Home</a></li>
+            <li><a href="about.html" title="About Marlon Palomares">About Me</a></li>
+            <li><a href="hobbies.html" title="Hobbies of Marlon Palomares">My Hobbies</a></li>
+            <li><a href="services.html" title="Social Media Marketing Services">My Services</a></li>
+            <li><a href="tools.html" title="Digital Marketing Tools">Tools I Use</a></li>
+            <li><a href="privacy-policy.html" title="Privacy Policy">Privacy Policy</a></li>
+            <li><a href="terms-and-conditions.html" title="Terms and Conditions">Terms & Conditions</a></li>
           </ul>
         </div>
         <div class="footer-section">
           <h4>Services</h4>
           <ul>
-            <li><a href="services.html#strategy">Strategy Development</a></li>
-            <li><a href="services.html#content">Content Creation</a></li>
-            <li><a href="services.html#community">Community Management</a></li>
-            <li><a href="services.html#paid">Paid Campaigns</a></li>
-            <li><a href="services.html#analytics">Analytics & Reporting</a></li>
+            <li><a href="services.html#strategy" title="Social Media Strategy Development Services">Strategy Development</a></li>
+            <li><a href="services.html#content" title="Content Creation Specialist Services">Content Creation</a></li>
+            <li><a href="services.html#community" title="Community Management Services">Community Management</a></li>
+            <li><a href="services.html#paid" title="Paid Social Media Campaigns">Paid Campaigns</a></li>
+            <li><a href="services.html#analytics" title="Analytics-Driven Marketing Solutions">Analytics & Reporting</a></li>
           </ul>
         </div>
         <div class="footer-section">

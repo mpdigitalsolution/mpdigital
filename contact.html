@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Get In Touch - Marlon Palomares</title>
-  <meta name="description" content="Get in touch with Marlon Palomares, a Social Media Strategist & Brand Builder. Connect today to elevate your brand's digital presence." />
-  <meta name="keywords" content="Social Media, Digital Marketing, Contact, Marlon Palomares, Brand Builder" />
+  <title>Get In Touch - Marlon Palomares | Social Media Strategist</title>
+  <meta name="description" content="Contact Marlon Palomares, a premier Social Media Strategist and Brand Builder, to elevate your brand's digital presence with tailored social media strategies, content creation, paid advertising, influencer marketing, and data-driven analytics. Schedule a consultation today!" />
+  <meta name="keywords" content="Contact Social Media Strategist, Marlon Palomares, Digital Marketing Expert, Social Media Strategy Consultant, Brand Growth Solutions, Content Creation Specialist, Social Media Management Services, Paid Advertising Expert, Influencer Marketing Strategies, Digital Presence Optimization, Online Brand Engagement, Targeted Digital Marketing, Social Media Campaign Management, Brand Visibility Solutions, Digital Marketing Consultation, Social Media Analytics, Brand Identity Development, Digital Advertising Specialist, Content Strategy Services" />
   <meta name="author" content="Marlon Palomares" />
   
   <!-- Schema Markup for Structured Data -->
@@ -22,6 +22,7 @@
       "https://www.linkedin.com/in/mpdigital/"
     ],
     "jobTitle": "Social Media Strategist & Brand Builder",
+    "description": "Marlon Palomares specializes in social media strategy, content creation, paid advertising, influencer marketing, and digital marketing to enhance brand growth and engagement.",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+639913062370",
@@ -38,18 +39,22 @@
   }
   </script>
   
-  <!-- EmailJS Scripts -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script type="text/javascript">
-    (function(){
-      emailjs.init({
-        publicKey: "efRrbEvsWA8_PG5Z0"
-      });
-    })();
+  <!-- Schema for Contact Page -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Marlon Palomares - Social Media Strategist",
+    "description": "Get in touch with Marlon Palomares for expert social media strategies, content creation, paid advertising, and digital marketing solutions to boost your brand's online presence.",
+    "url": "https://example.com/contact.html"
+  }
   </script>
   
+  <!-- EmailJS Script with defer -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" integrity="sha256-6lM5O8jF/WZ3ZBZqE3o2eQh8xv+Uh8T0+gX2qL9h7jY=" crossorigin="anonymous" defer></script>
+  
   <!-- Font Awesome for Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   
   <style>
     :root {
@@ -123,6 +128,40 @@
       text-decoration: none;
       display: block;
     }
+    
+    /* Logo Styles with Gradient Overlay */
+    .logo-container {
+      position: relative;
+      display: inline-block;
+      margin-right: 20px;
+      transition: var(--transition);
+    }
+    .logo {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 5px rgba(0,0,0,0.2));
+      z-index: 2;
+      position: relative;
+    }
+    .logo-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--gradient);
+      opacity: 0.8;
+      mix-blend-mode: multiply;
+      border-radius: 50%;
+      z-index: 1;
+      animation: logoGlow 3s ease-in-out infinite alternate;
+    }
+    @keyframes logoGlow {
+      0% { opacity: 0.7; transform: scale(1); }
+      100% { opacity: 0.9; transform: scale(1.05); }
+    }
+    
     header {
       background-color: white;
       position: sticky;
@@ -135,7 +174,7 @@
     .nav-container {
       position: relative;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
       max-width: 1200px;
       margin: 0 auto;
@@ -143,8 +182,6 @@
     }
     
     .menu-toggle {
-      position: absolute;
-      left: 20px;
       font-size: 24px;
       background: none;
       border: none;
@@ -157,41 +194,61 @@
       color: var(--primary-color);
     }
     
-    /* Mobile Navigation (Off-canvas) */
+    /* Mobile Navigation (Horizontal for Desktop, Off-canvas for Mobile) */
     .nav-menu {
-      position: fixed;
-      top: 0;
-      right: -100%;
-      width: 80%;
-      max-width: 300px;
-      height: 100vh;
-      background: var(--dark-color);
       display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
       transition: right 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-      box-shadow: -5px 0 15px rgba(0,0,0,0.1);
       z-index: 1050;
-    }
-    .nav-menu.active {
-      right: 0;
     }
     .nav-menu ul {
       list-style: none;
-      text-align: center;
-      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
     }
     .nav-menu ul li {
-      margin: 20px 0;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: var(--transition);
-      transition-delay: calc(0.1s * var(--i));
-    }
-    .nav-menu.active ul li {
+      margin: 0 10px;
       opacity: 1;
       transform: translateY(0);
+      transition: var(--transition);
+    }
+    
+    /* Mobile Navigation (Off-canvas) */
+    @media (max-width: 767px) {
+      .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background: var(--dark-color);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+      }
+      .nav-menu.active {
+        right: 0;
+      }
+      .nav-menu ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+      }
+      .nav-menu ul li {
+        margin: 20px 0;
+        opacity: 0;
+        transform: translateY(20px);
+        transition-delay: calc(0.1s * var(--i));
+      }
+      .nav-menu.active ul li {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
     
     /* Desktop Navigation */
@@ -207,6 +264,7 @@
       }
       .nav-menu ul {
         display: flex;
+        flex-direction: row;
       }
       .nav-menu ul li {
         margin: 0 8px;
@@ -234,15 +292,6 @@
     }
     
     /* Enhanced Navigation Links */
-    nav ul {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    nav ul li {
-      margin: 0 10px;
-    }
     nav ul li a {
       display: flex;
       align-items: center;
@@ -443,7 +492,6 @@
       width: 100%;
       height: 300px;
       border: 0;
-      loading: lazy;
     }
     
     /* Form Container Styles */
@@ -651,19 +699,16 @@
       }
     }
     @media (max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-        align-items: center;
-      }
-      nav ul li {
-        margin: 5px 0;
-      }
       h2 {
         font-size: 2rem;
       }
       .contact > p {
         font-size: 1rem;
         padding: 0 20px;
+      }
+      .logo-container {
+        margin-right: 0;
+        margin-bottom: 10px;
       }
     }
   </style>
@@ -675,47 +720,53 @@
   <!-- Header with Mobile-Friendly Navigation -->
   <header>
     <div class="headline-banner">
-      <a href="https://cal.com/marlon-palomares-c4cyjo/secret" aria-label="Book a Consultation">
+      <a href="https://cal.com/marlon-palomares-c4cyjo/secret" aria-label="Book a Social Media Consultation" title="Schedule a Consultation">
         🚀 Elevate Your Brand's Social Media Presence Today!
       </a>
     </div>
     <nav>
       <div class="nav-container">
-        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" title="Toggle Navigation">
           <i class="fas fa-bars"></i>
         </button>
-        <ul id="navMenu">
-          <li>
-            <a href="index.html">
-              <i class="fas fa-home nav-icon" aria-hidden="true"></i> Home
-            </a>
-          </li>
-          <li>
-            <a href="about.html">
-              <i class="fas fa-user nav-icon" aria-hidden="true"></i> About Me
-            </a>
-          </li>
-          <li>
-            <a href="hobbies.html">
-              <i class="fas fa-heart nav-icon" aria-hidden="true"></i> My Hobbies
-            </a>
-          </li>
-          <li>
-            <a href="services.html">
-              <i class="fas fa-briefcase nav-icon" aria-hidden="true"></i> My Services
-            </a>
-          </li>
-          <li>
-            <a href="tools.html">
-              <i class="fas fa-wrench nav-icon" aria-hidden="true"></i> Tools I Use
-            </a>
-          </li>
-          <li>
-            <a href="contact.html">
-              <i class="fas fa-envelope nav-icon" aria-hidden="true"></i> Get In Touch
-            </a>
-          </li>
-        </ul>
+        <div class="logo-container">
+          <img src="images/Gem.svg" alt="Marlon Palomares Digital Solutions Logo" title="Marlon Palomares Logo" class="logo">
+          <div class="logo-overlay"></div>
+        </div>
+        <div id="navMenu" class="nav-menu">
+          <ul>
+            <li style="--i: 1;">
+              <a href="index.html" title="Home Page">
+                <i class="fas fa-home nav-icon" aria-hidden="true"></i> Home
+              </a>
+            </li>
+            <li style="--i: 2;">
+              <a href="about.html" title="About Marlon Palomares">
+                <i class="fas fa-user nav-icon" aria-hidden="true"></i> About Me
+              </a>
+            </li>
+            <li style="--i: 3;">
+              <a href="hobbies.html" title="Marlon Palomares Hobbies">
+                <i class="fas fa-heart nav-icon" aria-hidden="true"></i> My Hobbies
+              </a>
+            </li>
+            <li style="--i: 4;">
+              <a href="services.html" title="Social Media Services">
+                <i class="fas fa-briefcase nav-icon" aria-hidden="true"></i> My Services
+              </a>
+            </li>
+            <li style="--i: 5;">
+              <a href="tools.html" title="Digital Marketing Tools">
+                <i class="fas fa-wrench nav-icon" aria-hidden="true"></i> Tools I Use
+              </a>
+            </li>
+            <li style="--i: 6;">
+              <a href="contact.html" title="Contact Marlon Palomares">
+                <i class="fas fa-envelope nav-icon" aria-hidden="true"></i> Get In Touch
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
     <div class="overlay" id="overlay"></div>
@@ -727,7 +778,7 @@
       <div class="section-headline">📱 Let's Connect and Grow Together</div>
       <h2>Get In Touch</h2>
       <p>
-        Ready to elevate your social media presence? I'm here to help you achieve your digital marketing goals. Fill out the form below, and I'll get back to you with personalized strategies for your brand.
+        Ready to elevate your brand's digital presence? I'm here to help you achieve your digital marketing goals with tailored social media strategies, engaging content, targeted advertising campaigns, and advanced analytics. Fill out the form below, and I'll get back to you with personalized solutions for your brand's growth and visibility.
       </p>
       
       <div class="contact-container">
@@ -735,7 +786,7 @@
         <div class="contact-info">
           <h3><i class="fas fa-id-card" aria-hidden="true"></i> Contact Information</h3>
           <div class="contact-item">
-            <div class="contact-icon">
+            <div class="contact-icon" title="Location">
               <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
             </div>
             <div class="contact-text">
@@ -744,7 +795,7 @@
             </div>
           </div>
           <div class="contact-item">
-            <div class="contact-icon">
+            <div class="contact-icon" title="Email">
               <i class="fas fa-envelope" aria-hidden="true"></i>
             </div>
             <div class="contact-text">
@@ -753,7 +804,7 @@
             </div>
           </div>
           <div class="contact-item">
-            <div class="contact-icon">
+            <div class="contact-icon" title="Phone">
               <i class="fas fa-phone-alt" aria-hidden="true"></i>
             </div>
             <div class="contact-text">
@@ -772,19 +823,19 @@
           <form id="contactForm">
             <div class="form-group">
               <label for="name"><i class="fas fa-user" aria-hidden="true"></i> Full Name</label>
-              <input type="text" id="name" name="name" placeholder="Your name" required />
+              <input type="text" id="name" name="name" placeholder="Your name" required title="Enter your full name" />
             </div>
             <div class="form-group">
               <label for="email"><i class="fas fa-envelope" aria-hidden="true"></i> Email Address</label>
-              <input type="email" id="email" name="email" placeholder="your.email@example.com" required />
+              <input type="email" id="email" name="email" placeholder="your.email@example.com" required title="Enter your email address" />
             </div>
             <div class="form-group">
               <label for="company"><i class="fas fa-building" aria-hidden="true"></i> Company / Brand</label>
-              <input type="text" id="company" name="company" placeholder="Your company or brand name" />
+              <input type="text" id="company" name="company" placeholder="Your company or brand name" title="Enter your company or brand name" />
             </div>
             <div class="form-group">
               <label for="service"><i class="fas fa-briefcase" aria-hidden="true"></i> Service You're Interested In</label>
-              <select id="service" name="service" required>
+              <select id="service" name="service" required title="Select a service">
                 <option value="" disabled selected>Select a service</option>
                 <option value="social-media-management">Social Media Management</option>
                 <option value="content-creation">Content Creation</option>
@@ -796,17 +847,17 @@
             </div>
             <div class="form-group">
               <label for="message"><i class="fas fa-comment" aria-hidden="true"></i> How can I help you?</label>
-              <textarea id="message" name="message" rows="5" placeholder="Tell me about your project, goals, or challenges..." required></textarea>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about your project, goals, or challenges for your brand's digital growth and visibility..." required title="Describe your needs"></textarea>
             </div>
-            <button type="submit" id="submitBtn">
+            <button type="submit" id="submitBtn" title="Send Your Message">
               <div id="spinner" class="spinner"></div>
               <i class="fas fa-paper-plane" aria-hidden="true"></i> Send Message
             </button>
             <div id="formSuccess" class="form-status form-success">
-              <i class="fas fa-check-circle" aria-hidden="true"></i> Thank you for your message! I'll get back to you soon.
+              <i class="fas fa-check-circle" aria-hidden="true"></i> Thank you for your message! I'll get back to you soon with tailored digital marketing solutions to boost your brand's visibility.
             </div>
             <div id="formError" class="form-status form-error">
-              <i class="fas fa-exclamation-circle" aria-hidden="true"></i> Oops! Something went wrong. Please try again later.
+              <i class="fas fa-exclamation-circle" aria-hidden="true"></i> Oops! Something went wrong. Please try again later or contact me directly.
             </div>
           </form>
         </div>
@@ -821,29 +872,43 @@
   <footer>
     <div class="footer-content">
       <div class="footer-links">
-        <a href="index.html" class="footer-link">Home</a>
-        <a href="about.html" class="footer-link">About</a>
-        <a href="hobbies.html" class="footer-link">Hobbies</a>
-        <a href="services.html" class="footer-link">Services</a>
-        <a href="tools.html" class="footer-link">Tools</a>
-        <a href="contact.html" class="footer-link">Contact</a>
-        <a href="privacy-policy.html" class="footer-link"><i class="fas fa-lock" aria-hidden="true"></i> Privacy & Policy</a>
-        <a href="terms-conditions.html" class="footer-link"><i class="fas fa-gavel" aria-hidden="true"></i> Terms & Conditions</a>
+        <a href="index.html" class="footer-link" title="Home Page">Home</a>
+        <a href="about.html" class="footer-link" title="About Marlon Palomares">About</a>
+        <a href="hobbies.html" class="footer-link" title="Hobbies">Hobbies</a>
+        <a href="services.html" class="footer-link" title="Social Media Services">Services</a>
+        <a href="tools.html" class="footer-link" title="Digital Marketing Tools">Tools</a>
+        <a href="contact.html" class="footer-link" title="Contact Marlon Palomares">Contact</a>
+        <a href="privacy-policy.html" class="footer-link" title="Privacy Policy"><i class="fas fa-lock" aria-hidden="true"></i> Privacy & Policy</a>
+        <a href="terms-conditions.html" class="footer-link" title="Terms and Conditions"><i class="fas fa-gavel" aria-hidden="true"></i> Terms & Conditions</a>
       </div>
       <div class="social-icons">
-        <a href="https://www.facebook.com/marlon.palomares.2024/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-        <a href="https://www.instagram.com/palomares523/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-        <a href="https://x.com/home" target="_blank" aria-label="X (Twitter)"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
-        <a href="https://www.linkedin.com/in/mpdigital/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
-        <a href="https://github.com/mpalomaresdigitalsolutions" target="_blank" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+        <a href="https://www.facebook.com/marlon.palomares.2024/" target="_blank" aria-label="Follow Marlon Palomares on Facebook" title="Facebook Profile" rel="noopener noreferrer"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+        <a href="https://www.instagram.com/palomares523/" target="_blank" aria-label="Follow Marlon Palomares on Instagram" title="Instagram Profile" rel="noopener noreferrer"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+        <a href="https://x.com/home" target="_blank" aria-label="Follow Marlon Palomares on X (Twitter)" title="X Profile" rel="noopener noreferrer"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/mpdigital/" target="_blank" aria-label="Connect with Marlon Palomares on LinkedIn" title="LinkedIn Profile" rel="noopener noreferrer"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+        <a href="https://github.com/mpalomaresdigitalsolutions" target="_blank" aria-label="View Marlon Palomares on GitHub" title="GitHub Profile" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i></a>
       </div>
       <p>© 2025 Marlon Palomares. All rights reserved.</p>
     </div>
   </footer>
   
   <!-- External JS Files -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js" integrity="sha512-Tn2m0TIpgVyTzzvmxLNuqbSJH3JP8jm+Cy3hvHrW7ndTDcJ1w5mBiksqDBb8GpE2kskW0M5B3qY/VCvJ2wnA/3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <!-- EmailJS Initialization -->
+  <script type="text/javascript">
+    (function(){
+      if (typeof emailjs === 'undefined') {
+        console.error('EmailJS library not loaded. Please check the CDN or network connection.');
+        return;
+      }
+      emailjs.init({
+        publicKey: "efRrbEvsWA8_PG5Z0"
+      });
+    })();
+  </script>
+  
+  <!-- Form Submission and Other Scripts -->
   <script>
     // Handle form submission using EmailJS with Service ID and Template ID
     document.getElementById('contactForm').addEventListener('submit', function(e) {
@@ -853,7 +918,18 @@
       document.getElementById('spinner').style.display = 'block';
       document.getElementById('submitBtn').disabled = true;
       
-      emailjs.sendForm('service_tnsgf4p', 'template_rftthef', this)
+      if (typeof emailjs === 'undefined') {
+        console.error('EmailJS library not loaded. Cannot send form.');
+        document.getElementById('spinner').style.display = 'none';
+        document.getElementById('submitBtn').disabled = false;
+        document.getElementById('formError').style.display = 'block';
+        setTimeout(() => {
+          document.getElementById('formError').style.display = 'none';
+        }, 5000);
+        return;
+      }
+      
+      emailjs.sendForm('service_tnsgf4p', 'template_0keha1n', this)
         .then(function(response) {
           console.log('SUCCESS!', response.status, response.text);
           document.getElementById('spinner').style.display = 'none';
@@ -923,6 +999,5 @@
       }, 3000);
     }
   </script>
-  <script src="js/script.js"></script>
 </body>
 </html>

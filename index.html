@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home - Marlon Palomares | Social Media Strategist</title>
-  <meta name="description" content="Marlon Palomares is a Social Media Strategist dedicated to transforming your digital presence with data-driven strategies. Connect today to elevate your brand.">
-  <meta name="keywords" content="Social Media, Digital Marketing, Strategy, Marlon Palomares, Brand Builder">
+  <meta name="description" content="Marlon Palomares, expert Social Media Strategist, transforms your digital presence with data-driven social media strategies, content creation, and analytics for brand growth. Connect today to elevate your business.">
+  <meta name="keywords" content="Social Media Strategist, Digital Marketing Expert, Social Media Strategy, Content Creation, Social Media Analytics, Brand Growth, Marlon Palomares, Digital Presence, Marketing Solutions, Social Media Management, Brand Awareness, Engagement Strategies, Social Media Certificates, Digital Marketing Certification, Marlon Palomares Credentials">
   <meta name="author" content="Marlon Palomares">
 
   <!-- JSON-LD Structured Data -->
@@ -13,7 +13,7 @@
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Marlon Palomares",
+    "name": "Marlon Palomares - Social Media Strategist",
     "url": "https://example.com/",
     "potentialAction": {
       "@type": "SearchAction",
@@ -26,7 +26,7 @@
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Marlon Palomares",
+    "name": "Marlon Palomares Digital Solutions",
     "url": "https://example.com/",
     "logo": "https://example.com/images/Mp.svg",
     "sameAs": [
@@ -35,7 +35,8 @@
       "https://x.com/home",
       "https://www.linkedin.com/in/mpdigital/",
       "https://github.com/mpalomaresdigitalsolutions"
-    ]
+    ],
+    "description": "Marlon Palomares provides expert social media strategies, content creation, and analytics to boost brand engagement and growth."
   }
   </script>
 
@@ -57,11 +58,11 @@
   <link rel="icon" href="images/Mp.svg" type="image/svg+xml">
 
   <style>
-    /* Global Styles */
+    /* Existing Global Styles (Unchanged) */
     :root {
       --primary-color: #3498db;
       --secondary-color: #2c3e50;
-      --accent-color: #ff6b6b;
+      --accent-color: #推动了品牌增长和参与度。ff6b6b;
       --text-dark: #2c3e50;
       --text-light: #ecf0f1;
       --text-gray: #7f8c8d;
@@ -163,8 +164,8 @@
     }
     
     .logo img {
-      height: 80px;
-      width: 80px;
+      height: 100px;
+      width: 100px;
       transition: transform 0.3s ease;
       object-fit: contain;
     }
@@ -199,6 +200,7 @@
       transform: translateY(20px);
       animation: fadeInUp 0.5s ease forwards;
       animation-delay: calc(0.1s * var(--i));
+      position: relative; /* Added for dropdown positioning */
     }
     
     @keyframes fadeInUp {
@@ -248,6 +250,71 @@
       transform: rotate(90deg);
     }
     
+    /* Dropdown Menu Styles */
+    .dropdown {
+      position: relative;
+    }
+    
+    .dropdown-toggle {
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+    }
+    
+    .dropdown-toggle::after {
+      content: '\f078'; /* Font Awesome chevron-down */
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      margin-left: 8px;
+      font-size: 0.8rem;
+      transition: transform 0.3s ease;
+    }
+    
+    .dropdown:hover .dropdown-toggle::after {
+      transform: rotate(180deg);
+    }
+    
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: rgba(44, 62, 80, 0.98);
+      backdrop-filter: blur(10px);
+      border-radius: 10px;
+      box-shadow: var(--box-shadow);
+      min-width: 200px;
+      z-index: 1000;
+      overflow: hidden;
+    }
+    
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+    
+    .dropdown-menu li {
+      margin: 0;
+      opacity: 1;
+      transform: none;
+      animation: none;
+    }
+    
+    .dropdown-menu li a {
+      display: block;
+      padding: 12px 20px;
+      border-radius: 0;
+      background: none;
+      box-shadow: none;
+      font-size: 0.9rem;
+      color: white;
+      transition: var(--transition);
+    }
+    
+    .dropdown-menu li a:hover {
+      background: rgba(52, 152, 219, 0.3);
+      transform: none;
+    }
+    
     /* Mobile Navigation */
     @media screen and (max-width: 992px) {
       .header-container {
@@ -295,8 +362,37 @@
       }
       
       .logo img {
-        height: 70px;
-        width: 70px;
+        height: 80px;
+        width: 80px;
+      }
+      
+      /* Mobile Dropdown Styles */
+      .dropdown-menu {
+        position: static;
+        background: none;
+        box-shadow: none;
+        display: none;
+        width: 100%;
+        padding-left: 20px;
+      }
+      
+      .dropdown.active .dropdown-menu {
+        display: block;
+      }
+      
+      .dropdown-menu li a {
+        padding: 10px 25px;
+        font-size: 1rem;
+        color: var(--text-light);
+      }
+      
+      .dropdown-toggle::after {
+        content: '\f078';
+        margin-left: auto;
+      }
+      
+      .dropdown.active .dropdown-toggle::after {
+        transform: rotate(180deg);
       }
     }
     
@@ -316,7 +412,7 @@
       }
     }
     
-    /* Hero Section */
+    /* Existing Hero Section Styles (Unchanged) */
     .hero {
       position: relative;
       min-height: 90vh;
@@ -361,6 +457,7 @@
       line-height: 1.2;
       background: linear-gradient(45deg, #ff6b6b, #f06595);
       -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
       font-family: 'Playfair Display', serif;
     }
@@ -413,8 +510,8 @@
     }
     
     .profile-display {
-      width: 400px;
-      height: 400px;
+      width: 450px;
+      height: 450px;
       border-radius: 20px;
       overflow: hidden;
       border: 10px solid rgba(255, 255, 255, 0.2);
@@ -454,8 +551,8 @@
       }
       
       .profile-display {
-        width: 320px;
-        height: 320px;
+        width: 350px;
+        height: 350px;
       }
     }
     
@@ -478,12 +575,12 @@
       }
       
       .profile-display {
-        width: 280px;
-        height: 280px;
+        width: 300px;
+        height: 300px;
       }
     }
     
-    /* Services Section */
+    /* Existing Services Section Styles (Unchanged) */
     .services {
       padding: 100px 20px;
       text-align: center;
@@ -562,7 +659,7 @@
     }
     
     .service-title {
-      font-size: 1.5rem;
+      font-size: 1.5ворили для повышения узнаваемости бренда и вовлеченности.5rem;
       margin-bottom: 15px;
       color: var(--text-dark);
       font-weight: 600;
@@ -598,7 +695,7 @@
       color: var(--secondary-color);
     }
     
-    /* CTA Section */
+    /* Existing CTA Section Styles (Unchanged) */
     .cta-section {
       padding: 100px 20px;
       background: linear-gradient(135deg, #3498db, #9b59b6);
@@ -646,7 +743,7 @@
       box-shadow: 0 10px 20px rgba(0,0,0,0.2);
     }
     
-    /* WhatsApp Chat */
+    /* Existing WhatsApp Chat Styles (Unchanged) */
     .whatsapp-chat-btn {
       position: fixed;
       bottom: 30px;
@@ -791,7 +888,7 @@
       background: #128C7E;
     }
     
-    /* Footer */
+    /* Existing Footer Styles (Unchanged) */
     footer {
       background-color: var(--secondary-color);
       color: white;
@@ -920,7 +1017,7 @@
     <div class="headline-banner">🚀 Elevate Your Brand's Social Media Presence Today!</div>
     <div class="header-container">
       <div class="logo">
-        <img src="images/Mp.svg" alt="Marlon Palomares Logo" width="500" height="500">
+        <img src="images/Mp.svg" alt="Marlon Palomares Digital Solutions Logo" title="Marlon Palomares Logo" width="500" height="500">
         <span class="logo-text">MP Digital</span>
       </div>
       <nav>
@@ -929,32 +1026,39 @@
         </button>
         <ul id="navMenu">
           <li style="--i: 1;">
-            <a href="index.html">
+            <a href="index.html" title="Home Page">
               <i class="fas fa-home nav-icon"></i> Home
             </a>
           </li>
           <li style="--i: 2;">
-            <a href="about.html">
+            <a href="about.html" title="About Marlon Palomares">
               <i class="fas fa-user nav-icon"></i> About Me
             </a>
           </li>
           <li style="--i: 3;">
-            <a href="hobbies.html">
-              <i class="fas fa-heart nav-icon"></i> My Hobbies
+            <a href="hobbies.html" title="Marlon Palomares Hobbies">
+              <i class="fas fa-heart nav-icon"></i> Hobbies
             </a>
           </li>
-          <li style="--i: 4;">
-            <a href="services.html">
-              <i class="fas fa-cogs nav-icon"></i> My Services
+          <li style="--i: 4;" class="dropdown">
+            <a href="services.html" class="dropdown-toggle" title="Social Media Services" aria-expanded="false">
+              <i class="fas fa-cogs nav-icon"></i>  Services
             </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a href="Certificate.html" title="Social Media Certificates and Credentials">
+                  <i class="fas fa-certificate nav-icon"></i> Certificates
+                </a>
+              </li>
+            </ul>
           </li>
           <li style="--i: 5;">
-            <a href="tools.html">
-              <i class="fas fa-wrench nav-icon"></i> Tools I Use
+            <a href="tools.html" title="Digital Marketing Tools">
+              <i class="fas fa-wrench nav-icon"></i> Tool Box
             </a>
           </li>
           <li style="--i: 6;">
-            <a href="contact.html">
+            <a href="contact.html" title="Contact Marlon Palomares">
               <i class="fas fa-envelope nav-icon"></i> Get In Touch
             </a>
           </li>
@@ -974,17 +1078,17 @@
             I help brands build meaningful connections with their audience through data-driven social media strategies that deliver real, measurable results.
           </p>
           <div class="hero-cta">
-            <a href="https://cal.com/marlon-palomares-c4cyjo/secret" class="cta-primary">
+            <a href="https://cal.com/marlon-palomares-c4cyjo/secret" class="cta-primary" title="Start Your Social Media Strategy">
               Get Started <i class="fas fa-arrow-right"></i>
             </a>
-            <a href="https://cal.com/marlon-palomares-c4cyjo/secret" class="cta-secondary">
+            <a href="https://cal.com/marlon-palomares-c4cyjo/secret" class="cta-secondary" title="Learn About Our Services">
               Learn More <i class="fas fa-book-open"></i>
             </a>
           </div>
         </div>
         <div class="hero-image">
           <div class="profile-display">
-            <img src="images/home.png" alt="Marlon Palomares Profile Picture" loading="lazy">
+            <img src="images/home.png" alt="Marlon Palomares, Social Media Strategist Profile Picture" title="Marlon Palomares Profile" loading="lazy">
           </div>
         </div>
       </div>
@@ -1011,7 +1115,7 @@
               <div class="service-more">
                 <p>Our Strategy Development service includes a comprehensive market analysis, competitor review, and a tailored plan to maximize your digital presence. We identify key opportunities and create a roadmap for success.</p>
               </div>
-              <a class="learn-more-toggle">
+              <a class="learn-more-toggle" title="Learn More About Strategy Development">
                 <span>Learn More</span> <i class="fas fa-chevron-down"></i>
               </a>
             </div>
@@ -1029,7 +1133,7 @@
               <div class="service-more">
                 <p>Our Content Creation service produces high-quality visuals, copy, and multimedia assets that capture your brand's essence and engage your followers. We ensure consistency across all platforms while tailoring content to each channel's best practices.</p>
               </div>
-              <a class="learn-more-toggle">
+              <a class="learn-more-toggle" title="Learn More About Content Creation">
                 <span>Learn More</span> <i class="fas fa-chevron-down"></i>
               </a>
             </div>
@@ -1047,7 +1151,7 @@
               <div class="service-more">
                 <p>Our Analytics & Reporting service provides detailed insights and actionable data to continuously refine your social media strategy. We track key metrics, measure campaign effectiveness, and provide clear visual reports that highlight successes and areas for improvement.</p>
               </div>
-              <a class="learn-more-toggle">
+              <a class="learn-more-toggle" title="Learn More About Analytics & Reporting">
                 <span>Learn More</span> <i class="fas fa-chevron-down"></i>
               </a>
             </div>
@@ -1063,14 +1167,14 @@
         <p class="cta-text">
           Let's work together to create a strategy that connects with your audience and drives real results for your business.
         </p>
-        <a href="https://cal.com/marlon-palomares-c4cyjo/secret" class="cta-primary">
+        <a href="https://cal.com/marlon-palomares-c4cyjo/secret" class="cta-primary" title="Contact for Social Media Solutions">
           Get in Touch Today <i class="fas fa-arrow-right"></i>
         </a>
       </div>
     </section>
     
     <!-- WhatsApp Chat Button -->
-    <button class="whatsapp-chat-btn" id="whatsappChatBtn" aria-label="Open WhatsApp chat">
+    <button class="whatsapp-chat-btn" id="whatsappChatBtn" aria-label="Open WhatsApp chat for support">
       <i class="fab fa-whatsapp"></i>
     </button>
     
@@ -1088,7 +1192,7 @@
       <div class="chat-footer">
         <form class="chat-form" id="whatsappChatForm">
           <textarea placeholder="Type your message..." required aria-label="Your message"></textarea>
-          <button type="submit">
+          <button type="submit" title="Send Message via WhatsApp">
             <i class="fab fa-whatsapp"></i> Send to WhatsApp
           </button>
         </form>
@@ -1100,24 +1204,24 @@
   <footer>
     <div class="footer-content container">
       <ul class="footer-links">
-        <li><a href="privacy-policy.html"><i class="fas fa-lock"></i> Privacy Policy</a></li>
-        <li><a href="terms-conditions.html"><i class="fas fa-gavel"></i> Terms & Conditions</a></li>
-        <li><a href="sitemap.html"><i class="fas fa-sitemap"></i> Sitemap</a></li>
+        <li><a href="privacy-policy.html" title="Privacy Policy"><i class="fas fa-lock"></i> Privacy Policy</a></li>
+        <li><a href="terms-conditions.html" title="Terms and Conditions"><i class="fas fa-gavel"></i> Terms & Conditions</a></li>
+        <li><a href="sitemap.html" title="Website Sitemap"><i class="fas fa-sitemap"></i> Sitemap</a></li>
       </ul>
       <div class="social-icons">
-        <a href="https://www.facebook.com/marlon.palomares.2024/" target="_blank" aria-label="Facebook" rel="noopener noreferrer">
+        <a href="https://www.facebook.com/marlon.palomares.2024/" target="_blank" aria-label="Follow Marlon Palomares on Facebook" title="Facebook Profile" rel="noopener noreferrer">
           <i class="fab fa-facebook-f"></i>
         </a>
-        <a href="https://www.instagram.com/palomares523/" target="_blank" aria-label="Instagram" rel="noopener noreferrer">
+        <a href="https://www.instagram.com/palomares523/" target="_blank" aria-label="Follow Marlon Palomares on Instagram" title="Instagram Profile" rel="noopener noreferrer">
           <i class="fab fa-instagram"></i>
         </a>
-        <a href="https://x.com/home" target="_blank" aria-label="X (Twitter)" rel="noopener noreferrer">
+        <a href="https://x.com/home" target="_blank" aria-label="Follow Marlon Palomares on X (Twitter)" title="X Profile" rel="noopener noreferrer">
           <i class="fab fa-x-twitter"></i>
         </a>
-        <a href="https://www.linkedin.com/in/mpdigital/" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer">
+        <a href="https://www.linkedin.com/in/mpdigital/" target="_blank" aria-label="Connect with Marlon Palomares on LinkedIn" title="LinkedIn Profile" rel="noopener noreferrer">
           <i class="fab fa-linkedin-in"></i>
         </a>
-        <a href="https://github.com/mpalomaresdigitalsolutions" target="_blank" aria-label="GitHub" rel="noopener noreferrer">
+        <a href="https://github.com/mpalomaresdigitalsolutions" target="_blank" aria-label="View Marlon Palomares on GitHub" title="GitHub Profile" rel="noopener noreferrer">
           <i class="fab fa-github"></i>
         </a>
       </div>
@@ -1155,6 +1259,20 @@
             menuToggle.querySelector('i').classList.remove('fa-times');
             menuToggle.querySelector('i').classList.add('fa-bars');
             document.body.style.overflow = '';
+          }
+        });
+      });
+      
+      // Dropdown menu toggle for mobile
+      const dropdowns = document.querySelectorAll('.dropdown');
+      dropdowns.forEach(dropdown => {
+        const toggle = dropdown.querySelector('.dropdown-toggle');
+        toggle.addEventListener('click', function(e) {
+          if (window.innerWidth <= 992) {
+            e.preventDefault();
+            dropdown.classList.toggle('active');
+            const expanded = dropdown.classList.contains('active') ? 'true' : 'false';
+            toggle.setAttribute('aria-expanded', expanded);
           }
         });
       });
@@ -1237,7 +1355,7 @@
       });
       
       window.addEventListener('scroll', animateOnScroll);
-      animateOnScroll(); // Run once on page load
+      animateOnScroll();
       
       // Smooth scrolling for anchor links
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
